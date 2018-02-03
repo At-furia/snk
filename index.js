@@ -13,7 +13,7 @@ var prefix = ("<");
 var randnum = 0;
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: 'SNK - <help', type: 2}})
+    bot.user.setPresence({ game: { name: 'SNK - <help', type: 4}})
     console.log("Bot Ready !");
 
 });
