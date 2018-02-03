@@ -18,7 +18,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login('NDA1ODQyMzE1MjExNTcxMjEw.DVYKAg.ZV3svu1Wpwio8wK8NFHxaq5ajtA');
+bot.login('');
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Brigades d'Entraînements");
