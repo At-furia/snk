@@ -110,13 +110,13 @@ bot.on('message', message => {
   if (message.content.startsWith(prefix + 'bataillon') || message.content.startsWith(prefix + 'bataillon') ) {
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
-        message.member.removeRole(Roleremovegarnison);
-        message.member.removeRole(Roleremovespéciale);
         console.log(`${message.author.username} possède déjà ce rôle !`);
    }
     else {
     message.member.addRole(Role);
     message.channel.sendMessage("Tu as rejoint le Bataillon d'Exploration !");
+    message.member.removeRole(Roleremovegarnison);
+    message.member.removeRole(Roleremovespéciale);
     console.log(`${message.author.username} got a role`);
   };}});
 
@@ -140,6 +140,8 @@ bot.on('message', message => {
     else {
     message.member.addRole(Role);
     message.channel.sendMessage('Tu as rejoint la Garnison !');
+    message.member.removeRole(Roleremoveexploration);
+    message.member.removeRole(Roleremovespéciale);
     console.log(`${message.author.username} got a role`);
   };}});
 
