@@ -127,7 +127,7 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', 'La Garnison');
-  let Roleremoveexploration = guild.roles.find("name', 'Le Bataillon d'Exploration");
+  let Roleremoveexploration = guild.roles.find('name', "Le Bataillon d'Exploration");
   let Roleremovespéciale = guild.roles.find('name', 'Les Brigades Spéciales');
   
   if(!message.content.startsWith(prefix)) return;
