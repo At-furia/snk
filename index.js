@@ -96,12 +96,12 @@ var bienvenue_embed = new Discord.RichEmbed()
 
 bot.on('message', message => {
 if (message.content === prefix + "stats"){
-    message.reply('Commande actuellement en maintenance !')
+    message.reply(' :tools: Commande actuellement en maintenance ! :tools: ')
 }})
 
 bot.on('message', message => {
 if (message.content === prefix + "sugg"){
-    message.reply('Commande actuellement en maintenance !')
+    message.reply(' :tools: Commande actuellement en maintenance ! :tools: ')
 }})
 
 bot.on('message', message => {
