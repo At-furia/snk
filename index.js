@@ -100,6 +100,11 @@ if (message.content === prefix + "stats"){
 }})
 
 bot.on('message', message => {
+if (message.content === prefix + "sugg"){
+    message.reply('Commande actuellement en maintenance !')
+}})
+
+bot.on('message', message => {
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
@@ -248,20 +253,20 @@ bot.on('message', message => {
 
     break;
 
-    case "sugg":
+    // case "sugg":
 
-    var value = message.content.substr(6);
-        if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
-        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-        var author = message.author.username.toString();
-        var number = db.get('sugg').map('id').value();
-        console.log(value);
-        message.reply("La suggestion a bien été prise ajoutée dans les demandes !")
+    // var value = message.content.substr(6);
+ //       if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
+ //       return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+ //       var author = message.author.username.toString();
+ //       var number = db.get('sugg').map('id').value();
+  //      console.log(value);
+  //      message.reply("La suggestion a bien été prise ajoutée dans les demandes !")
 
-        db.get('sugg')
-            .push({ story_value: value, story_author: author})
-            .write();
-        break;
+ //       db.get('sugg')
+   //         .push({ story_value: value, story_author: author})
+  //          .write();
+  //      break;
 //*
  //*       case "stats" : 
 //*
