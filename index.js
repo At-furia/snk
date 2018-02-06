@@ -258,7 +258,7 @@ bot.on('message', message => {
             .push({ story_value: value, story_author: author})
             .write();
         break;
-
+//*
         case "stats" : 
 
         if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
@@ -270,7 +270,7 @@ bot.on('message', message => {
             .addField("Messages", `${userXP[1]} messages`, true)
             .addField("Nom du membre", msgauthor, true)
 
-            message.channel.send({embed: stats_embed});
+            message.channel.send({embed: stats_embed}); *//
 
     }
     
