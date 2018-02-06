@@ -259,18 +259,18 @@ bot.on('message', message => {
             .write();
         break;
 //*
-        case "stats" : 
+ //*       case "stats" : 
+//*
+ //*       if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
+  //*      return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+  //*      var userMessageDB = db.get("xp").filter({username: msgauthor}).find("xp").value();
+  //*      var userXP = Object.values(userxpdb);
+   //*     var stats_embed = new Discord.RichEmbed()
+   //*         .setTitle(`Nombre de messages sur le serveur`)
+   //*         .addField("Messages", `${userXP[1]} messages`, true)
+    //*        .addField("Nom du membre", msgauthor, true)
 
-        if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
-        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-        var userMessageDB = db.get("xp").filter({username: msgauthor}).find("xp").value();
-        var userXP = Object.values(userxpdb);
-        var stats_embed = new Discord.RichEmbed()
-            .setTitle(`Nombre de messages sur le serveur`)
-            .addField("Messages", `${userXP[1]} messages`, true)
-            .addField("Nom du membre", msgauthor, true)
-
-            message.channel.send({embed: stats_embed}); *//
+   //*         message.channel.send({embed: stats_embed}); 
 
     }
     
