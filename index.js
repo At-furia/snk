@@ -102,12 +102,16 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', "Le Bataillon d'Exploration");
+  let Roleremovegarnison = guild.roles.find('name', 'La Garnison');
+  let Roleremovespéciale = guild.roles.find('name', 'Les Brigades Spéciales');
   
   if(!message.content.startsWith(prefix)) return;
   
   if (message.content.startsWith(prefix + 'bataillon') || message.content.startsWith(prefix + 'bataillon') ) {
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
+        message.member.removeRole(Roleremovegarnison);
+        message.member.removeRole(Roleremovespéciale);
         console.log(`${message.author.username} possède déjà ce rôle !`);
    }
     else {
@@ -123,6 +127,8 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', 'La Garnison');
+  let Roleremoveexploration = guild.roles.find("name', 'Le Bataillon d'Exploration");
+  let Roleremovespéciale = guild.roles.find('name', 'Les Brigades Spéciales');
   
   if(!message.content.startsWith(prefix)) return;
   
@@ -144,6 +150,8 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', 'Les Brigades Spéciales');
+  let Roleremovegarnison = guild.roles.find('name', 'La Garnison');
+  let Roleremoveexploration = guild.roles.find('name', "Le Bataillon d'Exploration");
   
   if(!message.content.startsWith(prefix)) return;
   
@@ -155,6 +163,8 @@ bot.on('message', message => {
     else {
     message.member.addRole(Role);
     message.channel.sendMessage('Tu as rejoint Les Brigades Spéciales !');
+    message.member.removeRole(Roleremovegarnison);
+    message.member.removeRole(Roleremoveexploration);
     console.log(`${message.author.username} got a role`);
   };}});
 
