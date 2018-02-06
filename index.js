@@ -62,7 +62,6 @@ bot.on('message', message => {
 if (message.content === prefix + "att"){
 var bienvenue_embed = new Discord.RichEmbed()
 
-    
     .addField(`Présentation`,`
     Vous venez d'integrer le monde de Shingeki No Kyojin - FR,
     nous vous félicitions pour votre intégrations au brigades d'entraînements.
@@ -93,6 +92,11 @@ var bienvenue_embed = new Discord.RichEmbed()
     Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
     message.channel.sendEmbed(bienvenue2_embed);
 
+}})
+
+bot.on('message', message => {
+if (message.content === prefix + "stats"){
+    message.reply('Commande actuellement en maintenance !')
 }})
 
 bot.on('message', message => {
