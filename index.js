@@ -18,7 +18,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login('');
+bot.login('process.env.BOT');
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Brigades d'Entraînements");
