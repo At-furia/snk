@@ -278,7 +278,21 @@ bot.on('message', message => {
     }
             
         break;
+            
+case "alex" : 
 
+           var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
+        var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
+        var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
+        var ptcfinal = Object.values(ptc);
+        var ptckillfinal = Object.values(ptckill);
+        var xp_embed = new Discord.RichEmbed()
+            .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
+            .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1]} points
+Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
+        message.channel.send({embed: xp_embed});
+            
+            break;
     // case "sugg":
 
     // var value = message.content.substr(6);
@@ -315,7 +329,7 @@ bot.on('message', message => {
             .setColor('#D9F200')
             .addField("Fonctionnement des commandes", "Chaque membre possède les commande de son grade sur le discord ainsi que les commandes des grades inférieurs ")
             .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration")
-            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur. :x: \n<chasse Pour lancer le minijeu 'Chasse' (Vos stats sont enregistrées)\n <kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
+            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur. :x: \n<chasse Pour lancer le minijeu 'Chasse' (Vos stats ne sont enregistrées)\n <kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
             .addField("Commandes Esquade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
