@@ -285,6 +285,7 @@ case "alex" :
         var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
         var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
         var ptcfinal = Object.values(ptc);
+        var xpfinal = Object.values(xp);
         var ptckillfinal = Object.values(ptckill);
         var xp_embed = new Discord.RichEmbed()
             .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
