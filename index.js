@@ -251,7 +251,10 @@ bot.on('message', message => {
     }}
             
             case "kill" :
-
+            
+            if(!message.member.roles.some(r=>["Escuade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
+            return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+            
             randomkill();
 
             var titankill = Math.floor(Math.random() * 101);
@@ -313,7 +316,7 @@ Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
             .setColor('#D9F200')
             .addField("Fonctionnement des commandes", "Chaque membre possède les commande de son grade sur le discord ainsi que les commandes des grades inférieurs ")
             .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration")
-            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur.\n<chasse Pour lancer le minijeu 'Chasse' (Vos stats sont enregistrées)\n <kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
+            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur. :x: \n<chasse Pour lancer le minijeu 'Chasse' (Vos stats sont enregistrées)\n <kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
             .addField("Commandes Esquade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
@@ -359,7 +362,9 @@ var party_launch = false;
 
 bot.on('message', function(message){
     if(message.content == prefix + "chasse"){
-
+        if(!message.member.roles.some(r=>["Escuade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
+        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+        
         message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
 
         party_launch = true;
