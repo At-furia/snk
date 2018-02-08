@@ -6,11 +6,12 @@ const FileSync = require ('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
-db.defaults({xp: [], sugg: []}).write()
+db.defaults({xp: [], sugg: [], kill:[], ptc:[], ptckill:[]}).write()
 
 var bot = new Discord.Client();
 var prefix = ("<");
 var randnum = 0;
+var rkill = db.get('kill').size().value();
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
@@ -248,8 +249,32 @@ bot.on('message', message => {
             })
         }
     }}
+            
+            case "kill" :
 
-    break;
+            randomkill();
+
+            var titankill = Math.floor(Math.random() * 101);
+            var kill = db.get(`kill[${randnum}].kill_value`).toString().value();
+            message.reply("a tué " + titankill + " Titans" + `${kill}`)
+            var msgauthor = message.author.username;
+
+    if(message.author.bot)return;
+
+    if(!db.get("ptckill").find({username: msgauthor}).value()){
+        db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
+    }else{
+        var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
+        console.log(userptckilldb);
+        var userptckill = Object.values(userptckilldb)
+        console.log(userptckill);
+        console.log(`Nombre d'ptckill : ${userptckill[1]}`)
+        var titankilln = Math.floor(titankill);
+        db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += titankilln}).write();
+
+    }
+            
+        break;
 
     // case "sugg":
 
@@ -266,18 +291,19 @@ bot.on('message', message => {
   //          .write();
   //      break;
 //*
- //*       case "stats" : 
-//*
- //*       if(!message.member.roles.some(r=>["Escuade Livaï","Le Bataillon d'Exploration","Les Brigades Spéciales","La Garnison"].includes(r.name)) )
-  //*      return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-  //*      var userMessageDB = db.get("xp").filter({username: msgauthor}).find("xp").value();
-  //*      var userXP = Object.values(userxpdb);
-   //*     var stats_embed = new Discord.RichEmbed()
-   //*         .setTitle(`Nombre de messages sur le serveur`)
-   //*         .addField("Messages", `${userXP[1]} messages`, true)
-    //*        .addField("Nom du membre", msgauthor, true)
+ case "stats" : 
 
-   //*         message.channel.send({embed: stats_embed}); 
+            var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
+        var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
+        var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
+        var xpfinal = Object.values(xp);
+        var ptcfinal = Object.values(ptc);
+        var ptckillfinal = Object.values(ptckill);
+        var xp_embed = new Discord.RichEmbed()
+            .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
+            .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1]} points
+Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
+        message.channel.send({embed: xp_embed});
 
     }
     
@@ -287,7 +313,7 @@ bot.on('message', message => {
             .setColor('#D9F200')
             .addField("Fonctionnement des commandes", "Chaque membre possède les commande de son grade sur le discord ainsi que les commandes des grades inférieurs ")
             .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration")
-            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord.\n<stats Voir son nombre de messages sur le serveur. ")
+            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur.\n<chasse Pour lancer le minijeu 'Chasse' (Vos stats sont enregistrées)\n <kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
             .addField("Commandes Esquade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
@@ -327,6 +353,88 @@ bot.on('message', message => {
 
 }); 
 
+var number_random = 0;
+
+var party_launch = false;
+
+bot.on('message', function(message){
+    if(message.content == prefix + "chasse"){
+
+        message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
+
+        party_launch = true;
+
+        number_random = Math.floor(Math.random() * (500 - 0) + 0)
+
+        console.log(number_random);
+
+    }
+
+    if(party_launch && message.content != null){
+
+        if(Number.isInteger(parseInt(message.content))){
+
+            
+            if(message.content > number_random){
+
+                message.reply("Il y'a moins de Titans !")
+            }
+            else if (message.content < number_random){
+
+                message.reply("Il y'a plus de Titans !")
+            
+            }else{ (message.content = number_random)
+
+            message.reply('à trouvé le bon nombre de Titans et gagne 1 point !');
+
+            var msgauthor = message.author.username;
+
+    if(message.author.bot)return;
+
+    if(!db.get("ptc").find({username: msgauthor}).value()){
+        db.get("ptc").push({username: msgauthor, ptc: 1}).write();
+    }else{
+        var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
+        console.log(userptcdb);
+        var userptc = Object.values(userptcdb)
+        console.log(userptc);
+        console.log(`Nombre d'ptc : ${userptc[1]}`)
+
+        db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
+
+    }
+            party_launch = false;
+            
+            }
+            
+        }  
+
+
+    }
+                
+
+    if(message.content == "chasse stop"){
+
+        if(party_launch = true){
+
+            message.reply("Les Titans sont partis...")
+
+            party_launch = false;
+
+        }else{
+
+            message.reply("Il n'y a pas de Titans dans les environs")
+        }
+
+    }
+})
+
+function randomkill(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(rkill);
+    randnum = Math.floor(Math.random() * (max - min) + min);
+
+}
 
   bot.login(process.env.TOKEN);
 
