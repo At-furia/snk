@@ -25,5 +25,27 @@
       "xp": 4
     }
   ],
-  "sugg": []
+"kill": [
+    {
+      "kill_value": " avec une arme à feu !"
+    },
+    {
+      "kill_value": " avec un sabre !"
+    },
+    {
+      "kill_value": " avec un canon à Mitrailles !"
+    },
+    {
+      "kill_value": " Des pièges !"
+    },
+    {
+      "kill_value": " avec un canon à Pomegrenades !"
+    },
+    {
+      "kill_value": " avec l'aide d'Eren en Titan !"
+    },
+    {
+      "kill_value": " avec une Manœuvre tridimensionnel !"
+    }
+  ]
 }
