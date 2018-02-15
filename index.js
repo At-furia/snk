@@ -340,8 +340,9 @@ Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
   //      break;
 //*
  case "stats" : 
-
-            var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
+            
+        var msgauthor = message.author.username;
+        var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
         var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
         var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
         var ptcfinal = Object.values(ptc);
