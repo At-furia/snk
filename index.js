@@ -345,6 +345,7 @@ Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
         var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
         var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
         var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
+        var xpfinal = Object.values(xp);
         var ptcfinal = Object.values(ptc);
         var ptckillfinal = Object.values(ptckill);
         var xp_embed = new Discord.RichEmbed()
