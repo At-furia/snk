@@ -94,11 +94,6 @@ var bienvenue_embed = new Discord.RichEmbed()
 }})
 
 bot.on('message', message => {
-if (message.content === prefix + "stats"){
-    message.reply(' :tools: Commande actuellement en maintenance ! :tools: ')
-}})
-
-bot.on('message', message => {
 if (message.content === prefix + "sugg"){
     message.reply(' :tools: Commande actuellement en maintenance ! :tools: ')
 }})
@@ -309,21 +304,6 @@ bot.on('message', message => {
             
         break;
             
-case "alex" : 
-
-           var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
-        var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
-        var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
-        var ptcfinal = Object.values(ptc);
-        var xpfinal = Object.values(xp);
-        var ptckillfinal = Object.values(ptckill);
-        var xp_embed = new Discord.RichEmbed()
-            .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
-            .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1]} points
-Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
-        message.channel.send({embed: xp_embed});
-            
-            break;
     // case "sugg":
 
     // var value = message.content.substr(6);
