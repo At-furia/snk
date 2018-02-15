@@ -197,8 +197,38 @@ bot.on('message', message => {
 
         db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += 1}).write();
 
+        
+        var msgauthor = message.author.username;
+        var killtest = 0
+        if(message.author.bot)return;
+    
+        if(!db.get("ptckill").find({username: msgauthor}).value()){
+            db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
+        }else{
+           var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
+            console.log(userptckilldb);
+            var userptckill = Object.values(userptckilldb)
+            db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += killtest}).write();
+    
+        }
+        var msgauthor = message.author.username;
+        var killteste = 0
+        if(message.author.bot)return;
+    
+        if(!db.get("ptc").find({username: msgauthor}).value()){
+            db.get("ptc").push({username: msgauthor, ptc: 1}).write();
+        }else{
+           var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
+            console.log(userptcdb);
+            var userptc = Object.values(userptcdb)
+            db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += killteste}).write();
+    
+        
+        }
     }
 
+    
+    
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
 
@@ -309,18 +339,18 @@ Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
   //          .write();
   //      break;
 //*
-// case "stats" : 
+ case "stats" : 
 
-//            var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
-//        var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
- //       var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
- //       var ptcfinal = Object.values(ptc);
- //       var ptckillfinal = Object.values(ptckill);
- //       var xp_embed = new Discord.RichEmbed()
- //           .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
- //           .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1]} points
-//Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
- //       message.channel.send({embed: xp_embed});
+            var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
+        var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
+        var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
+        var ptcfinal = Object.values(ptc);
+        var ptckillfinal = Object.values(ptckill);
+        var xp_embed = new Discord.RichEmbed()
+            .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés.` )
+            .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1] += -1} points.
+Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués. ` )
+        message.channel.send({embed: xp_embed});
 
     }
     
@@ -330,7 +360,7 @@ Apocalypse Titans : ${ptckillfinal[1]} Titans tués ` )
             .setColor('#D9F200')
             .addField("Fonctionnement des commandes", "Chaque membre possède les commande de son grade sur le discord ainsi que les commandes des grades inférieurs ")
             .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration")
-            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur. :x: \n<chasse Pour lancer le minijeu 'Chasse' (Vos stats ne sont enregistrées)\n<kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats sont enregistrées) ")
+            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<sugg Envoyer une suggestion d'amélioration du serveur Discord. :x: \n<stats Voir ses stats sur le serveur. :x: \n<chasse Pour lancer le minijeu 'Chasse' (Vos stats ne sont pas enregistrées)\n<kill Pour lancer le minijeu 'Apocalypse Titans' (Vos stats ne sont pas enregistrées) ")
             .addField("Commandes Esquade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
