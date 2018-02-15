@@ -46,7 +46,7 @@ bot.on("guildMemberAdd", member => {
 
     var bienvenue2_embed = new Discord.RichEmbed()
     .addField(`Présentation de SNK-FR`,`
-    Bonjour je me présente : SNK-FR, je suis votre "guide" dans cette ville !
+    Bonjour je me présente : SNK-FR, je suis votre "guide" dans cette ville, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
     Nous allons commencer par choisir votre corps d'armée !
     Pour cela il vous suffit de taper <garnison OU <bataillon OU <b-spéciales
     
