@@ -48,16 +48,6 @@
       "kill_value": " avec une Manœuvre tridimensionnel !"
     }
   ],
-  "ptckill": [
-    {
-      "username": "Alex_",
-      "ptckill": 867
-    }
-   ],
-  "ptc": [
-    {
-      "username": "Alex_",
-      "ptc": 2
-    }
-  ]
+  "ptckill": [],
+  "ptc": []
 }
