@@ -26,7 +26,7 @@ bot.on("guildMemberAdd", member => {
 
     
     .addField(`Présentation`,`
-    Vous venez d'integrer le monde de Shingeki No Kyojin - FR,
+    Vous venez d'integrer le monde de SNK-FRANCE,
     nous vous félicitions pour votre intégrations au brigades d'entraînements.
     
     *Vous devez désormais choisir un corps d'armée entre :
@@ -112,7 +112,7 @@ bot.on('message', message => {
   if (message.content.startsWith(prefix + 'bataillon')) {
       
       if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+  return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
       
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
@@ -139,7 +139,7 @@ bot.on('message', message => {
   if (message.content.startsWith(prefix + 'garnison')) {
       
       if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+  return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
       
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
@@ -166,7 +166,7 @@ bot.on('message', message => {
   if (message.content.startsWith(prefix + 'b-spéciale')) {
       
       if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+  return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
       
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
