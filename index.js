@@ -105,12 +105,15 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', "Le Bataillon d'Exploration");
-  let Roleremovegarnison = guild.roles.find('name', 'La Garnison');
-  let Roleremovespéciale = guild.roles.find('name', 'Les Brigades Spéciales');
+  let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
   
   if(!message.content.startsWith(prefix)) return;
   
-  if (message.content.startsWith(prefix + 'bataillon') || message.content.startsWith(prefix + 'bataillon') ) {
+  if (message.content.startsWith(prefix + 'bataillon')) {
+      
+      if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
+  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+      
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
         console.log(`${message.author.username} possède déjà ce rôle !`);
@@ -118,8 +121,7 @@ bot.on('message', message => {
     else {
     message.member.addRole(Role);
     message.channel.sendMessage("Tu as rejoint le Bataillon d'Exploration !");
-    message.member.removeRole(Roleremovegarnison);
-    message.member.removeRole(Roleremovespéciale);
+    message.member.removeRole(Roleremoveentrainement);
     console.log(`${message.author.username} got a role`);
   };}});
 
@@ -130,12 +132,15 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', 'La Garnison');
-  let Roleremoveexploration = guild.roles.find('name', "Le Bataillon d'Exploration");
-  let Roleremovespéciale = guild.roles.find('name', 'Les Brigades Spéciales');
+  let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
   
   if(!message.content.startsWith(prefix)) return;
   
-  if (message.content.startsWith(prefix + 'garnison') || message.content.startsWith(prefix + 'garnison') ) {
+  if (message.content.startsWith(prefix + 'garnison')) {
+      
+      if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
+  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+      
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
         console.log(`${message.author.username} possède déjà ce rôle !`);
@@ -143,8 +148,7 @@ bot.on('message', message => {
     else {
     message.member.addRole(Role);
     message.channel.sendMessage('Tu as rejoint la Garnison !');
-    message.member.removeRole(Roleremoveexploration);
-    message.member.removeRole(Roleremovespéciale);
+    message.member.removeRole(Roleremoveentrainement);
     console.log(`${message.author.username} got a role`);
   };}});
 
@@ -155,12 +159,15 @@ bot.on('message', message => {
   
   let guild = message.member.guild;
   let Role = guild.roles.find('name', 'Les Brigades Spéciales');
-  let Roleremovegarnison = guild.roles.find('name', 'La Garnison');
-  let Roleremoveexploration = guild.roles.find('name', "Le Bataillon d'Exploration");
+  let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
   
   if(!message.content.startsWith(prefix)) return;
   
-  if (message.content.startsWith(prefix + 'b-spéciale') || message.content.startsWith(prefix + 'b-spéciale') ) {
+  if (message.content.startsWith(prefix + 'b-spéciale')) {
+      
+      if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
+  return message.reply("Tu as déjà choisi un corps d'armé, tu ne peux pas en choisir un autre !");
+      
     if (message.member.roles.has(Role.id)) {
         message.channel.sendMessage('tu possède déjà ce rôle !');
         console.log(`${message.author.username} possède déjà ce rôle !`);
@@ -168,8 +175,7 @@ bot.on('message', message => {
     else {
     message.member.addRole(Role);
     message.channel.sendMessage('Tu as rejoint Les Brigades Spéciales !');
-    message.member.removeRole(Roleremovegarnison);
-    message.member.removeRole(Roleremoveexploration);
+    message.member.removeRole(Roleremoveentrainement);
     console.log(`${message.author.username} got a role`);
   };}});
 
