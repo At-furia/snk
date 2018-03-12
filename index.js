@@ -16,6 +16,7 @@ var rkill = db.get('kill').size().value();
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
     console.log("Bot Ready !");
+    bot.user.setStatus("idle")
 
 });
 
