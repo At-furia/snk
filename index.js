@@ -360,7 +360,7 @@ Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués. ` )
     if (message.content === prefix + "réseaux"){
         var réseaux_embed = new Discord.RichEmbed()
                 .setColor('#D9F200')
-                .addField("Site", "En construction")
+                .addField("Site", "www.snk-france.fr")
                 .addField("Twitter", "https://twitter.com/FR_SNK")
                 .addField("Facebook", "https://www.facebook.com/Shingeki-no-kyojin-3-147624222254357/ \nhttps://www.facebook.com/SNKFrance/")
                 .addField("Youtube", "https://www.youtube.com/channel/UCKzU9176ms-0z6Kmjpz2Onw")
