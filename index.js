@@ -95,11 +95,6 @@ var bienvenue_embed = new Discord.RichEmbed()
 }})
 
 bot.on('message', message => {
-if (message.content === prefix + "sugg"){
-    message.reply(' :tools: Commande actuellement en maintenance ! :tools: ')
-}})
-
-bot.on('message', message => {
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
@@ -229,7 +224,6 @@ bot.on('message', message => {
         }
     }
 
-    
     
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
