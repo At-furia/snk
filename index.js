@@ -23,6 +23,8 @@
 
     });
 
+  bot.login(process.env.TOKEN);
+
     bot.on('message', message => {
         
         const chasse = require("./commands/chasse.js");
