@@ -188,7 +188,7 @@
         randomkill();
 
         var titankill = Math.floor(Math.random() * 101);
-        var kill = db.get(`kill[${randnum}].kill_value`).toString().value();
+        var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
         message.reply("a tué " + titankill + " Titans" + `${kill}`)
         var msgauthor = message.author.username;
 
