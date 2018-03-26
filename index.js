@@ -27,19 +27,19 @@
 
     bot.on('message', message => {
         
-        const chasse = require("./commands/chasse.js");
         const kick = require("./commands/kick.js");
         const ban = require("./commands/ban.js");
         const réseaux = require("./commands/réseaux.js");
         const pf = require("./commands/pf.js");
         const admin = require("./commands/admin.js");
+        const chasse = require("./commands/chasse.js");
 
-        chasse(message, prefix, bot)
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
         réseaux(message, prefix, bot)
         pf(message, prefix, bot)
         admin(message, prefix, bot)
+        chasse(message, prefix, bot)
 
     })
 
