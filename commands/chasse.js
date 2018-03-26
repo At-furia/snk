@@ -1,9 +1,3 @@
-    const FileSync = require ('lowdb/adapters/FileSync')
-    const low = require('lowdb')
-    const adapter = new FileSync('database.json');
-    const db = low(adapter);
-    
-    db.defaults({ptc:[]}).write()
 
     var number_random = 0;
     var party_launch = false;
@@ -42,16 +36,7 @@ function chasse(message,prefix){
                 message.reply('à trouvé le bon nombre de Titans et gagne 1 point !');
 
                 var msgauthor = message.author.username;
-
-    if(!db.get("ptc").find({username: msgauthor}).value()){
-        db.get("ptc").push({username: msgauthor, ptc: 1}).write();
-    }else{
-        var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-        var userptc = Object.values(userptcdb)
-
-        db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
-
-        }
+        
             party_launch = false;
             
             }
