@@ -33,7 +33,7 @@ function chasse(message,prefix){
 
             }else{(message.content = number_random) 
 
-                message.reply('à trouvé le bon nombre de Titans et gagne 1 point !');
+                message.reply('à trouvé le bon nombre de Titans !');
 
                 var msgauthor = message.author.username;
         
