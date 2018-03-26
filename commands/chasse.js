@@ -57,7 +57,7 @@ function chasse(message,prefix){
             }
         }
     }   
-        if(message.content == "pom stop"){
+        if(message.content == "chasse stop"){
 
             if(party_launch == true){
     
