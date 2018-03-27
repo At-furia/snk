@@ -229,7 +229,10 @@ var number_random = 0;
 var party_launch = false;
 
 bot.on('message', function(message){
+          let chasse = message.guild.channels.find("name", "chasse");
+
     if(message.content == prefix + "chasse"){
+                if (message.channel === chasse) { 
         if(!message.member.roles.some(r=>["Escuade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
@@ -294,4 +297,7 @@ bot.on('message', function(message){
         }
 
     }
-})
+        else {
+                message.reply("Cette commande fonctionne uniquement sur le canal #chasse ")
+        }
+    }})
