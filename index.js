@@ -55,6 +55,7 @@
         -La Garnison
         -Le Bataillon d'Exploration
         -Les Brigades Spéciales
+        -Titan Shifter
         SNK-FR vous expliquera le fonctionnement plus bas dans vos messages :ok_hand:
         Soyez poli et courtois, un français correct est demandé au minimum.
         Le respect est de vigueur, les propos rascistes, injure ou autre ne seront pas toléré.`)
@@ -68,7 +69,7 @@
         .addField(`Présentation de SNK-FR`,`
         Bonjour je me présente : SNK-FR, je suis votre "guide" dans cette ville, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
         Nous allons commencer par choisir votre corps d'armée !
-        Pour cela il vous suffit de taper <garnison OU <bataillon OU <b-spéciales
+        Pour cela il vous suffit de taper <garnison OU <bataillon OU <b-spéciales OU <shifter
         
         Une fois votre corps d'armée choisit, vous avez a disposition plusieurs commandes
         qui vous seront détaillées en tapant <help !
@@ -99,6 +100,32 @@
         else {
         message.member.addRole(Role);
         message.channel.sendMessage("Tu as rejoint le Bataillon d'Exploration !");
+        message.member.removeRole(Roleremoveentrainement);
+    };}});
+
+
+    bot.on('message', message => {
+
+        if (message.author.bot) return;
+        if (message.channel.type === 'dm') return;
+    
+    let guild = message.member.guild;
+    let Role = guild.roles.find('name', "Titan Shifter");
+    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
+    
+    if(!message.content.startsWith(prefix)) return;
+    
+    if (message.content.startsWith(prefix + 'shifter')) {
+        
+        if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
+    return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
+        
+        if (message.member.roles.has(Role.id)) {
+            message.channel.sendMessage('tu possède déjà ce rôle !');
+    }
+        else {
+        message.member.addRole(Role);
+        message.channel.sendMessage("Tu as rejoint les Titans Shifter !");
         message.member.removeRole(Roleremoveentrainement);
     };}});
 
