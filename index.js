@@ -220,7 +220,7 @@ if (message.content === prefix + "help"){
             .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration")
             .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<chasse Pour lancer le minijeu 'Chasse'\n<kill Pour lancer le minijeu 'Apocalypse Titans' ")
             .addField("Commandes Titan Shifter ", "<manger Pour lancer le minijeu 'Apocalypse Titans' ")
-            .addField("Commandes Esquade Livaï", "<admin Affiche les commandes Admin.")
+            .addField("Commandes Escouade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
         console.log("Commande Help demandée"); 
@@ -230,7 +230,7 @@ if (message.content === prefix + "help"){
     bot.on('message', message => {
         if (message.content.startsWith(prefix + 'kill')) {
 
-        if(!message.member.roles.some(r=>["Escuade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
+        if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
         randomkill();
@@ -305,7 +305,7 @@ var party_launch = false;
 bot.on('message', function(message){
 
     if(message.content == prefix + "chasse"){
-        if(!message.member.roles.some(r=>["Escuade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
+        if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
         message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
