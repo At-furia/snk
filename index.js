@@ -241,7 +241,7 @@ if (message.content === prefix + "help"){
         var titankill = Math.floor(Math.random() * 101);
         var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
             
-            if (message.channel === kill) { 
+            if (message.channel === tuer) { 
 
         message.reply("a tué " + titankill + " Titans" + `${kill}`)
         var msgauthor = message.author.username;
@@ -250,7 +250,7 @@ if(message.author.bot)return;
 
             } else {
 
-        message.reply("Merci d'utiliser cette commande dans le salon #manger 😉")
+        message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
         }
      }})
         function randomkill(min, max) {
