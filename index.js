@@ -270,7 +270,7 @@ if(!db.get("ptckill").find({username: msgauthor}).value()){
         
         randommanger();
 
-        var titankill = Math.floor(Math.random() * 101);
+        var titankill = Math.floor(Math.random() * 201);
         var kill = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
         message.reply("a tué " + titankill + " Humains" + `${kill}`)
         var msgauthor = message.author.username;
