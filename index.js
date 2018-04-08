@@ -6,8 +6,10 @@
 
     const adapter = new FileSync('database.json');
     const killadapter = new FileSync('kill.json');
+    const mangeradapter = new FileSync('manger.json');
     const db = low(adapter);
     const killdb = low(killadapter);
+    const mangerdb = low(mangeradapter);
 
 
     db.defaults({xp: [], sugg: []}).write()
@@ -16,6 +18,7 @@
     var prefix = "<"
     var randnum = 0;
     var rkill = killdb.get('kill').size().value();
+    var rmanger = mangerdb.get('manger').size().value();
 
     bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
@@ -258,6 +261,41 @@ if(!db.get("ptckill").find({username: msgauthor}).value()){
             randnum = Math.floor(Math.random() * (max - min) + min);
         
         }
+    bot.on('message', message => {
+        if (message.content.startsWith(prefix + 'manger')) {
+
+        if(!message.member.roles.some(r=>["Titan Shifter"].includes(r.name)) )
+        return message.reply("Vous devez être avec les Titans Shifter pour utiliser cette commande !");
+        
+        randommanger();
+
+        var titankill = Math.floor(Math.random() * 101);
+        var kill = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
+        message.reply("a tué " + titankill + " Humains" + `${kill}`)
+        var msgauthor = message.author.username;
+
+if(message.author.bot)return;
+
+if(!db.get("ptckill").find({username: msgauthor}).value()){
+    db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
+}else{
+    var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
+    console.log(userptckilldb);
+    var userptckill = Object.values(userptckilldb)
+    console.log(userptckill);
+    console.log(`Nombre d'ptckill : ${userptckill[1]}`)
+    var titankilln = Math.floor(titankill);
+    db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += titankilln}).write();
+
+}
+
+        }})
+        function randommanger(min, max) {
+            min = Math.ceil(0);
+            max = Math.floor(rmanger);
+            randnum = Math.floor(Math.random() * (max - min) + min);
+        
+        }
 
 var number_random = 0;
 
@@ -331,3 +369,5 @@ bot.on('message', function(message){
 
     }
     })
+
+
