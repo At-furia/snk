@@ -263,6 +263,8 @@ if(!db.get("ptckill").find({username: msgauthor}).value()){
         
         }
     bot.on('message', message => {
+        let miam = message.guild.channels.find("name", "manger");
+
         if (message.content.startsWith(prefix + 'manger')) {
 
         if(!message.member.roles.some(r=>["Titan Shifter"].includes(r.name)) )
@@ -272,30 +274,25 @@ if(!db.get("ptckill").find({username: msgauthor}).value()){
 
         var titankill = Math.floor(Math.random() * 201);
         var kill = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
+            
+        if (message.channel === miam) { 
+
         message.reply("a tué " + titankill + " Humains" + `${kill}`)
         var msgauthor = message.author.username;
 
 if(message.author.bot)return;
 
-if(!db.get("ptckill").find({username: msgauthor}).value()){
-    db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
-}else{
-    var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
-    console.log(userptckilldb);
-    var userptckill = Object.values(userptckilldb)
-    console.log(userptckill);
-    console.log(`Nombre d'ptckill : ${userptckill[1]}`)
-    var titankilln = Math.floor(titankill);
-    db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += titankilln}).write();
 
-}
+        
+        }  else {
 
-        }})
+        message.reply("Merci d'utiliser cette commande dans le salon #manger ;)")
+        }
+    }})
         function randommanger(min, max) {
             min = Math.ceil(0);
             max = Math.floor(rmanger);
             randnum = Math.floor(Math.random() * (max - min) + min);
-        
         }
 
 var number_random = 0;
