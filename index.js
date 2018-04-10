@@ -238,7 +238,7 @@ if (message.content === prefix + "help"){
         
         randomkill();
 
-        var titankill = Math.floor(Math.random() * 9999999999999999999999999999999);
+        var titankill = Math.floor(Math.random() * 999999999999);
         var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
             
             if (message.channel === tuer) { 
