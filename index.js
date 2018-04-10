@@ -302,11 +302,11 @@ bot.on('message', function(message){
         if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
-        message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
+        message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500000 Titans !  ")
 
         party_launch = true;
 
-        number_random = Math.floor(Math.random() * (500 - 0) + 0)
+        number_random = Math.floor(Math.random() * (500000 - 0) + 0)
 
         console.log(number_random);
 
