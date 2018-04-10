@@ -4,7 +4,7 @@ function admin(message,prefix){
 
     if(message.content.startsWith(prefix + 'admin')){
 
-        if(!message.member.roles.some(r=>["Escuade Livaï","test"].includes(r.name)) )
+        if(!message.member.roles.some(r=>["Escouade Livaï","test"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
         var admin_embed = new Discord.RichEmbed()
