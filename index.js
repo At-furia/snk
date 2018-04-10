@@ -366,3 +366,7 @@ bot.on('message', function(message){
     })
 
 
+    bot.on('message', message => {
+if (message.content === prefix + "do you know da way ?"){
+    message.reply("I know da way")
+})
