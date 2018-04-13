@@ -2,7 +2,15 @@
 {
   "xp": [ ],
   
-  "ptc": [ ],
+  "ptc": [
+    {
+      "username": "Alex_",
+      "ptc": 1
+    } ],
   
-   "ptckill": [ ]
+   "ptckill": [ 
+     {
+      "username": "Alex_",
+      "ptckill": 1
+    }]
 }
