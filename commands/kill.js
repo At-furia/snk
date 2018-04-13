@@ -5,6 +5,9 @@ const fs = require("fs");
 
 const killadapter = new FileSync('kill.json');
 const killdb = low(killadapter);
+const adapter = new FileSync('database.json');
+const db = low(adapter);
+
 
 var rkill = killdb.get('kill').size().value();
 
