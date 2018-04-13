@@ -1,6 +1,7 @@
+    const Discord = require('discord.js');
+
 function admin(message,prefix){
 
-    const Discord = require('discord.js');
 
     if(message.content.startsWith(prefix + 'admin')){
 
