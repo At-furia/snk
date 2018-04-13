@@ -36,7 +36,9 @@
         const spéciale = require("./commands/spéciale.js");
         const garnison = require("./commands/garnison.js");
         const bataillon = require("./commands/bataillon.js");
-        const shifter = require("./commands/shifter.js");
+        const shifter = require("./commands/shifter.js");        
+        const msgstats = require("./commands/msgstats.js");
+
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -51,6 +53,8 @@
         garnison(message, prefix, bot)
         bataillon(message, prefix, bot)
         shifter(message, prefix, bot)
+        msgstats(message, prefix, bot)
+
 
 
     })
