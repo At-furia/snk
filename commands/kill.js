@@ -8,6 +8,7 @@ const killdb = low(killadapter);
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
+db.defaults({xp: [], ptc:[], ptckill:[]}).write()
 
 var rkill = killdb.get('kill').size().value();
 
