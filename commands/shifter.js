@@ -3,7 +3,7 @@ const low = require('lowdb')
 const FileSync = require ('lowdb/adapters/FileSync')
 const fs = require("fs");
 
-function spéciale(message,prefix,bot){
+function shifter(message,prefix,bot){
 
 if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
@@ -28,4 +28,4 @@ if (message.author.bot) return;
         message.member.removeRole(Roleremoveentrainement);
 }}}
 
-module.exports = spéciale
+module.exports = shifter
