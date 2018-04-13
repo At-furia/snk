@@ -20,7 +20,7 @@ function manger(message,prefix,bot){
     if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
     return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
     
-    randomkill();
+    randommanger();
 
     var titankill = Math.floor(Math.random() * 126);
     var kill = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
