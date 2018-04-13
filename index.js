@@ -32,7 +32,7 @@
         const action = require("./commands/action.js");
         const kill = require("./commands/kill.js");
         const manger = require("./commands/manger.js");
-
+        const help = require("./commands/help.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -42,8 +42,7 @@
         action(message, prefix, bot)
         kill(message, prefix, bot)
         manger(message, prefix, bot)
-
-
+        help(message, prefix, bot)
 
     })
 
@@ -193,44 +192,6 @@
         message.member.removeRole(Roleremoveentrainement);
     };}});
 
-
-    bot.on('message', message => {
-
-        var msgauthor = message.author.username;
-
-        if(message.author.bot)return;
-
-        if(!db.get("xp").find({username: msgauthor}).value()){
-            db.get("xp").push({username: msgauthor, xp: 1}).write();
-        }else{
-            var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-            console.log(userxpdb);
-            var userxp = Object.values(userxpdb)
-            console.log(userxp);
-            console.log(`Nombre d'xp : ${userxp[1]}`)
-
-            db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += 1}).write();
-
-        }
-
-    }); 
-
-bot.on('message', message => {
-if (message.content === prefix + "help"){
-    var help_embed = new Discord.RichEmbed()
-            .setColor('#D9F200')
-            .addField("Fonctionnement des commandes", "Chaque membre possède les commande de son grade sur le discord ainsi que les commandes des grades inférieurs ")
-            .addField("Commandes Brigade d'entrainement", "<réseaux Affiche les différents réseaux sociaux de la communauté SNK - FR\n<b-spéciales Rejoindre Les Brigades spéciales\n<garnison Rejoindre La Garnison\n<bataillon Rejoindre Le Bataillon d'Exploration\n<shifter Rejoindre les Titans Shifter")
-            .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<chasse Pour lancer le minijeu 'Chasse'\n<kill Pour lancer le minijeu 'Apocalypse Titans' ")
-            .addField("Commandes Titan Shifter ", "<manger Pour lancer le minijeu 'Apocalypse Titans' ")
-            .addField("Commandes Escouade Livaï", "<admin Affiche les commandes Admin.")
-            .setFooter("Crée par Alex_ et Eren Jäger")
-        message.channel.sendEmbed(help_embed);
-        console.log("Commande Help demandée"); 
-
-    }})
-       
-    
 var number_random = 0;
 
 var party_launch = false;
@@ -275,19 +236,11 @@ bot.on('message', function(message){
     if(!db.get("ptc").find({username: msgauthor}).value()){
         db.get("ptc").push({username: msgauthor, ptc: 1}).write();
     }
-
-
-    
             party_launch = false;
-            
             }
-            
         }  
-
-
     }
                 
-
     if(message.content == "chasse stop"){
 
         if(party_launch = true){
@@ -300,7 +253,5 @@ bot.on('message', function(message){
 
             message.reply("Il n'y a pas de Titans dans les environs")
         }
-
-    }
-    })
+    }})
 
