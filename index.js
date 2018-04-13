@@ -5,11 +5,7 @@
     const config = require("./config.json");
 
     const adapter = new FileSync('database.json');
-    const killadapter = new FileSync('kill.json');
-    const mangeradapter = new FileSync('manger.json');
     const db = low(adapter);
-    const killdb = low(killadapter);
-    const mangerdb = low(mangeradapter);
 
 
     db.defaults({xp: [], sugg: []}).write()
@@ -17,8 +13,6 @@
     var bot = new Discord.Client();
     var prefix = "<"
     var randnum = 0;
-    var rkill = killdb.get('kill').size().value();
-    var rmanger = mangerdb.get('manger').size().value();
 
     bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
@@ -37,6 +31,8 @@
         const admin = require("./commands/admin.js");
         const action = require("./commands/action.js");
         const kill = require("./commands/kill.js");
+        const manger = require("./commands/manger.js");
+
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -45,6 +41,8 @@
         admin(message, prefix, bot)
         action(message, prefix, bot)
         kill(message, prefix, bot)
+        manger(message, prefix, bot)
+
 
 
     })
@@ -232,39 +230,7 @@ if (message.content === prefix + "help"){
 
     }})
        
-    bot.on('message', message => {
-        let miam = message.guild.channels.find("name", "manger");
-
-        if (message.content.startsWith(prefix + 'manger')) {
-
-        if(!message.member.roles.some(r=>["Titan Shifter"].includes(r.name)) )
-        return message.reply("Vous devez être avec les Titans Shifter pour utiliser cette commande !");
-        
-        randommanger();
-
-        var titankill = Math.floor(Math.random() * 251);
-        var kill = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
-            
-        if (message.channel === miam) { 
-
-        message.reply("a tué " + titankill + " Humains" + `${kill}`)
-        var msgauthor = message.author.username;
-
-if(message.author.bot)return;
-
-
-        
-        }  else {
-
-        message.reply("Merci d'utiliser cette commande dans le salon #manger 😉")
-        }
-    }})
-        function randommanger(min, max) {
-            min = Math.ceil(0);
-            max = Math.floor(rmanger);
-            randnum = Math.floor(Math.random() * (max - min) + min);
-        }
-
+    
 var number_random = 0;
 
 var party_launch = false;
@@ -338,8 +304,3 @@ bot.on('message', function(message){
     }
     })
 
-
-    bot.on('message', message => {
-if (message.content === prefix + "do you know da way ?"){
-    message.reply("I know da way")
-}})
