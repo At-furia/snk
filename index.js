@@ -33,6 +33,10 @@
         const kill = require("./commands/kill.js");
         const manger = require("./commands/manger.js");
         const help = require("./commands/help.js");
+        const spéciale = require("./commands/spéciale.js");
+        const garnison = require("./commands/garnison.js");
+        const bataillon = require("./commands/bataillon.js");
+        const shifter = require("./commands/shifter.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -43,6 +47,11 @@
         kill(message, prefix, bot)
         manger(message, prefix, bot)
         help(message, prefix, bot)
+        spéciale(message, prefix, bot)
+        garnison(message, prefix, bot)
+        bataillon(message, prefix, bot)
+        shifter(message, prefix, bot)
+
 
     })
 
@@ -89,112 +98,7 @@
         Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
         member.sendMessage(bienvenue2_embed);
         member.addRole(role)
-    });
-
-   // bot.on('message', message => {
-
-  //      if (message.author.bot) return;
- //       if (message.channel.type === 'dm') return;
-    
-   // let guild = message.member.guild;
-  //  let Role = guild.roles.find('name', "Le Bataillon d'Exploration");
- //   let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
-    
-  //  if(!message.content.startsWith(prefix)) return;
-    
- //   if (message.content.startsWith(prefix + 'bataillon')) {
-        
-      //  if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
- //   return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
-        
-   //     if (message.member.roles.has(Role.id)) {
-  //          message.channel.sendMessage('tu possède déjà ce rôle !');
-  //  }
-   //     else {
-   //     message.member.addRole(Role);
-  //      message.channel.sendMessage("Tu as rejoint le Bataillon d'Exploration !");
-  //      message.member.removeRole(Roleremoveentrainement);
- //   };}});
-    bot.on('message', message => {
-    if (message.content.startsWith(prefix + 'bataillon')) {
-        message.reply("Le Bataillon d'Exploration ne recrute plus actuellement, d'autres factions ont besoin de membres ;)")
-    }})
-
-
-    bot.on('message', message => {
-
-        if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
-    
-    let guild = message.member.guild;
-    let Role = guild.roles.find('name', "Titan Shifter");
-    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
-    
-    if(!message.content.startsWith(prefix)) return;
-    
-    if (message.content.startsWith(prefix + 'shifter')) {
-        
-        if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-    return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
-        
-        if (message.member.roles.has(Role.id)) {
-            message.channel.sendMessage('tu possède déjà ce rôle !');
-    }
-        else {
-        message.member.addRole(Role);
-        message.channel.sendMessage("Tu as rejoint les Titans Shifter !");
-        message.member.removeRole(Roleremoveentrainement);
-    };}});
-
-    bot.on('message', message => {
-
-        if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
-    
-    let guild = message.member.guild;
-    let Role = guild.roles.find('name', 'La Garnison');
-    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
-    
-    if(!message.content.startsWith(prefix)) return;
-    
-    if (message.content.startsWith(prefix + 'garnison')) {
-        
-        if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-    return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
-        
-        if (message.member.roles.has(Role.id)) {
-            message.channel.sendMessage('tu possède déjà ce rôle !');
-    }
-        else {
-        message.member.addRole(Role);
-        message.channel.sendMessage('Tu as rejoint la Garnison !');
-        message.member.removeRole(Roleremoveentrainement);
-    };}});
-
-    bot.on('message', message => {
-
-        if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
-    
-    let guild = message.member.guild;
-    let Role = guild.roles.find('name', 'Les Brigades Spéciales');
-    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
-    
-    if(!message.content.startsWith(prefix)) return;
-    
-    if (message.content.startsWith(prefix + 'b-spéciale')) {
-        
-        if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-    return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
-        
-        if (message.member.roles.has(Role.id)) {
-            message.channel.sendMessage('tu possède déjà ce rôle !');
-    }
-        else {
-        message.member.addRole(Role);
-        message.channel.sendMessage('Tu as rejoint Les Brigades Spéciales !');
-        message.member.removeRole(Roleremoveentrainement);
-    };}});
+    })
 
 var number_random = 0;
 
