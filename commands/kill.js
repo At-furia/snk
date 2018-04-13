@@ -35,7 +35,18 @@ if(message.author.bot)return;
 
     message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
         }
-    }}
+    }
+if (titankill < 10){
+
+    message.reply("C'est tout ? Je vous pensais plus fort que ça... 😔 ")
+}
+if (titankill > 115) {
+    message.reply("😮 WOAW QUELLE FORCE !!! 😍")
+
+}
+}
+
+
     function randomkill(min, max) {
         min = Math.ceil(0);
         max = Math.floor(rkill);
