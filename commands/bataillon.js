@@ -30,6 +30,6 @@ function bataillon(message,prefix,bot){
     
      if (message.content.startsWith(prefix + 'bataillon')) {
         message.reply("Le Bataillon d'Exploration ne recrute plus actuellement, d'autres factions ont besoin de membres ;)")
-    }
+    }}
 
 module.exports = bataillon
