@@ -36,6 +36,7 @@
         const pf = require("./commands/pf.js");
         const admin = require("./commands/admin.js");
         const action = require("./commands/action.js");
+        const kill = require("./commands/kill.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -43,6 +44,8 @@
         pf(message, prefix, bot)
         admin(message, prefix, bot)
         action(message, prefix, bot)
+        kill(message, prefix, bot)
+
 
     })
 
@@ -229,38 +232,6 @@ if (message.content === prefix + "help"){
 
     }})
        
-    bot.on('message', message => {
-        
-        let tuer = message.guild.channels.find("name", "kill");
-
-        if (message.content.startsWith(prefix + 'kill')) {
-
-        if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) )
-        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-        
-        randomkill();
-
-        var titankill = Math.floor(Math.random() * 126);
-        var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
-            
-            if (message.channel === tuer) { 
-
-        message.reply("a tué " + titankill + " Titans" + `${kill}`)
-        var msgauthor = message.author.username;
-
-if(message.author.bot)return;
-
-            } else {
-
-        message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
-        }
-     }})
-        function randomkill(min, max) {
-            min = Math.ceil(0);
-            max = Math.floor(rkill);
-            randnum = Math.floor(Math.random() * (max - min) + min);
-        
-        }
     bot.on('message', message => {
         let miam = message.guild.channels.find("name", "manger");
 
