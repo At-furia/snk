@@ -109,7 +109,15 @@ bot.on('message', function(message){
 
     if(!db.get("ptc").find({username: msgauthor}).value()){
         db.get("ptc").push({username: msgauthor, ptc: 1}).write();
-    }
+    } else{
+    var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
+    console.log(userptcdb);
+    var userptc = Object.values(userptcdb)
+    console.log(userptc);
+    console.log(`Nombre d'ptckill : ${userptc[1]}`)
+    db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
+
+}
             party_launch = false;
             }
         }  
