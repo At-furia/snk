@@ -29,11 +29,7 @@ function msgstats(message,prefix,bot){
            
             if (message.content === prefix + "msgstat"){        
                 var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
-                var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
-                var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
                 var xpfinal = Object.values(xp);
-                var ptcfinal = Object.values(ptc);
-                var ptckillfinal = Object.values(ptckill);
                 var xp_embed = new Discord.RichEmbed()
                     .setColor("#590599")
                     .setDescription("Stats depuis le dernier redémarrage du bot")
