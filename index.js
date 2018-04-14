@@ -251,6 +251,6 @@ bot.on('message', message =>{
                 .setDescription("Stats depuis le dernier redémarrage du bot")
                 .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
                 .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1] += -1} points
-Titans Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués ` )
+Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
             message.channel.send({embed: xp_embed});
     }}})
