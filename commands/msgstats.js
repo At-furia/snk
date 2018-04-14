@@ -6,9 +6,6 @@ const fs = require("fs");
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
-var ptc = db.get('ptc').size().value();
-var ptckill = db.get('ptckill').size().value();
-
 db.defaults({xp: [], ptc:[], ptckill:[]}).write()
 
 function msgstats(message,prefix,bot){
@@ -28,33 +25,7 @@ function msgstats(message,prefix,bot){
 
         db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += 1}).write();
 
-        var msgauthor = message.author.username;
-        var killtest = 0
-        if(message.author.bot)return;
-    
-        if(!db.get("ptckill").find({username: msgauthor}).value()){
-            db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
-        }else{
-           var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
-            console.log(userptckilldb);
-            var userptckill = Object.values(userptckilldb)
-            db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += killtest}).write();
-    
-        }}
-
-
-
-        var msgauthor = message.author.username;
-        var killteste = 0
-        if(message.author.bot)return;
-    
-        if(!db.get("ptc").find({username: msgauthor}).value()){
-            db.get("ptc").push({username: msgauthor, ptc: 1}).write();
-        }else{
-           var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-            console.log(userptcdb);
-            var userptc = Object.values(userptcdb)
-            db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += killteste}).write();
+   
            
             if (message.content === prefix + "msgstat"){        
                 var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
@@ -67,9 +38,9 @@ function msgstats(message,prefix,bot){
                     .setColor("#590599")
                     .setDescription("Stats depuis le dernier redémarrage du bot")
                     .addField("Messages :", `${message.author.username} : ${xpfinal[1]} messages postés` )
-                    .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1] += -1} points
-Titans Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués ` )
+     ///               .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1] += -1} points
+// Titans Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués ` )
                 message.channel.send({embed: xp_embed});
-        }}}
+        }}
         
         module.exports = msgstats
