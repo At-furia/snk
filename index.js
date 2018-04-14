@@ -141,7 +141,7 @@ bot.on('message', function(message){
     }})
 
         bot.on('message', message =>{
-if (message.content.startsWith(prefix + 'kill')) {
+        if (message.content === prefix + "kill"){        
 
     let tuer = message.guild.channels.find("name", "kill");
 
