@@ -6,6 +6,9 @@ const fs = require("fs");
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
+var ptc = db.get('ptc').size().value();
+var ptckill = db.get('ptckill').size().value();
+
 db.defaults({xp: [], ptc:[], ptckill:[]}).write()
 
 function msgstats(message,prefix,bot){
