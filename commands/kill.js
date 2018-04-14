@@ -8,7 +8,6 @@ const killdb = low(killadapter);
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
-db.defaults({xp: [], ptc:[], ptckill:[]}).write()
 
 var rkill = killdb.get('kill').size().value();
 
@@ -46,20 +45,6 @@ if (titankill < 10){
 }
 if (titankill > 115) {
     message.reply("😮 WOAW QUELLE FORCE !!! 😍")
-
-}
-    if(message.author.bot)return;
-
-if(!db.get("ptckill").find({username: msgauthor}).value()){
-    db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
-}else{
-    var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
-    console.log(userptckilldb);
-    var userptckill = Object.values(userptckilldb)
-    console.log(userptckill);
-    console.log(`Nombre d'ptckill : ${userptckill[1]}`)
-    var titankilln = Math.floor(titankill);
-    db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += titankilln}).write();
 
 }
 }
