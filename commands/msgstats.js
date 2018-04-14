@@ -41,6 +41,6 @@ function msgstats(message,prefix,bot){
      ///               .addField("Minijeux :", `Chasse de Titans : ${ptcfinal[1] += -1} points
 // Titans Apocalypse Titans : ${ptckillfinal[1] += -1} Titans tués ` )
                 message.channel.send({embed: xp_embed});
-        }}
+        }})
         
         module.exports = msgstats
