@@ -18,16 +18,16 @@ function manger(message,prefix,bot){
     let miam = message.guild.channels.find("name", "manger");
 
     if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
-    return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+    return message.reply("Vous devez utiliser cette commande !");
     
     randommanger();
 
     var titankill = Math.floor(Math.random() * 126);
-    var kill = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
+    var bouffer = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
 
-    message.reply("a tué " + titankill + " Humains" + `${kill}`)
+    message.reply("a tué " + titankill + " Humains" + `${bouffer}`)
     var msgauthor = message.author.username;
 
 if(message.author.bot)return;
