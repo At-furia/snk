@@ -271,7 +271,7 @@ if (message.content === prefix + "manger"){
     randommanger();
 
     var titankill = Math.floor(Math.random() * 126);
-    var bouffer = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
+    var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
         
