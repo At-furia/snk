@@ -261,7 +261,7 @@ Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
 
 bot.on('message', message =>{
 
-if (message.content === prefix + "kill"){        
+if (message.content === prefix + "manger"){        
 
     let miam = message.guild.channels.find("name", "manger");
 
