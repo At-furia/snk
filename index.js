@@ -8,6 +8,8 @@
     const db = low(adapter);
     const killadapter = new FileSync('kill.json');
     const killdb = low(killadapter);
+    const mangeradapter = new FileSync('manger.json');
+    const mangerdb = low(mangeradapter);
 
     db.defaults({xp: [], sugg: [], ptc: [], ptckill: []}).write()
 
