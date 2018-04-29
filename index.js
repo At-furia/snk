@@ -270,7 +270,7 @@ if (message.content === prefix + "manger"){
     
     randommanger();
 
-    var titankill = Math.floor(Math.random() * 126);
+    var titankill = Math.floor(Math.random() * 251);
     var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
