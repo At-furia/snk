@@ -266,7 +266,7 @@ if (message.content === prefix + "manger"){
     let miam = message.guild.channels.find("name", "manger");
 
     if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
-    return message.reply("Vous devez utiliser cette commande !");
+    return message.reply("Vous devez être un titan pour utiliser cette commande !");
     
     randommanger();
 
