@@ -328,7 +328,7 @@ bot.on('message', message => {
 bot.on('message', message => {
 
     if (message.author.bot) return;
-    let accueil = message.guild.channels.find("name", "accueil");
+    let accueil = message.guild.channels.find("name", "accueil-event-mai-2018");
 
     if (message.channel === accueil) { 
 
