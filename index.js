@@ -48,6 +48,8 @@
         const bataillon = require("./commands/bataillon.js");
         const shifter = require("./commands/shifter.js");        
       //  const msgstats = require("./commands/msgstats.js");
+        const spoil = require("./commands/spoil.js");        
+
 
 
         kick(message, prefix, bot)       
@@ -64,6 +66,7 @@
         bataillon(message, prefix, bot)
         shifter(message, prefix, bot)
       //  msgstats(message, prefix, bot)
+        spoil(message, prefix, bot)
 
 
 
