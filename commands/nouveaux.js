@@ -29,7 +29,10 @@ function nouveaux(member,bot){
         serveur quel que soit votre faction.
         Aussi, nous vous demandons de jouer le jeu et de choisir un pseudo de personnage en lien avec SNK`)
         .addBlankField()
-        .addField(`Présentation de SNK-FR`,`
+        member.sendMessage(bienvenue_embed);
+
+        var bienvenue2_embed = new Discord.RichEmbed()
+               .addField(`Présentation de SNK-FR`,`
         Bonjour je me présente : SNK-FR, je suis votre "guide" dans cette ville, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
         Pour cela deux choix s'offre a vous :
 
@@ -42,12 +45,14 @@ function nouveaux(member,bot){
         Une fois votre camp choisit, vous avez a disposition plusieurs commandes
         qui vous seront détaillées en tapant <help !
         Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
-        member.sendMessage(bienvenue_embed);
-
-      //  var bienvenue2_embed = new Discord.RichEmbed()
-        
-       // member.sendMessage(bienvenue2_embed);
+        member.sendMessage(bienvenue2_embed);
         member.addRole(role)
+    
+            var bienvenue3_embed = new Discord.RichEmbed()
+            .addField("test","test")
+            member.sendMessage(bienvenue3_embed);
+
+
 }
 
 module.exports = nouveaux
