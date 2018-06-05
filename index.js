@@ -163,10 +163,11 @@ bot.on('message', function(message){
                 message.reply("Il y'a plus de Titans !")
             
             }else{ (message.content = number_random)
-
-            message.reply('à trouvé le bon nombre de Titans !');
-
             var msgauthor = message.author.username;
+
+            message.reply('à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction !');
+            bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` (à gagné une chasse)`)
+
 
     if(message.author.bot)return;
 
