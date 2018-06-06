@@ -20,7 +20,7 @@ function kill(message,prefix,bot){
 
     let tuer = message.guild.channels.find("name", "kill");
 
-     if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )"].includes(r.name)) )
+     if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
     return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
     
     randomkill();
