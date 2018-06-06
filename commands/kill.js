@@ -61,21 +61,21 @@ if (titankill > 115) {
     if (titankill < 75 ){
     if (titankill < 25 ) 
 
-bot.channels.get("424249866743578625").send(`+ 10 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
+bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
 else {
 
-bot.channels.get("424249866743578625").send(`+ 20 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
+bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 }
 }
 
 else if (titankill > 75 ){
     if (titankill < 100 ) 
 
-bot.channels.get("424249866743578625").send(`+ 30 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
+bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
  else {
-    bot.channels.get("424249866743578625").send(`+ 40 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
+    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
 }
 } 
