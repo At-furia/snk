@@ -20,7 +20,7 @@ function manger(message,prefix,bot){
     let miam = message.guild.channels.find("name", "manger");
 
     if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
-    return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+    return message.reply("Vous devez être un Titan pour utiliser cette commande !");
     
     randommanger();
 
