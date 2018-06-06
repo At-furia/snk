@@ -91,7 +91,7 @@
         const admin = require("./commands/admin.js");
         const action = require("./commands/action.js");
         const kill = require("./commands/kill.js");
-     //   const manger = require("./commands/manger.js");
+        const manger = require("./commands/manger.js");
         const help = require("./commands/help.js");
         const spéciale = require("./commands/spéciale.js");
         const garnison = require("./commands/garnison.js");
@@ -109,7 +109,7 @@
         admin(message, prefix, bot)
         action(message, prefix, bot)
         kill(message, prefix, bot)
-       // manger(message, prefix, bot)
+        manger(message, prefix, bot)
         help(message, prefix, bot)
         spéciale(message, prefix, bot)
         garnison(message, prefix, bot)
@@ -262,38 +262,4 @@ bot.on('message', message =>{
 Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
             message.channel.send({embed: xp_embed});
     }}})
-
-bot.on('message', message =>{
-
-if (message.content === prefix + "manger"){        
-
-    let miam = message.guild.channels.find("name", "manger");
-
-    if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
-    return message.reply("Vous devez être un titan pour utiliser cette commande !");
-    
-    randommanger();
-
-    var titankill = Math.floor(Math.random() * 251);
-    var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
-        
-    if (message.channel === miam) { 
-        
-    message.reply("a tué " + titankill + " Humains" + `${bouffer}`)
-    var msgauthor = message.author.username;
-
-if(message.author.bot)return;
-} else {
-
-    message.reply("Merci d'utiliser cette commande dans le salon #manger 😉")
-        }
-    }})
-    function randommanger(min, max) {
-        min = Math.ceil(0);
-        max = Math.floor(rmanger);
-        randnum = Math.floor(Math.random() * (max - min) + min);
-    
-    }
-
-
 
