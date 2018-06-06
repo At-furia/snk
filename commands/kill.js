@@ -38,8 +38,7 @@ if(message.author.bot)return;
 
     message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
         }
-    }
-if (titankill < 10){
+    }  if (titankill < 10){
 
     message.reply("C'est tout ? Je vous pensais plus fort que ça... 😔 ")
 }
