@@ -37,7 +37,7 @@ if(message.author.bot)return;
 
     message.reply("Merci d'utiliser cette commande dans le salon #manger 😉")
         }
-    }}
+    }
     function randommanger(min, max) {
         min = Math.ceil(0);
         max = Math.floor(rmanger);
@@ -65,7 +65,7 @@ bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` 
     bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
 }
-} 
+} }
 
 
     module.exports = manger
