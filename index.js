@@ -90,7 +90,7 @@
         const pf = require("./commands/pf.js");
         const admin = require("./commands/admin.js");
         const action = require("./commands/action.js");
-      //  const kill = require("./commands/kill.js");
+        const kill = require("./commands/kill.js");
      //   const manger = require("./commands/manger.js");
         const help = require("./commands/help.js");
         const spéciale = require("./commands/spéciale.js");
@@ -108,7 +108,7 @@
         pf(message, prefix, bot)
         admin(message, prefix, bot)
         action(message, prefix, bot)
-      //  kill(message, prefix, bot)
+        kill(message, prefix, bot)
        // manger(message, prefix, bot)
         help(message, prefix, bot)
         spéciale(message, prefix, bot)
@@ -201,59 +201,6 @@ bot.on('message', function(message){
         }
     }})
 
-        bot.on('message', message =>{
-        if (message.content === prefix + "kill"){        
-
-    let tuer = message.guild.channels.find("name", "kill");
-
-    if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
-    return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-    
-    randomkill();
-
-    var titankill = Math.floor(Math.random() * 126);
-    var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
-        
-    if (message.channel === tuer) { 
-
-    message.reply("a tué " + titankill + " Titans" + `${kill}`)
-    var msgauthor = message.author.username;
-
-if(message.author.bot)return;
-        if(!db.get("ptckill").find({username: msgauthor}).value()){
-            db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
-        }else{
-            var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
-            console.log(userptckilldb);
-            var userptckill = Object.values(userptckilldb)
-            console.log(userptckill);
-            console.log(`Nombre d'ptckill : ${userptckill[1]}`)
-            var titankilln = Math.floor(titankill);
-            db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += titankilln}).write();
-    
-        }
-} else {
-
-    message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
-        }
-    }
-if (titankill < 10){
-
-    message.reply("C'est tout ? Je vous pensais plus fort que ça... 😔 ")
-}
-if (titankill > 115) {
-    message.reply("😮 WOAW QUELLE FORCE !!! 😍")
-
-}
-}
-)
-
-    function randomkill(min, max) {
-        min = Math.ceil(0);
-        max = Math.floor(rkill);
-        randnum = Math.floor(Math.random() * (max - min) + min);
-    
-    }
 
 bot.on('message', message =>{
     
