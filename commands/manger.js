@@ -22,7 +22,7 @@ function manger(message,prefix,bot){
     
     randommanger();
 
-    var titankill = Math.floor(Math.random() * 126);
+    var titankill = Math.floor(Math.random() * 251);
     var bouffer = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
@@ -42,5 +42,28 @@ if(message.author.bot)return;
         randnum = Math.floor(Math.random() * (max - min) + min);
     
     }
+
+    if (titankill < 124 ){
+    if (titankill < 62 ) 
+
+bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+
+else {
+
+bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+}
+}
+
+else if (titankill > 124 ){
+    if (titankill < 186 ) 
+
+bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+
+ else {
+    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+
+}
+} 
+}
 
     module.exports = manger
