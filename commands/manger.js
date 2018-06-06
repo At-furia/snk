@@ -25,7 +25,7 @@ function manger(message,prefix,bot){
     randommanger();
 
     var titankille = Math.floor(Math.random() * 251);
-    var bouffer = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
+    var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
 
