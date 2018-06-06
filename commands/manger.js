@@ -5,6 +5,8 @@ const fs = require("fs");
 
 const mangeradapter = new FileSync('manger.json');
 const mangerdb = low(mangeradapter);
+const adapter = new FileSync('database.json');
+const db = low(adapter);
 
 var rmanger = mangerdb.get('manger').size().value();
 
@@ -64,6 +66,6 @@ bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` 
 
 }
 } 
-}
+
 
     module.exports = manger
