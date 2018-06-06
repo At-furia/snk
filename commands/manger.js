@@ -65,7 +65,7 @@ bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` 
     bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
 }
-} }}
+} 
 
 
     module.exports = manger
