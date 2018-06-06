@@ -20,16 +20,16 @@ function manger(message,prefix,bot){
     let miam = message.guild.channels.find("name", "manger");
 
     if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
-    return message.reply("Vous devez utiliser cette commande !");
+    return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
     
     randommanger();
 
-    var titankill = Math.floor(Math.random() * 251);
+    var titankille = Math.floor(Math.random() * 251);
     var bouffer = mangerdb.get(`kill[${randnum}].manger_value`).toString().value();
         
     if (message.channel === miam) { 
 
-    message.reply("a tué " + titankill + " Humains" + `${bouffer}`)
+    message.reply("a tué " + titankille + " Humains" + `${bouffer}`)
     var msgauthor = message.author.username;
 
 if(message.author.bot)return;
@@ -45,8 +45,8 @@ if(message.author.bot)return;
     
     }
 
-    if (titankill < 124 ){
-    if (titankill < 62 ) 
+    if (titankille < 124 ){
+    if (titankille < 62 ) 
 
 bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
@@ -56,8 +56,8 @@ bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` 
 }
 }
 
-else if (titankill > 124 ){
-    if (titankill < 186 ) 
+else if (titankille > 124 ){
+    if (titankille < 186 ) 
 
 bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
