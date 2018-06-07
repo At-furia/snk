@@ -55,7 +55,9 @@ if (titankill > 115) {
     
     }
 
-    
+      var chance = Math.floor(Math.random() * 101);
+
+    if (chance > 60) {
     if (titankill < 75 ){
     if (titankill < 25 ) 
 
@@ -77,5 +79,7 @@ bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` 
 
 }
 } 
+    } else {
+}
 }
     module.exports = kill
