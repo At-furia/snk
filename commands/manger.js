@@ -44,7 +44,9 @@ if(message.author.bot)return;
         randnum = Math.floor(Math.random() * (max - min) + min);
     
     }
+  var chancee = Math.floor(Math.random() * 101);
 
+    if (chancee > 60) {
     if (titankille < 124 ){
     if (titankille < 62 ) 
 
@@ -65,7 +67,9 @@ bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` 
     bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
 }
-} }
-
+} 
+    } else {
+}
+}
 
     module.exports = manger
