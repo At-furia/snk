@@ -99,6 +99,7 @@
         const shifter = require("./commands/shifter.js");        
       //  const msgstats = require("./commands/msgstats.js");
         const spoil = require("./commands/spoil.js");        
+        const trois = require("./commands/trois.js");
 
 
 
@@ -117,6 +118,7 @@
         shifter(message, prefix, bot)
       //  msgstats(message, prefix, bot)
         spoil(message, prefix, bot)
+        trois(message, prefix, bot)
 
 
 
