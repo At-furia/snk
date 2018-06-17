@@ -19,7 +19,7 @@ function trois(message,prefix,bot){
         var theme = ['','SNK','Animaux','Objets','+18','Nature','Corps','Aliments','Fruits','Légumes','Animé/Manga','Vulgaire'];    
         randomt = Math.ceil(Math.random() * 11);
 
-        var theme_aleatoire = alphabet[randomt];
+        var theme_aleatoire = theme[randomt];
 
         var bruh_embed = new Discord.RichEmbed()
 
