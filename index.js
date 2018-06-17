@@ -66,7 +66,7 @@
         Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
         
         
-        message.member.addRole(role);
+        member.addRole(role);
 
         member.sendMessage(bienvenue_embed);
 
