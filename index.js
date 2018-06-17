@@ -67,7 +67,7 @@
         member.sendMessage(bienvenue_embed);
 
         
-          message.member.addRole(role);
+          member.addRole(role);
 
       })
 
