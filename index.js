@@ -78,6 +78,8 @@
  -        qui vous seront détaillées en tapant <help !
  -        Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
  -        member.sendMessage(bienvenue2_embed);
+          message.member.addRole(role);
+
       })
 
     bot.on('message', message => {
