@@ -18,13 +18,13 @@ if (message.author.bot) return;
         
         
         if (message.member.roles.has(Role.id)) {
-            message.channel.sendMessage('Canal Spoil désactivé !');
+            message.channel.sendMessage('Canal Spoil et Manga-Scans désactivé !');
             message.member.removeRole(removespoil);
 
     }
         else {
         message.member.addRole(Role);
-        message.channel.sendMessage('Canal Spoil activé !');
+        message.channel.sendMessage('Canal Spoil et Manga-Scans activé !');
 }}}
 
 module.exports = spoil
