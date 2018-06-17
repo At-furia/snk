@@ -254,3 +254,34 @@ Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
             message.channel.send({embed: xp_embed});
     }}})
 
+
+bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let ttt = message.guild.channels.find("name", "event-des-3-lettres");
+                    if (message.channel === ttt) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("458016809208250399").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+
+            bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let tttt = message.guild.channels.find("name", "event-des-3-lettres-admin");
+                    if (message.channel === tttt) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("458016496212246540").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+
