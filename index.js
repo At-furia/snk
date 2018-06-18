@@ -295,11 +295,69 @@ bot.on('message', message => {
                 if (message.channel.type === 'dm') return;
                 var supp = false;
 
-                let hopla = message.guild.channels.find("name", "bordel");
+                let hopla = message.guild.channels.find("name", "bot-vers-brigades-dentrainement");
                     if (message.channel === hopla) {                    
 
                         message.delete(1); //Supposed to delete message
                         bot.channels.get("389511539347947520").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+
+ bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let hoplar = message.guild.channels.find("name", "bot-vers-brig");
+                    if (message.channel === hoplar) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("389511416933122058").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+
+ bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let hoplat = message.guild.channels.find("name", "bot-vers-bataillon");
+                    if (message.channel === hoplat) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("389215030563962890").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+ bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let hoplac = message.guild.channels.find("name", "bot-vers-shifter");
+                    if (message.channel === hoplac) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("431966899946127365").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+ bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let hoplaq = message.guild.channels.find("name", "bot-vers-garnison");
+                    if (message.channel === hoplaq) {                    
+
+                        message.delete(1); //Supposed to delete message
+                        bot.channels.get("389511187680854017").send(message.content.slice(0, message.content.length));
                     }     
                 }
             )
