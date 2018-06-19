@@ -375,3 +375,18 @@ bot.on('message', message => {
                     }     
                 }
             )
+
+bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let salonvip = message.guild.channels.find("name", "bot-vers-spoil");
+                    if (message.channel === salonvip) {                    
+
+                       // message.delete(1); //Supposed to delete message
+                        bot.channels.get("389511539347947520").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
