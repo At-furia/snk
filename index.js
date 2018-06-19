@@ -382,7 +382,7 @@ bot.on('message', message => {
                 if (message.channel.type === 'dm') return;
                 var supp = false;
 
-                let salonvip = message.guild.channels.find("name", "bot-vers-spoil");
+                let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
                     if (message.channel === salonvip) {                    
 
                        // message.delete(1); //Supposed to delete message
