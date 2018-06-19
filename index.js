@@ -361,3 +361,17 @@ bot.on('message', message => {
                     }     
                 }
             )
+ bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+                var supp = false;
+
+                let hoplaqu = message.guild.channels.find("name", "bot-vers-spoil");
+                    if (message.channel === hoplaqu) {                    
+
+                       // message.delete(1); //Supposed to delete message
+                        bot.channels.get("422177927501709312").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
