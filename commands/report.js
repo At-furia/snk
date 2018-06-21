@@ -21,7 +21,7 @@ function report(message,prefix,bot){
                                 if (message.author.bot) return;
                                  
                                 message.delete(1); //Supposed to delete message
-                                bot.channels.get("459467889544658945").send(msgauthor + "A report : " + message.content.slice(7, message.content.length)); 
+                                bot.channels.get("459467889544658945").send(msgauthor + " A report : " + message.content.slice(7, message.content.length)); 
                             }
                             }
 
