@@ -89,7 +89,8 @@
       //  const msgstats = require("./commands/msgstats.js");
         const spoil = require("./commands/spoil.js");        
         const trois = require("./commands/trois.js");
-
+        const haine = require("./commands/haine.js");
+        const love = require("./commands/love.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -107,6 +108,8 @@
       //  msgstats(message, prefix, bot)
         spoil(message, prefix, bot)
         trois(message, prefix, bot)
+        haine(message, prefix, bot)
+        love(message, prefix, bot)
 
     })
 
