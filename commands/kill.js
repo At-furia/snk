@@ -10,10 +10,7 @@ const db = low(adapter);
 
 var rkill = killdb.get('kill').size().value();
 
-
-
 function kill(message,prefix,bot){
-
 
     if (message.content.startsWith(prefix + 'kill')) {
 
@@ -45,8 +42,6 @@ if (titankill > 115) {
     message.reply("😮 WOAW QUELLE FORCE !!! 😍")
 
 }
-
-
 
     function randomkill(min, max) {
         min = Math.ceil(0);
