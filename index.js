@@ -20,12 +20,10 @@
     var rmanger = mangerdb.get('manger').size().value();
 
 
-
-
     bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
         bot.user.setStatus("idle")
-        bot.channels.get("406139512985747466").send(`Bot redémarré`);
+    //    bot.channels.get("406139512985747466").send(`Bot redémarré`);
 
 
     });
@@ -93,7 +91,6 @@
         const trois = require("./commands/trois.js");
 
 
-
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
         réseaux(message, prefix, bot)
@@ -110,8 +107,6 @@
       //  msgstats(message, prefix, bot)
         spoil(message, prefix, bot)
         trois(message, prefix, bot)
-
-
 
     })
 
@@ -261,12 +256,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let ttt = message.guild.channels.find("name", "event-des-3-lettres");
                     if (message.channel === ttt) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("458016809208250399").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -276,12 +269,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let tttt = message.guild.channels.find("name", "event-des-3-lettres-admin");
                     if (message.channel === tttt) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("458016496212246540").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -293,12 +284,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hopla = message.guild.channels.find("name", "bot-vers-brigades-dentrainement");
                     if (message.channel === hopla) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("389511539347947520").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -308,12 +297,11 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hoplar = message.guild.channels.find("name", "bot-vers-brig");
                     if (message.channel === hoplar) {                    
 
-                        message.delete(1); //Supposed to delete message
+                     //   message.delete(1); //Supposed to delete message
                         bot.channels.get("389511416933122058").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -323,12 +311,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hoplat = message.guild.channels.find("name", "bot-vers-bataillon");
                     if (message.channel === hoplat) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("389215030563962890").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -337,12 +323,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hoplac = message.guild.channels.find("name", "bot-vers-shifter");
                     if (message.channel === hoplac) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("431966899946127365").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -351,12 +335,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hoplaq = message.guild.channels.find("name", "bot-vers-garnison");
                     if (message.channel === hoplaq) {                    
 
-                        message.delete(1); //Supposed to delete message
                         bot.channels.get("389511187680854017").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -365,12 +347,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let hoplaqu = message.guild.channels.find("name", "bot-vers-spoil");
                     if (message.channel === hoplaqu) {                    
 
-                       // message.delete(1); //Supposed to delete message
                         bot.channels.get("422177927501709312").send(message.content.slice(0, message.content.length));
                     }     
                 }
@@ -380,12 +360,10 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var supp = false;
 
                 let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
                     if (message.channel === salonvip) {                    
 
-                       // message.delete(1); //Supposed to delete message
                         bot.channels.get("389511539347947520").send(message.content.slice(0, message.content.length));
                     }     
                 }
