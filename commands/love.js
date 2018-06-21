@@ -12,9 +12,6 @@ function love(message,prefix,bot){
         randomlove = Math.ceil(Math.random() * 101);
 
         var memberlove = message.mentions.users.first();
-        
-        if(!message.member.roles.some(r=>["1ère Division","Escouade Livaï","Escouade Mike","test"].includes(r.name)) )
-        return message.reply("Cette commande est réservée uniquement aux VIP (1ère Division) pour le moment !");
     
         if(!memberlove){
             message.reply("L'utilisateur n'existe pas !");
