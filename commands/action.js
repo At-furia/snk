@@ -23,7 +23,6 @@ randomperso();
 var lul = luldb.get(`lul[${randnum}].lul_value`).toString().value();
 console.log(randnum);
 
-
 randomlul();
 var perso = persodb.get(`perso[${randnum}].perso_value`).toString().value();
 console.log(randnum);
