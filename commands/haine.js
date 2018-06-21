@@ -13,8 +13,6 @@ function haine(message,prefix,bot){
 
         var memberhaine = message.mentions.users.first();
 
-        if(!message.member.roles.some(r=>["1ère Division","Escouade Livaï","Escouade Mike","test"].includes(r.name)) )
-        return message.reply("Cette commande est réservée uniquement aux VIP (1ère Division) pour le moment !");
 
         if(!memberhaine){
             message.reply("L'utilisateur n'existe pas !");
