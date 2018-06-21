@@ -1,7 +1,6 @@
-    const Discord = require('discord.js');
+const Discord = require('discord.js');
 
 function admin(message,prefix){
-
 
     if(message.content.startsWith(prefix + 'admin')){
 
@@ -10,7 +9,7 @@ function admin(message,prefix){
         
         var admin_embed = new Discord.RichEmbed()
                 .setColor('#D9F200')
-                .addField("Commandes Modération", "/kick @PseudoDuMembre\n/ban @PseudoDuMembre")
+                .addField("Commandes Modération", "<kick @PseudoDuMembre\n<ban @PseudoDuMembre")
                 .setFooter("Crée par Alex_ et Eren Jäger")
             message.author.sendMessage(admin_embed);
             console.log("Commande Admin demandée")  ; 
