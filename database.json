@@ -7,16 +7,6 @@
     }
   ],
   
-  "ptc": [
-    {
-      "username": "Alex_",
-      "ptc": 99999999
-    } ],
-  
-   "ptckill": [ 
-     {
-      "username": "Alex_",
-      "ptckill": 9999999
-    }
-   ]
+  "ptc": [],  
+   "ptckill": [ ]
 }
