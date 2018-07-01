@@ -374,3 +374,30 @@ bot.on('message', message => {
                     }     
                 }
             )
+
+bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+
+                let sal = message.guild.channels.find("name", "bot-vers-annonces-générales");
+                    if (message.channel === sal) {                    
+
+                        bot.channels.get("422178790572294144").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
+
+
+bot.on('message', message => {
+
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+
+                let sald = message.guild.channels.find("name", "bot-vers-taverne");
+                    if (message.channel === sald) {                    
+
+                        bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length));
+                    }     
+                }
+            )
