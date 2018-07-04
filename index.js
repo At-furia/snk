@@ -262,7 +262,7 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
-                var joueur = message.author.username;
+                var joueur = message.author.tag;
 
                 let ttt = message.guild.channels.find("name", "event-des-3-lettres");
                     if (message.channel === ttt) {                    
