@@ -262,11 +262,12 @@ bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
+                var joueur = message.author.username;
 
                 let ttt = message.guild.channels.find("name", "event-des-3-lettres");
                     if (message.channel === ttt) {                    
 
-                        bot.channels.get("458016809208250399").send(message.content.slice(0, message.content.length));
+                        bot.channels.get("458016809208250399").send(message.content.slice(0, message.content.length) + joueur);
                     }     
                 }
             )
