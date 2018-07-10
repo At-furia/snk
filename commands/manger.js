@@ -50,21 +50,21 @@ if(message.author.bot)return;
     if (titankille < 124 ){
     if (titankille < 62 ) 
 
-bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+//bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
 else {
 
-bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+//bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 }
 }
 
 else if (titankille > 124 ){
     if (titankille < 186 ) 
 
-bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+//bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
  else {
-    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
+//    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
 }
 } 
