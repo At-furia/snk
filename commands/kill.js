@@ -52,29 +52,29 @@ if (titankill > 115) {
 
       var chance = Math.floor(Math.random() * 101);
 
-    if (chance > 60) {
-    if (titankill < 75 ){
-    if (titankill < 25 ) 
+   // if (chance > 60) {
+   // if (titankill < 75 ){
+   // if (titankill < 25 ) 
 
 //bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
-else {
+//else {
 
 //bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
-}
-}
+//}
+//}
 
-else if (titankill > 75 ){
-    if (titankill < 100 ) 
+//else if (titankill > 75 ){
+//    if (titankill < 100 ) 
 
 //bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
- else {
+// else {
   //  bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
-}
-} 
-    } else {
-}
+//}
+//} 
+ //   } else {
+//}
 }
     module.exports = kill
