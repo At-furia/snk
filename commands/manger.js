@@ -46,30 +46,30 @@ if(message.author.bot)return;
     }
   var chancee = Math.floor(Math.random() * 101);
 
-    if (chancee > 60) {
-    if (titankille < 124 ){
-    if (titankille < 62 ) 
+  //  if (chancee > 60) {
+ //   if (titankille < 124 ){
+ //   if (titankille < 62 ) 
 
 //bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
-else {
+//else {
 
 //bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
-}
-}
+//}
+//}
 
-else if (titankille > 124 ){
-    if (titankille < 186 ) 
+//else if (titankille > 124 ){
+ //   if (titankille < 186 ) 
 
 //bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
- else {
+// else {
 //    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
-}
-} 
-    } else {
-}
+//}
+//} 
+ //   } else {
+//}
 }
 
     module.exports = manger
