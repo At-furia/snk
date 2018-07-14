@@ -402,3 +402,32 @@ bot.on('message', message => {
                     }     
                 }
             )
+
+bot.on('message', function (message) {
+
+            var joueur = message.author.username;
+            if (message.author.bot) return;
+            if (message.content.startsWith(prefix + "question")) {
+                var sayings = ["Oui.",
+                                            "Non.",
+                                            "Je ne sais pas.",
+                                            "Peut être..",
+                                            "Je valide !",
+                                            "J'adore.",
+                                            "Je ne suis pas Google.",
+                                            "Je ne peux pas y répondre tout de suite.",
+                                            "La mer Noire",
+                                        "42"];
+    
+                var result = Math.floor((Math.random() * sayings.length) + 0);
+
+               var mdrembed = new Discord.RichEmbed()
+                .setTitle("Questions/Réponses")
+                .addField(`Question de ${joueur} :`,`${message.content.slice(10, message.content.length)}`)
+                .addField("Réponse :",`${sayings[result]}`);
+                message.channel.send(mdrembed)
+
+
+        }
+    
+    })
