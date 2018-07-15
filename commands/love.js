@@ -21,9 +21,9 @@ function love(message,prefix,bot){
             
             }}
 
- var joueur = message.author.username;
+             var joueur = message.author.username;
             if (message.author.bot) return;
-            if (message.content.startsWith(prefix + "question") {
+            if (message.content.startsWith(prefix + "question")) {
                 var sayings = ["Oui.",
                                             "Non.",
                                             "Je ne sais pas.",
