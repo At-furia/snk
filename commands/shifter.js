@@ -29,7 +29,7 @@ function shifter(message,prefix,bot){
 //}}}
 
 
-if (message.content.startsWith(prefix + 'bataillon')) {
-       message.reply("Le Bataillon d'Exploration ne recrute plus actuellement, d'autres factions ont besoin de membres ;)")
+if (message.content.startsWith(prefix + 'shifter')) {
+       message.reply("Les Ttians Shifter ne recrutent plus actuellement, d'autres factions ont besoin de membres ;)")
    }}
 module.exports = shifter
