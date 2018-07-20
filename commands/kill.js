@@ -52,28 +52,25 @@ if (titankill > 115) {
 
       var chance = Math.floor(Math.random() * 101);
 
-    if (chance > 60) {
-    if (titankill < 75 ){
-    if (titankill < 25 ) 
+var bruh = ["10","20","30","40"];
+var result = Math.floor((Math.random() * bruh.length) + 0);
 
-bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
 
-else {
+    if (chance > 75) {
+        if(!message.member.roles.some(r=>["La Garnison"].includes(r.name)) ){
+return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction La Garnison (pour avoir tué des Titans)`)
+        }
+    
+    if(!message.member.roles.some(r=>["Les Brigades Spéciales"].includes(r.name)) ) {
+        return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
 
-bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
+    }
+
+    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration"].includes(r.name)) ) {
+        return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir tué des Titans)`)
+
+    }
+    }
 }
-}
 
-else if (titankill > 75 ){
-   if (titankill < 100 ) 
-
-bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
-
-else {
-    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir tué des Titans)`)
-}
-} 
-  } else {
-}
-}
     module.exports = kill
