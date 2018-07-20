@@ -429,5 +429,7 @@ bot.on('message', function (message) {
 
 
         }
-    
+                if (message.content === prefix + "kill") {
+                    message.reply("La commande est désactivée temporairement suite a un problème technique")
+                }
     })
