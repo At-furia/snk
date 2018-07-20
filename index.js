@@ -79,7 +79,7 @@
         const pf = require("./commands/pf.js");
         const admin = require("./commands/admin.js");
         const action = require("./commands/action.js");
-      //  const kill = require("./commands/kill.js");
+        const kill = require("./commands/kill.js");
         const manger = require("./commands/manger.js");
         const help = require("./commands/help.js");
         const spéciale = require("./commands/spéciale.js");
@@ -99,7 +99,7 @@
         pf(message, prefix, bot)
         admin(message, prefix, bot)
         action(message, prefix, bot)
-      //  kill(message, prefix, bot)
+        kill(message, prefix, bot)
         manger(message, prefix, bot)
         help(message, prefix, bot)
         spéciale(message, prefix, bot)
