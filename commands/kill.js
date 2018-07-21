@@ -9,6 +9,8 @@ const adapter = new FileSync('database.json');
 const db = low(adapter);
 
 var rkill = killdb.get('kill').size().value();
+ 
+db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
 
 function kill(message,prefix,bot){
 
@@ -62,6 +64,15 @@ var result = Math.floor((Math.random() * bruh.length) + 0);
 
         if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
 return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction La Garnison (pour avoir tué des Titans)`)
+       
+    if(!db.get("pt").find({faction: "garnison"}).value()){
+        db.get("pt").push({faction: "garnison", pt: 1}).write();
+    } else{
+    var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += ${bruh[result]}).write();
+
+}
         }
     
     if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison"].includes(r.name)) ) {
@@ -75,6 +86,19 @@ return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pou
     }
     }
     }
+                   
+        if (message.content.startsWith(prefix + 'pt')) {
+            var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
+            var ptckillfinal = Object.values(ptckill);
+            var xp_embed = new Discord.RichEmbed()
+                .setColor("#590599")
+                .setDescription("points par faction ")
+                .addField("Garnison :", `${ptckillfinal[1]} points` )
+                .addField("Shifter :", `sdffgf` )
+            message.channel.send({embed: xp_embed});
+        }
+               
+                   
 }
 
     module.exports = kill
