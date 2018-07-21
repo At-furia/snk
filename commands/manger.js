@@ -63,6 +63,27 @@ var result = Math.floor((Math.random() * bruh.length) + 0);
                    bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir tué des Humains)`)
                } 
     }
+    
+     if (message.content.startsWith(prefix + 'tp')) {
+            var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
+            var ptckillfinal = Object.values(ptckill);
+                     var ptckiell = db.get("pt").filter({faction: "exploration"}).find('pt').value()
+            var ptckillfinale = Object.values(ptckiell);
+                     var ptckilel = db.get("pt").filter({faction: "spéciale"}).find('pt').value()
+            var ptckillfinael = Object.values(ptckilel);
+                              var pteckilel = db.get("pt").filter({faction: "shifter"}).find('pt').value()
+            var pteckillfinael = Object.values(pteckilel);
+            var xp_embed = new Discord.RichEmbed()
+                .setColor("#590599")
+                .setDescription("points par faction (reset toute les 23h, sauf si crash entre temps)")
+                .addField("Garnison :", `${ptckillfinal[1] -= 1} points` )
+                .addField("Brigade Spéciale :", `${ptckillfinael[1] -= 1} points` )
+                .addField("Bataillon d'exploration :", `${ptckillfinale[1] -= 1} points` )
+                .addField("Titans Shifter :", `${pteckillfinael[1] -= 1} points` )
+
+            message.channel.send({embed: xp_embed});
+        }
+               
 }
 
     module.exports = manger
