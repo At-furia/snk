@@ -70,7 +70,7 @@ return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pou
     } else{
     var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
     var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += `${bruh[result]}`).write();
+    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += bruh[result]}).write();
 
 }
         }
