@@ -55,7 +55,7 @@ var result = Math.floor((Math.random() * bruh.length) + 0);
 
     if (chance > 75) {
         
-               if (titankill > 16 ){
+               if (titankille > 51 ){
                    
                    var userptcdb = db.get("pt").filter({faction: "shifter"}).find('pt').value();
     var userptc = Object.values(userptcdb)
