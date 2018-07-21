@@ -13,6 +13,14 @@
     {
       "faction": "garnison",
       "pt": 1
-    }
+    },
+        {
+      "faction": "exploration",
+      "pt": 1
+    },
+        {
+      "faction": "spéciale",
+      "pt": 1
+    },
     ]
 }
