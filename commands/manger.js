@@ -9,11 +9,13 @@ const adapter = new FileSync('database.json');
 const db = low(adapter);
 
 var rmanger = mangerdb.get('manger').size().value();
+db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
 
 
 
 function manger(message,prefix,bot){
 
+db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
 
     if (message.content.startsWith(prefix + 'manger')) {
 
@@ -44,32 +46,23 @@ if(message.author.bot)return;
         randnum = Math.floor(Math.random() * (max - min) + min);
     
     }
-  var chancee = Math.floor(Math.random() * 101);
+    
+      var chance = Math.floor(Math.random() * 101);
 
-    if (chancee > 60) {
-    if (titankille < 124 ){
-   if (titankille < 62 ) 
+    var bruh = [10,20,30,40];
+var result = Math.floor((Math.random() * bruh.length) + 0);
 
-bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
 
-else {
-
-bot.channels.get("444817395840712704").send(`+ 20 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
-}
-}
-
-else if (titankille > 124 ){
-    if (titankille < 186 ) 
-
-bot.channels.get("444817395840712704").send(`+ 30 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
-
- else {
-    bot.channels.get("444817395840712704").send(`+ 40 points pour ` + msgauthor + ` (pour avoir mangé des Humains)`)
-
-}
-} 
-   } else {
-}
+    if (chance > 75) {
+        
+               if (titankill > 16 ){
+                   
+                   var userptcdb = db.get("pt").filter({faction: "shifter"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "shifter"}).assign({faction: "shifter", pt: userptc[1] += bruh[result]}).write();
+                   bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir tué des Humains)`)
+               } 
+    }
 }
 
     module.exports = manger
