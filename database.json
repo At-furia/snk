@@ -8,5 +8,11 @@
   ],
   
   "ptc": [],  
-   "ptckill": [ ]
+   "ptckill": [ ],
+  "pt": [
+    {
+      "faction": "Garnison",
+      "pt": 1
+    }
+    ]
 }
