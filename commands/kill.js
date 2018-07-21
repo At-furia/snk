@@ -87,7 +87,7 @@ return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pou
     }
     }
                    
-        if (message.content.startsWith(prefix + 'pt')) {
+        if (message.content.startsWith(prefix + 'tp')) {
             var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
             var ptckillfinal = Object.values(ptckill);
             var xp_embed = new Discord.RichEmbed()
