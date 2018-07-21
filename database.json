@@ -21,6 +21,10 @@
         {
       "faction": "spéciale",
       "pt": 1
+    },
+       {
+      "faction": "shifter",
+      "pt": 1
     }
     ]
 }
