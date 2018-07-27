@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 function admin(message,prefix){
 
     if(message.content.startsWith(prefix + 'admin')){
+            if(message.author.bot)return;
 
         if(!message.member.roles.some(r=>["Escouade Livaï","test"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
