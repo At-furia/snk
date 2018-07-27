@@ -1,6 +1,7 @@
 function kick(message,prefix,bot){
 
     if(message.content.startsWith(prefix +'kick')){
+            if(message.author.bot)return;
 
 if (!message.channel.permissionsFor(message.member).hasPermission("KICK_MEMBERS")){
     message.reply("Tu n'as pas le droit de kick ! ;)")
