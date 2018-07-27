@@ -363,18 +363,17 @@ bot.on('message', message => {
                 }
             )
 
-//bot.on('message', message => {
-//
-       //         if (message.author.bot) return;
-        //        if (message.channel.type === 'dm') return;
-//
-          //      let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
-           //         if (message.channel === salonvip) {                    
+bot.on('message', message => {
 
-            //            bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length));
-           //         }     
-           //     }
-         //   )
+       if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+               let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
+                   if (message.channel === salonvip) {                    
+
+                       bot.channels.get("451187288995659808").send(message.content.slice(0, message.content.length));
+                   }     
+                }
+            )
 
 bot.on('message', message => {
 
