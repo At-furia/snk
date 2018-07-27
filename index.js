@@ -370,7 +370,7 @@ bot.on('message', message => {
                let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
                    if (message.channel === salonvip) {                    
 
-                       bot.channels.get("451187288995659808").send(message.content.slice(0, message.content.length));
+                       bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length));
                    }     
                 }
             )
