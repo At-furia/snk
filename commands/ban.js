@@ -1,7 +1,8 @@
 function ban(message,prefix,bot){
 
     if(message.content.startsWith(prefix +'ban')){
-   
+               if(message.author.bot)return;
+
         if (!message.channel.permissionsFor(message.member).hasPermission("BAN_MEMBERS")){
             message.reply("Tu n'as pas le droit de ban ! ;)")
         }else{
