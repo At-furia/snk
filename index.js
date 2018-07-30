@@ -44,7 +44,7 @@
                 .addField("Bataillon d'exploration :", `${ptckillfinale[1] -= 1} points` )
                 .addField("Titans Shifter :", `${pteckillfinaeel[1] -= 1} points` )
 
-            bot.channels.get("444817395840712704").send({embed: xp_embed});
+            bot.channels.get("444817395840712704").send({embed: xp_embed})
                         .catch(console.error); // add error handling here
         }, 1 * 1800000);
 
