@@ -25,10 +25,7 @@
         bot.user.setStatus("idle")
         bot.channels.get("406139512985747466").send(`Bot redémarré`);
                 titanalive2 = true;
-
-        var interval = setInterval (function () {
-            titanalive2 = false;
-            var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
+var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
             var ptckillfinal = Object.values(ptckill);
             var ptckiell = db.get("pt").filter({faction: "exploration"}).find('pt').value()
             var ptckillfinale = Object.values(ptckiell);
@@ -36,6 +33,9 @@
             var ptckillfinael = Object.values(ptckilel);
             var pteckileel = db.get("pt").filter({faction: "shifter"}).find('pt').value()
             var pteckillfinaeel = Object.values(pteckileel);
+        var interval = setInterval (function () {
+            titanalive2 = false;
+            
             var xp_embed = new Discord.RichEmbed()
                 .setColor("#590599")
                 .setDescription("points par faction (reset toute les 23h, sauf si crash entre temps)")
@@ -46,7 +46,7 @@
 
             bot.channels.get("444817395840712704").send({embed: xp_embed})
                         .catch(console.error); // add error handling here
-        }, 1 * 1800000);
+        }, 1 * 180000);
 
 
     });
