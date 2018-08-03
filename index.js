@@ -396,9 +396,15 @@ bot.on('message', message => {
 
                 let sald = message.guild.channels.find("name", "bot-vers-taverne");
                     if (message.channel === sald) {                    
+                    if (message.content === prefix + "t") {                    
 
-                        bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length));
-                    }     
+                        bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
+                        } 
+                    if (message.content === prefix + "be") {                    
+
+                        bot.channels.get("389215030563962890").send(message.content.slice(3, message.content.length));
+                        } 
+                    }
                 }
             )
 
