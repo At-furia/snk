@@ -271,8 +271,7 @@ bot.on('message', message => {
                     }     
                 }
             )
-
-            bot.on('message', message => {
+bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
@@ -284,85 +283,6 @@ bot.on('message', message => {
                     }     
                 }
             )
-
-
-
-            bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hopla = message.guild.channels.find("name", "bot-vers-brigades-dentrainement");
-                    if (message.channel === hopla) {                    
-
-                        bot.channels.get("389511539347947520").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
-
- bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hoplar = message.guild.channels.find("name", "bot-vers-brig");
-                    if (message.channel === hoplar) {                    
-
-                     //   message.delete(1); //Supposed to delete message
-                        bot.channels.get("389511416933122058").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
-
- bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hoplat = message.guild.channels.find("name", "bot-vers-bataillon");
-                    if (message.channel === hoplat) {                    
-
-                        bot.channels.get("389215030563962890").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
- bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hoplac = message.guild.channels.find("name", "bot-vers-shifter");
-                    if (message.channel === hoplac) {                    
-
-                        bot.channels.get("431966899946127365").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
- bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hoplaq = message.guild.channels.find("name", "bot-vers-garnison");
-                    if (message.channel === hoplaq) {                    
-
-                        bot.channels.get("389511187680854017").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
- bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let hoplaqu = message.guild.channels.find("name", "bot-vers-spoil");
-                    if (message.channel === hoplaqu) {                    
-
-                        bot.channels.get("422177927501709312").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
-
 bot.on('message', message => {
 
        if (message.author.bot) return;
@@ -374,39 +294,41 @@ bot.on('message', message => {
                    }     
                 }
             )
-
 bot.on('message', message => {
 
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
 
-                let sal = message.guild.channels.find("name", "bot-vers-annonces-générales");
-                    if (message.channel === sal) {                    
-
-                        bot.channels.get("422178790572294144").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
-
-
-bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let sald = message.guild.channels.find("name", "bot-vers-taverne");
-                    if (message.channel === sald) {                    
+                let sald = message.guild.channels.find("name", "bot-vers-autres-salons");
+                    if (message.channel === sald) { 
+                        
                     if(message.content.startsWith(prefix +'t')){
                         bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
                         } 
                     if(message.content.startsWith(prefix +'be')){
-
                         bot.channels.get("389215030563962890").send(message.content.slice(3, message.content.length));
+                       } 
+                    if(message.content.startsWith(prefix +'g')){
+                        bot.channels.get("389511187680854017").send(message.content.slice(2, message.content.length));
+                       } 
+                    if(message.content.startsWith(prefix +'ts')){
+                        bot.channels.get("431966899946127365").send(message.content.slice(3, message.content.length));
+                       } 
+                    if(message.content.startsWith(prefix +'s')){
+                        bot.channels.get("422177927501709312").send(message.content.slice(2, message.content.length));
+                       }
+                    if(message.content.startsWith(prefix +'a')){
+                        bot.channels.get("422178790572294144").send(message.content.slice(2, message.content.length));
+                       }    
+                    if(message.content.startsWith(prefix +'bs')){
+                        bot.channels.get("389511416933122058").send(message.content.slice(3, message.content.length));
+                       }
+                    if(message.content.startsWith(prefix +'e')){
+                        bot.channels.get("389511539347947520").send(message.content.slice(2, message.content.length));
                        } 
                     }
                 }
             )
-
 bot.on('message', function (message) {
 
             var joueur = message.author.username;
@@ -430,12 +352,8 @@ bot.on('message', function (message) {
                 .addField(`Question de ${joueur} :`,`${message.content.slice(10, message.content.length)}`)
                 .addField("Réponse :",`${sayings[result]}`);
                 message.channel.send(mdrembed)
-
-
         }
             //    if (message.content === prefix + "kill") {
            //         message.reply("La commande est désactivée temporairement suite a un problème technique")
           //     }
-    
-
     })
