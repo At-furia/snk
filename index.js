@@ -400,10 +400,10 @@ bot.on('message', message => {
 
                         bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
                         } 
-                    if (message.content === prefix + "be") {                    
+                    //if (message.content === prefix + "be") {                    
 
-                        bot.channels.get("389215030563962890").send(message.content.slice(3, message.content.length));
-                        } 
+                    //    bot.channels.get("389215030563962890").send(message.content.slice(3, message.content.length));
+                    //    } 
                     }
                 }
             )
