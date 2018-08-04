@@ -147,6 +147,7 @@ bot.on('message', function(message){
     if(party_launch && message.content != null){
 
         if(Number.isInteger(parseInt(message.content))){
+        var args = message.content.substring(prefix.length).split(" ");
 
              if(Number.isInteger(parseInt(message.content))){
             if (message.content.includes(')') ||
@@ -161,6 +162,7 @@ bot.on('message', function(message){
                 message.content.includes('%') ||
                 message.content.includes('^') ||
                 message.content.includes('$') ||
+                message.content.includes(args) ||
                 message.content.includes('!') 
                 ) {
                     return message.delete()
