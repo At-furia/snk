@@ -211,7 +211,7 @@ bot.on('message', function(message){
 
             message.reply("Il n'y a pas de Titans dans les environs")
         }
-    }
+    
     }})
 
 
