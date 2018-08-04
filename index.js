@@ -127,6 +127,8 @@ var number_random = 0;
 var party_launch = false;
 
 bot.on('message', function(message){
+  let chs = message.guild.channels.find("name", "chasse");
+    if (message.channel === chs ) {
 
     if(message.content == prefix + "chasse"){
         if(!message.member.roles.some(r=>["Titan Shifter","Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","1ère Division"].includes(r.name)) )
@@ -146,6 +148,23 @@ bot.on('message', function(message){
 
         if(Number.isInteger(parseInt(message.content))){
 
+             if(Number.isInteger(parseInt(message.content))){
+            if (message.content.includes(')') ||
+                message.content.includes('/') ||
+                message.content.includes('*') ||
+                message.content.includes('-') ||
+                message.content.includes('+') ||
+                message.content.includes(',') ||
+                message.content.includes(';') ||
+                message.content.includes(':') ||
+                message.content.includes('.') ||
+                message.content.includes('%') ||
+                message.content.includes('^') ||
+                message.content.includes('$') ||
+                message.content.includes('!') 
+                ) {
+                    return message.delete()
+                } 
             
             if(message.content > number_random){
 
@@ -179,7 +198,7 @@ bot.on('message', function(message){
             }
         }  
     }
-                
+            
     if(message.content == "chasse stop"){
 
         if(party_launch = true){
@@ -192,6 +211,7 @@ bot.on('message', function(message){
 
             message.reply("Il n'y a pas de Titans dans les environs")
         }
+    }
     }})
 
 
