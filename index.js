@@ -24,8 +24,7 @@
     bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
         bot.user.setStatus("idle")
-        bot.channels.get("406139512985747466").send(`Bot redémarré`);
- 
+        bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
     });
 
   bot.login(process.env.TOKEN);
