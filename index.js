@@ -377,3 +377,39 @@ bot.on('message', function (message) {
            //         message.reply("La commande est désactivée temporairement suite a un problème technique")
           //     }
     })
+
+
+  bot.on('message',function(message){
+    if(message.author.bot)return;
+    let guild = message.member.guild;
+
+    let modo = guild.roles.find('name', 'Escouade Mike');
+    let admin = guild.roles.find('name', 'Escouade Livaï');
+
+    if (message.member.roles.has(admin.id || modo.id)) {
+
+  if(message.content.includes('putain') ||
+message.content.includes('putin') ||
+message.content.includes('fdp') ||
+message.content.includes('connard') ||
+message.content.includes('bite') ||
+message.content.includes('pute') ||
+message.content.includes('salope')||
+message.content.includes('branler')||
+message.content.includes('branlette')||
+message.content.includes('sexe')||
+message.content.includes('baise')||
+message.content.includes('nique ta mère')
+  ){
+      message.delete()
+    message.reply("a été averti pour cause : Mot interdit.");
+
+    var inventaireembed = new Discord.RichEmbed()
+    .setTitle("Avertissement pour les mots interdits (modos et admins)")
+    .addField("Membre :", message.member.displayName)
+    .addField("Canal :", message.channel.name)
+    .addField("Message :", message.content)
+    bot.channels.get("428143543144546305").send({ embed: inventaireembed });
+        }
+    }
+})
