@@ -12,7 +12,7 @@
     const mangeradapter = new FileSync('manger.json');
     const mangerdb = low(mangeradapter);
 
-    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
+    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: []}).write()
 
     var bot = new Discord.Client();
     var prefix = "<"
