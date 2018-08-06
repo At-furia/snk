@@ -18,7 +18,7 @@ function boss(message,prefix){
 
     if (message.content === prefix + "bs") {
         titanalive = true;
-        message.reply("Un titan géant arrive près des humains, vous décidez d'unir vos forces pour essayer de le tuer ('<f' Pour combattre le Titan)")
+        message.reply("Un titan géant arrive et tente de tuer tout humains, vous décidez d'unir vos forces pour essayer de le tuer ('<f' Pour combattre le Titan)")
         var timeout = setTimeout(function () {
 
             titanalive = false;
