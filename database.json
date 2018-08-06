@@ -33,6 +33,11 @@
       "boss": "titan",
       "vie": 15000,
       "alive": 1
+    },
+    {
+      "boss": "humains",
+      "vie": 20000,
+      "alive": 1
     }
   ]
 }
