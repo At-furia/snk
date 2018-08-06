@@ -78,7 +78,7 @@ function boss(message,prefix){
                 db.get("boss").find({ boss: "humains" }).assign({ alive: viee[2] = 2 }).write();
                 titanalivee = false
             }
-        
+    }
     }
     }
 module.exports = boss
