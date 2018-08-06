@@ -26,5 +26,14 @@
       "faction": "shifter",
       "pt": 1
     }
-    ]
+    ],
+  
+  "boss": [
+    {
+      "boss": "titan",
+      "vie": 250,
+      "alive": 1
+    }
+  ]
+}
 }
