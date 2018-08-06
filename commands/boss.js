@@ -52,7 +52,7 @@ function boss(message,prefix){
     
     if (message.content === prefix + "bh") {
         titanalivee = true;
-        message.channel.sendMessage("Vous décider d'attaquer les humains, battez vous et tuez les tous ! ('<f' pour attaquer les humains)")
+        message.channel.sendMessage("Vous décidez d'attaquer les humains, battez vous et tuez les tous ! ('<f' pour attaquer les humains)")
         var timeout = setTimeout(function () {
 
             titanalivee = false;
