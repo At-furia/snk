@@ -18,7 +18,7 @@ function boss(message,prefix){
 
     if (message.content === prefix + "bs") {
         titanalive = true;
-        message.reply("Un titan géant arrive et tente de tuer tout humains, vous décidez d'unir vos forces pour essayer de le tuer ('<f' Pour combattre le Titan)")
+        message.channel.sendMessage("Un titan géant arrive et tente de tuer tout humains, vous décidez d'unir vos forces pour essayer de le tuer ('<f' Pour combattre le Titan)")
         var timeout = setTimeout(function () {
 
             titanalive = false;
@@ -52,7 +52,7 @@ function boss(message,prefix){
     
     if (message.content === prefix + "bh") {
         titanalivee = true;
-        message.reply("Vous décider d'attaquer les humains, battez vous et tuez les tous ! ('<f' pour attaquer les humains)")
+        message.channel.sendMessage("Vous décider d'attaquer les humains, battez vous et tuez les tous ! ('<f' pour attaquer les humains)")
         var timeout = setTimeout(function () {
 
             titanalivee = false;
