@@ -91,7 +91,7 @@
         const haine = require("./commands/haine.js");
         const love = require("./commands/love.js");
         const report = require("./commands/report.js");
-       // const boss = require("./commands/boss.js");
+        const boss = require("./commands/boss.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -112,7 +112,7 @@
         haine(message, prefix, bot)
         love(message, prefix, bot)
         report(message, prefix, bot)
-       // boss(message, prefix, bot)
+        boss(message, prefix, bot)
 
 
     })
@@ -128,8 +128,8 @@ var number_random = 0;
 
 var party_launch = false;
 
-//bot.on('message', function(message){
-    bot.on('message', message => {
+bot.on('message', function(message){
+    if (message.channel.type === 'dm') return;
 
   let chs = message.guild.channels.find("name", "chasse");
     if (message.channel === chs ) {
@@ -221,7 +221,8 @@ var party_launch = false;
 
 
 bot.on('message', message =>{
-    
+        if (message.channel.type === 'dm') return;
+
             var msgauthor = message.author.username;
             if(message.author.bot)return;
     
