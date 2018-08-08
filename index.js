@@ -128,7 +128,9 @@ var number_random = 0;
 
 var party_launch = false;
 
-bot.on('message', function(message){
+//bot.on('message', function(message){
+    bot.on('message', message => {
+
   let chs = message.guild.channels.find("name", "chasse");
     if (message.channel === chs ) {
 
