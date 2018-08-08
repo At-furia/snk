@@ -10,6 +10,7 @@ db.defaults({ xp: [], sugg: [], story: [], blagues:[], ptc:[], pt:[], ptckill:[]
 
 function boss(message,prefix){
     db.defaults({ xp: [], sugg: [], story: [], blagues:[], ptc:[], pt:[], ptckill:[], emojimort:[], titre:[], inventaireplayer:[], argent:[], argentplayer:[], shop:[], inventaire:[], banque: [], localisation:[], boss:[]}).write()
+    if (message.channel.type === 'dm') return;
 
     var joueur = message.author.username;
     if (message.author.bot) return;
