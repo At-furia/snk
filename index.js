@@ -91,7 +91,7 @@
         const haine = require("./commands/haine.js");
         const love = require("./commands/love.js");
         const report = require("./commands/report.js");
-        const boss = require("./commands/boss.js");
+       // const boss = require("./commands/boss.js");
 
         kick(message, prefix, bot)       
         ban(message, prefix, bot)
@@ -112,7 +112,7 @@
         haine(message, prefix, bot)
         love(message, prefix, bot)
         report(message, prefix, bot)
-        boss(message, prefix, bot)
+       // boss(message, prefix, bot)
 
 
     })
