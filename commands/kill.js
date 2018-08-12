@@ -60,9 +60,9 @@ var bruh = [10,20,30,40];
 var result = Math.floor((Math.random() * bruh.length) + 0);
 
 
-    if (chance > 75) {
+    if (chance > 85) {
         
-               if (titankill > 16 ){
+               if (titankill > 94 ){
 
         if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
            var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
