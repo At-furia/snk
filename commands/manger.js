@@ -24,16 +24,16 @@ db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
         if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
         return message.reply("Vous devez être un Titan pour utiliser cette commande !");
         
-        randommanger();
-    
-        var titankille = Math.floor(Math.random() * 251);
-        var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
+       
 
 
         var timeout = setTimeout(function () {
 
         if (message.channel === miam) { 
-
+ randommanger();
+    
+        var titankille = Math.floor(Math.random() * 251);
+        var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
 
         message.reply("a tué " + titankille + " Humains" + `${bouffer}`)
         var msgauthor = message.author.username;
