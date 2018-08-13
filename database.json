@@ -39,6 +39,12 @@
       "vie": 20000,
       "alive": 1
     }
+  ],
+  "chasse": [
+    {
+      "nombre": "azertyuiop",
+      "partieetat": "attente"
+    }
   ]
 }
 
