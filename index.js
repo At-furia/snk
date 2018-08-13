@@ -153,11 +153,11 @@ var chassedb = db.get("chasse").find('nombre').value()
 
             if(message.content > nombre[0]){
 
-                message.reply("Il y'a moins de Titans !")
+                message.reply("Il y a moins de Titans !")
             }
             else if (message.content < nombre[0]){
 
-                message.reply("Il y'a plus de Titans !")
+                message.reply("Il y a plus de Titans !")
             
             }
             
