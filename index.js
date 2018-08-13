@@ -137,7 +137,7 @@ var chassedb = db.get("chasse").find('nombre').value()
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
          
         if (nombre[0] == "azertyuiop"){
-        message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
+        message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 500 Titans !")
         number_random = Math.floor(Math.random() * (500 - 0) + 0)
         console.log(number_random);
         db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
