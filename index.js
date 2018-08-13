@@ -12,7 +12,7 @@
     const mangeradapter = new FileSync('manger.json');
     const mangerdb = low(mangeradapter);
 
-    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: []}).write()
+    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: [], chasse: []}).write()
 
     var bot = new Discord.Client();
     var prefix = "<"
@@ -124,12 +124,9 @@
 
     //  })
 
-var number_random = 0;
-
-var party_launch = false;
-
 bot.on('message', function(message){
     if (message.channel.type === 'dm') return;
+    if(message.author.bot)return;
 
   let chs = message.guild.channels.find("name", "chasse");
     if (message.channel === chs ) {
@@ -137,87 +134,52 @@ bot.on('message', function(message){
     if(message.content == prefix + "chasse"){
         if(!message.member.roles.some(r=>["Titan Shifter","Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","1ère Division"].includes(r.name)) )
         return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-        
+         
+        if (nombre[0] == "azertyuiop"){
         message.reply("Chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! tu as juste me dire combien tu vois et je te dirais si j'en vois autant ou pas.. D'après moi il y'a entre 0 et 500 Titans !  ")
-
-        party_launch = true;
-
         number_random = Math.floor(Math.random() * (500 - 0) + 0)
-
         console.log(number_random);
+        db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
 
+        } else {
+            message.reply("Une chasse est déjà en cours !")
+        }
     }
+    
 
-    if(party_launch && message.content != null){
+    if(nombre[1] == "start"){
 
-        if(Number.isInteger(parseInt(message.content))){
 
-             if(Number.isInteger(parseInt(message.content))){
-            if (message.content.includes(')') ||
-                message.content.includes('/') ||
-                message.content.includes('*') ||
-                message.content.includes('-') ||
-                message.content.includes('+') ||
-                message.content.includes(',') ||
-                message.content.includes(';') ||
-                message.content.includes(':') ||
-                message.content.includes('.') ||
-                message.content.includes('%') ||
-                message.content.includes('^') ||
-                message.content.includes('$') ||
-                message.content.includes(`\n`) ||
-                message.content.includes('!') 
-                ) {
-                    return message.delete()
-                } 
-            
-            if(message.content > number_random){
+            if(message.content > nombre[0]){
 
                 message.reply("Il y'a moins de Titans !")
             }
-            else if (message.content < number_random){
+            else if (message.content < nombre[0]){
 
                 message.reply("Il y'a plus de Titans !")
             
-            }else{ (message.content = number_random)
+            }
+            
+            if (message.content == nombre[0]) {
             var msgauthor = message.author.username;
 
             message.reply('à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction !');
             bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` (à gagné une chasse)`)
-
-
-    if(message.author.bot)return;
-
+                 db.get("chasse").find("nombre").assign({
+                nombre: nombre[0] = "azertyuiop",
+                partieetat: nombre[1] = "attente"
+            }).write();
     if(!db.get("ptc").find({username: msgauthor}).value()){
         db.get("ptc").push({username: msgauthor, ptc: 1}).write();
     } else{
     var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-    console.log(userptcdb);
     var userptc = Object.values(userptcdb)
-    console.log(userptc);
-    console.log(`Nombre d'ptckill : ${userptc[1]}`)
     db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
-
-}
-            party_launch = false;
+                }
             }
         }  
     }
-            
-    if(message.content == "chasse stop"){
-
-        if(party_launch = true){
-
-            message.reply("Les Titans sont partis...")
-
-            party_launch = false;
-
-        }else{
-
-            message.reply("Il n'y a pas de Titans dans les environs")
-        }
-    }}
-    }})
+})
 
 
 bot.on('message', message =>{
