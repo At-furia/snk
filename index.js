@@ -127,7 +127,8 @@
 bot.on('message', function(message){
     if (message.channel.type === 'dm') return;
     if(message.author.bot)return;
-
+var chassedb = db.get("chasse").find('nombre').value()
+    var nombre = Object.values(chassedb);
   let chs = message.guild.channels.find("name", "chasse");
     if (message.channel === chs ) {
 
