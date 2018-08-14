@@ -154,21 +154,25 @@ var chassedb = db.get("chasse").find('nombre').value()
             if(message.content > nombre[0]){
 
                 message.reply("Il y a moins de Titans !")
+                db.get("chasse").find("nombre").assign({essais: nombre[2] += 1}).write();
+
             }
             else if (message.content < nombre[0]){
 
                 message.reply("Il y a plus de Titans !")
-            
+                db.get("chasse").find("nombre").assign({essais: nombre[2] += 1}).write();
+
             }
             
             if (message.content == nombre[0]) {
             var msgauthor = message.author.username;
 
-            message.reply('à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction !');
+            message.reply(`à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction ! (en `+`${nombre[2] -= 1}` + ` essais !`);
             bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` (à gagné une chasse)`)
                  db.get("chasse").find("nombre").assign({
                 nombre: nombre[0] = "azertyuiop",
-                partieetat: nombre[1] = "attente"
+                partieetat: nombre[1] = "attente",
+                     essais: nombre[2] = 1
             }).write();
     if(!db.get("ptc").find({username: msgauthor}).value()){
         db.get("ptc").push({username: msgauthor, ptc: 1}).write();
