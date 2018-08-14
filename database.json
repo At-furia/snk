@@ -43,7 +43,8 @@
   "chasse": [
     {
       "nombre": "azertyuiop",
-      "partieetat": "attente"
+      "partieetat": "attente",
+      "essais" : 1
     }
   ]
 }
