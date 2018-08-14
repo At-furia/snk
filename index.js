@@ -167,7 +167,7 @@ var chassedb = db.get("chasse").find('nombre').value()
             if (message.content == nombre[0]) {
             var msgauthor = message.author.username;
 
-            message.reply(`à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction ! (en `+`${nombre[2] -= 1}` + ` essais !`);
+            message.reply(`à trouvé le bon nombre de Titans et fais gagner 5 points a sa faction ! (en `+`${nombre[2]}` + ` essais)`);
             bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` (à gagné une chasse)`)
                  db.get("chasse").find("nombre").assign({
                 nombre: nombre[0] = "azertyuiop",
