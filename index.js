@@ -129,7 +129,7 @@ bot.on('message', function(message){
     if(message.author.bot)return;
 var chassedb = db.get("chasse").find('nombre').value()
     var nombre = Object.values(chassedb);
-  let chs = message.guild.channels.find("name", "chasse");
+  let chs = message.guild.channels.find("name", "🔭-chasse");
     if (message.channel === chs ) {
 
     if(message.content == prefix + "chasse"){
