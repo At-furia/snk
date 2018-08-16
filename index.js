@@ -42,7 +42,7 @@
         
         *Vous devez désormais choisir un corps d'armée entre :
         -La Garnison
-        -Le Bataillon d'Exploration (actuellement fermé car trop de membres)
+        -Le Bataillon d'Exploration 
         -Les Brigades Spéciales
         *Cependant si vous préférez rejoindre le camps des titans, vous pouvez integrez également
         -Titan Shifter
