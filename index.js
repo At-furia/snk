@@ -31,7 +31,10 @@
 
 
       bot.on('guildMemberAdd', member => {
-           let role = member.guild.roles.find("name", "Brigades d'Entraînements");
+        let brig = guild.roles.find("name", "Les Brigades Spéciales");
+        let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
+        let shifter = guild.roles.find("name", "Titan Shifter");
+        let garnison = guild.roles.find("name", "La Garnison");
         member.guild.channels.find("name", "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
 
@@ -40,34 +43,45 @@
         Vous venez d'integrer le monde de SNK-FRANCE,
         nous vous félicitions pour votre intégrations au brigades d'entraînements.
         
-        *Vous devez désormais choisir un corps d'armée entre :
+        *Nous allons désormais vous choisir un corps d'armée entre :
         -La Garnison
         -Le Bataillon d'Exploration 
         -Les Brigades Spéciales
-        *Cependant si vous préférez rejoindre le camps des titans, vous pouvez integrez également
         -Titan Shifter
-        SNK-FR vous expliquera le fonctionnement plus bas dans vos messages :ok_hand:
+        Suivant ce que notre voyant vois de mieux pour vous !
         Soyez poli et courtois, un français correct est demandé au minimum.
         Le respect est de vigueur, les propos rascistes, injure ou autre ne seront pas toléré.`)
         .setFooter( `*Ne vous inquietez pas, la faction c'est juste pour le RP, histoire de s'amuser, vous aurez les même droits sur le 
         serveur quel que soit votre faction.
-        Aussi, nous vous demandons de jouer le jeu et de choisir un pseudo de personnage en lien avec SNK`)
+        Aussi, nous vous demandons de jouer le jeu et de choisir un pseudo un minimum sérieux !`)
         .addBlankField()
          .addField(`Présentation de SNK-FR`,`
-        Bonjour je me présente : SNK-FR, je suis votre "guide" dans cette ville, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
-        Pour cela deux choix s'offre a vous :
-        -Rejoindre l'armée humaine: 
-        Pour cela il vous suffit de taper <garnison OU <bataillon OU <b-spéciales 
-        -Rejoindre le camps des titans:
-        Pour cela il vous suffit de taper  <shifter  
-        Une fois votre camp choisit, vous avez a disposition plusieurs commandes
-        qui vous seront détaillées en tapant <help !
-        Il vous sera aussi possible de gagner des titres grâce a des "jeux" !`)
+        Bonjour je me présente : SNK-FR, je suis votre "guide" dans ce discord, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
+        Vous avez a disposition plusieurs commandes de jeux, musiques, etc..
+        qui vous seront détaillées en tapant <help ou en demandant a d'autres membres (ou aux modos et admins) !
+        Il vous sera aussi possible de gagner des titres grâce a des "evenements spéciaux" !`)
         member.sendMessage(bienvenue_embed);
+          
+    function random(min, max) {
+        min = Math.ceil(1);
+        max = Math.floor(3);
+        randnum = Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
+    random();
+    if (randnum == 1) {
+        member.addRole(brig);
+    }
+    if (randnum == 2) {
+        member.addRole(bataillon);
+    }
+    if (randnum == 3) {
+        member.addRole(garnison);
+    }
+    if (randnum == 4) {
+        member.addRole(shifter);
+    }
         
-          member.addRole(role);
-
       })
 
     bot.on('message', message => {
