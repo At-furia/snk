@@ -31,12 +31,11 @@
 
 
       bot.on('guildMemberAdd', member => {
-            let guild = message.member.guild;
 
-        let brig = guild.roles.find("name", "Les Brigades Spéciales");
-        let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
-        let shifter = guild.roles.find("name", "Titan Shifter");
-        let garnison = guild.roles.find("name", "La Garnison");
+        let brig = member.guild.roles.find("name", "Les Brigades Spéciales");
+        let bataillon = member.guild.roles.find("name", "Le Bataillon d'Exploration");
+        let shifter = member.guild.roles.find("name", "Titan Shifter");
+        let garnison = member.guild.roles.find("name", "La Garnison");
         member.guild.channels.find("name", "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
 
