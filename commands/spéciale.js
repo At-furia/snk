@@ -23,28 +23,28 @@ var member = message.author.username
         randnum = Math.floor(Math.random() * (max - min) + min);
     }
     random();
-    if (!message.member.roles.some(r => ["brigade d'entrainement"].includes(r.name)))
+    if (!message.member.roles.some(r => ["Brigades d'Entraînements"].includes(r.name)))
         return message.reply("Impossible de changer de faction avant la prochaine saison !");
 
     if (randnum == 1) {
         message.member.addRole(brig);
         message.member.removeRole(Roleremoveentrainement);
-        message.reply("Tu as rejoint les Brigades Spéciales")
+        message.reply("Tu m'a l'air d'être un bon fainéant ! Tu as rejoint les Brigades Spéciales")
     }
     if (randnum == 2) {
         message.member.addRole(bataillon);
         message.member.removeRole(Roleremoveentrainement);
-        message.reply("Tu as rejoint le Bataillon d'Exploration")
+        message.reply("Pas peur de la mort ? Tu as rejoint le Bataillon d'Exploration")
     }
     if (randnum == 3) {
         message.member.addRole(garnison);
         message.member.removeRole(Roleremoveentrainement);
-        message.reply("Tu as rejoint la Garnison")
+        message.reply("La Garnison c'est trop bon Tu as rejoint la Garnison")
     }
     if (randnum == 4) {
         message.member.addRole(shifter);
         message.member.removeRole(Roleremoveentrainement);
-        message.reply("Tu as rejoint les Titans Shifter")
+        message.reply("Mouai, pourquoi pas ! Tu as rejoint les Titans Shifter")
     }
 }
         
