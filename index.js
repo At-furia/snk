@@ -82,9 +82,9 @@
         const manger = require("./commands/manger.js");
         const help = require("./commands/help.js");
         const spéciale = require("./commands/spéciale.js");
-        const garnison = require("./commands/garnison.js");
-        const bataillon = require("./commands/bataillon.js");
-        const shifter = require("./commands/shifter.js");        
+      //  const garnison = require("./commands/garnison.js");
+       // const bataillon = require("./commands/bataillon.js");
+       // const shifter = require("./commands/shifter.js");        
       //  const msgstats = require("./commands/msgstats.js");
         const spoil = require("./commands/spoil.js");        
         const trois = require("./commands/trois.js");
@@ -103,9 +103,9 @@
         manger(message, prefix, bot)
         help(message, prefix, bot)
         spéciale(message, prefix, bot)
-        garnison(message, prefix, bot)
-        bataillon(message, prefix, bot)
-        shifter(message, prefix, bot)
+       // garnison(message, prefix, bot)
+      //  bataillon(message, prefix, bot)
+        // shifter(message, prefix, bot)
       //  msgstats(message, prefix, bot)
         spoil(message, prefix, bot)
         trois(message, prefix, bot)
@@ -386,4 +386,21 @@ bot.on('message', function (message) {
 //}
 //})
 
+ bot.on('message', message => {
 
+    if (message.content === prefix + "role") {
+    let rolegive = message.guild.roles.find('name', "Brigades d'Entraînements");
+    let shifterr = message.guild.roles.find('name', 'Titan Shifter');
+    let garnisone = message.guild.roles.find('name', 'La Garnison');
+    let btl = message.guild.roles.find('name', "Le Bataillon d'Exploration");
+    let briged = message.guild.roles.find('name', 'Les Brigades Spéciales');
+
+    if(message.author.bot)return;
+
+message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(shifterr));
+message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(briged));
+message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(btl));
+message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(garnisone));
+message.guild.members.filter(m => !m.user.bot).map(async member => await member.addRole(rolegive));
+    
+    }})
