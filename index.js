@@ -3,7 +3,7 @@
     const FileSync = require ('lowdb/adapters/FileSync')
     const fs = require("fs");
     const config = require("./config.json");
-    require('events').EventEmitter.prototype._maxListeners = 200;
+    require('events').EventEmitter.prototype._maxListeners = 300;
 
     const adapter = new FileSync('database.json');
     const db = low(adapter);
@@ -401,21 +401,4 @@ bot.on('message', function (message) {
 //}
 //})
 
- bot.on('message', message => {
-
-    if (message.content === prefix + "rolealex") {
-    let rolegive = message.guild.roles.find('name', "Brigades d'Entraînements");
-    let shifterr = message.guild.roles.find('name', 'Titan Shifter');
-    let garnisone = message.guild.roles.find('name', 'La Garnison');
-    let btl = message.guild.roles.find('name', "Le Bataillon d'Exploration");
-    let briged = message.guild.roles.find('name', 'Les Brigades Spéciales');
-
-    if(message.author.bot)return;
-
-message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(shifterr));
-message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(briged));
-message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(btl));
-message.guild.members.filter(m => !m.user.bot).map(async member => await member.removeRole(garnisone));
-message.guild.members.filter(m => !m.user.bot).map(async member => await member.addRole(rolegive));
-    
-    }})
+ 
