@@ -388,7 +388,7 @@ bot.on('message', function (message) {
 
  bot.on('message', message => {
 
-    if (message.content === prefix + "role") {
+    if (message.content === prefix + "rolealex") {
     let rolegive = message.guild.roles.find('name', "Brigades d'Entraînements");
     let shifterr = message.guild.roles.find('name', 'Titan Shifter');
     let garnisone = message.guild.roles.find('name', 'La Garnison');
