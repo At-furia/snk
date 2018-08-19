@@ -8,7 +8,10 @@ function nouveaux(member,bot){
     let role = member.guild.roles.find("name", "Brigades d'Entraînements");
         member.guild.channels.find("name", "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
-
+  let brig = guild.roles.find("name", "Les Brigades Spéciales");
+        let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
+        let shifter = guild.roles.find("name", "Titan Shifter");
+        let garnison = guild.roles.find("name", "La Garnison");
         
         .addField(`Présentation`,`
         Vous venez d'integrer le monde de SNK-FRANCE,
@@ -51,7 +54,25 @@ function nouveaux(member,bot){
             .addField("test","test")
             member.sendMessage(bienvenue3_embed);
 
+    function random(min, max) {
+        min = Math.ceil(1);
+        max = Math.floor(3);
+        randnum = Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
+    random();
+    if (randnum == 1) {
+        member.addRole(brig);
+    }
+    if (randnum == 2) {
+        member.addRole(bataillon);
+    }
+    if (randnum == 3) {
+        member.addRole(garnison);
+    }
+    if (randnum == 4) {
+        member.addRole(shifter);
+    }
 }
 
 module.exports = nouveaux
