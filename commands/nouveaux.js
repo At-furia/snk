@@ -4,6 +4,7 @@ const FileSync = require ('lowdb/adapters/FileSync')
 const fs = require("fs");
 
 function nouveaux(member,bot){
+  let guild = message.member.guild;
 
     let role = member.guild.roles.find("name", "Brigades d'Entraînements");
         member.guild.channels.find("name", "brigade-d-entrainement");
