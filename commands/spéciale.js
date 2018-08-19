@@ -6,26 +6,48 @@ const fs = require("fs");
 function spéciale(message,prefix,bot){
 
 if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
+if (message.channel.type === 'dm') return;
+if (message.content === prefix + "fac") {
 
-    let guild = message.member.guild;
-    let Role = guild.roles.find('name', 'Les Brigades Spéciales');
-    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
+let brig = guild.roles.find("name", "Les Brigades Spéciales");
+let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
+let shifter = guild.roles.find("name", "Titan Shifter");
+let garnison = guild.roles.find("name", "La Garnison");
+let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
 
-    if(!message.content.startsWith(prefix)) return;
+var member = message.author.username
 
-    if (message.content.startsWith(prefix + 'b-spéciales') ) {
-        
-        if(!message.member.roles.some(r=>["Brigades d'Entraînements"].includes(r.name)) )
-    return message.reply("Tu as déjà choisi un corps d'armée, tu ne peux pas en choisir un autre !");
-    
-        if (message.member.roles.has(Role.id)) {
-            message.channel.sendMessage('tu possède déjà ce rôle !');
+    function random(min, max) {
+        min = Math.ceil(1);
+        max = Math.floor(4);
+        randnum = Math.floor(Math.random() * (max - min) + min);
     }
-        else {
-        message.member.addRole(Role);
-        message.channel.sendMessage('Tu as rejoint la brigade Spéciale !');
+    random();
+    if (!message.member.roles.some(r => ["brigade d'entrainement"].includes(r.name)))
+        return message.reply("Impossible de changer de faction avant la prochaine saison !");
+
+    if (randnum == 1) {
+        message.member.addRole(brig);
         message.member.removeRole(Roleremoveentrainement);
-}}}
+        message.reply("Tu as rejoint les Brigades Spéciales")
+    }
+    if (randnum == 2) {
+        message.member.addRole(bataillon);
+        message.member.removeRole(Roleremoveentrainement);
+        message.reply("Tu as rejoint le Bataillon d'Exploration")
+    }
+    if (randnum == 3) {
+        message.member.addRole(garnison);
+        message.member.removeRole(Roleremoveentrainement);
+        message.reply("Tu as rejoint la Garnison")
+    }
+    if (randnum == 4) {
+        message.member.addRole(shifter);
+        message.member.removeRole(Roleremoveentrainement);
+        message.reply("Tu as rejoint les Titans Shifter")
+    }
+}
+        
+    }
 
 module.exports = spéciale
