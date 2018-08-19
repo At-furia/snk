@@ -31,6 +31,8 @@
 
 
       bot.on('guildMemberAdd', member => {
+            let guild = message.member.guild;
+
         let brig = guild.roles.find("name", "Les Brigades Spéciales");
         let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
         let shifter = guild.roles.find("name", "Titan Shifter");
