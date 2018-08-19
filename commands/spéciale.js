@@ -40,7 +40,7 @@ var member = message.author.username
     if (randnum == 3) {
         message.member.addRole(garnison);
         message.member.removeRole(Roleremoveentrainement);
-        message.reply("La Garnison c'est trop bon Tu as rejoint la Garnison")
+        message.reply("La Garnison c'est trop bon ! Tu as rejoint la Garnison")
     }
     if (randnum == 4) {
         message.member.addRole(shifter);
