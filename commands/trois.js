@@ -55,7 +55,7 @@ function trois(message,prefix,bot){
 
         .setTitle("Jeu des 10 lettres")
         .addField("Qu'est ce que le jeu des 10 lettres ?","C'est un jeu qui vous tire aléatoirement 10 lettres, avec ces lettres vous devez faire le plus grand mot possible !")
-        .addField("Lettres : ",` ${lettre_aleatoire}\n${lettre_aleatoire1}\n${lettre_aleatoire2}\n${lettre_aleatoire3}\n${lettre_aleatoire4}\n${lettre_aleatoire5}\n${lettre_aleatoire6}\n${lettre_aleatoire7}\n${lettre_aleatoire8}\n${lettre_aleatoire9} `)
+        .addField("Lettres : ",` ${lettre_aleatoire} - ${lettre_aleatoire1} - ${lettre_aleatoire2} - ${lettre_aleatoire3} - ${lettre_aleatoire4} - ${lettre_aleatoire5} - ${lettre_aleatoire6} - ${lettre_aleatoire7} - ${lettre_aleatoire8} - ${lettre_aleatoire9} `)
         .addField("MODE HARDCORE : Thème a respecter : ",`${theme_aleatoire}`)
         .setFooter("Codé et idée par ▼𝓐𝓵𝒆𝔁_ [Admin Bot]▲")
 
