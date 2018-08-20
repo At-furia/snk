@@ -44,7 +44,7 @@ function trois(message,prefix,bot){
         .setTitle("Jeu des 3 lettres")
         .addField("Qu'est ce que le jeu des 3 lettres ?","C'est un jeu qui vous tire aléatoirement 3 lettres, avec ces lettres vous devez faire une sorte de slogan, par exemple :\nLettres aléatoire : A T V --> Armée de Titans Vegan")
         .addField("Lettres : ",` ${lettre_aleatoire}\n${lettre_aleatoire1}\n${lettre_aleatoire2} `)
-        //.addField("Thème (optionnel) : ",`${theme_aleatoire}`)
+        .addField("MODE HARDCORE : Thème a respecter : ",`${theme_aleatoire}`)
         .setFooter("Codé et idée par ▼𝓐𝓵𝒆𝔁_ [Admin Bot]▲")
 
         message.channel.send({embed: bruh_embed});
@@ -56,6 +56,7 @@ if (message.content === prefix + "5l"){
         .setTitle("Jeu des 5 lettres")
         .addField("Qu'est ce que le jeu des 5 lettres ?","C'est un jeu qui vous tire aléatoirement 5 lettres, avec ces lettres vous devez faire une sorte de slogan, par exemple :\nLettres aléatoire : A T V D R --> Armée de Titans Vegan Drogués au Réglisse")
         .addField("Lettres : ",` ${lettre_aleatoire}\n${lettre_aleatoire1}\n${lettre_aleatoire2}\n${lettre_aleatoire3}\n${lettre_aleatoire4} `)
+        .addField("MODE HARDCORE : Thème a respecter : ",`${theme_aleatoire}`)
         .setFooter("Codé et idée par ▼𝓐𝓵𝒆𝔁_ [Admin Bot]▲")
 
         message.channel.send({embed: bruh_embed5});
