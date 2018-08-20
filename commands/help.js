@@ -12,7 +12,6 @@ function help(message,prefix){
             .addField("Commandes Bataillon d'exploration, Garnison et Brigades Spéciales ", "<chasse Pour lancer le minijeu 'Chasse'\n<kill Pour lancer le minijeu 'Apocalypse Titans' ")
             .addField("Commandes Titan Shifter ", "<manger Pour lancer le minijeu 'Apocalypse Titans'\n<chasse Pour lancer le minijeu 'Chasse' ")
         //    .addField("Commandes 1ère Division", "<love +@pseudo Affiche votre % d'amour entre vous et le membre mentionné\n<haine +@pseudo Comme love mais version haine.")
-            .addField("Commandes Escouade Livaï", "<admin Affiche les commandes Admin.")
             .setFooter("Crée par Alex_ et Eren Jäger")
         message.channel.sendEmbed(help_embed);
         }
