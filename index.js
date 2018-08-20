@@ -27,7 +27,7 @@
         bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
          var interval = setInterval (function () {
          
-        bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.")
+        bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.\nPour les Brigades d'Entraînements, rejoignez une faction avec <fac (c'est aléatoire). ")
                         .catch(console.error); // add error handling here
      }, 1 * 900000);
     });
