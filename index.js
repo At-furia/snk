@@ -29,7 +29,7 @@
          
         bot.channels.get("389511539347947520").send("Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.")
                         .catch(console.error); // add error handling here
-     }, 1 * 90000);
+     }, 1 * 900000);
     });
 
   bot.login(process.env.TOKEN);
