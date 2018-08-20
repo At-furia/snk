@@ -21,7 +21,7 @@ var member = message.author.username
     function random(min, max) {
         min = Math.ceil(1);
         max = Math.floor(4);
-        randnum = Math.floor(Math.random() * (max - min) + min);
+        randnum = Math.floor(Math.random() * (max - min + 1) + min);
     }
     random();
     if (!message.member.roles.some(r => ["Brigades d'Entraînements"].includes(r.name)))
