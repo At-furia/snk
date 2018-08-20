@@ -27,9 +27,9 @@
         bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
          var interval = setInterval (function () {
          
-        bot.channels.get("424249866743578625").send("Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.")
+        bot.channels.get("389511539347947520").send("Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.")
                         .catch(console.error); // add error handling here
-     }, 1 * 180000);
+     }, 1 * 90000);
     });
 
   bot.login(process.env.TOKEN);
