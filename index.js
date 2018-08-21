@@ -346,7 +346,7 @@ bot.on('message', function (message) {
             var joueur = message.author.username;
             if (message.author.bot) return;
             if (message.content === prefix + "question") {
-                var sayings = ["Oui.","Non.","Peut être.."];
+                var sayings = ["","Oui.","Non.","Peut être.."];
                                            // "Je ne sais pas.",
                                           
                                           //  "Je valide !",
@@ -357,12 +357,14 @@ bot.on('message', function (message) {
                                        // "42"
                               
     
-                var result = Math.floor((Math.random() * sayings.length) + 0);
+            //    var result = Math.floor((Math.random() * sayings.length) + 0);
+                result = Math.ceil(Math.random() * 3);
+        var repalea = sayings[result];
 
                var mdrembed = new Discord.RichEmbed()
                 .setTitle("Questions/Réponses")
                 .addField(`Question de ${joueur} :`,`${message.content.slice(10, message.content.length)}`)
-                .addField("Réponse :",`${sayings[result]}`);
+                .addField("Réponse :",`${repalea}`);
                 message.channel.send(mdrembed)
         }
             //    if (message.content === prefix + "kill") {
