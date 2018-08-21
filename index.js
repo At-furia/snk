@@ -346,17 +346,16 @@ bot.on('message', function (message) {
             var joueur = message.author.username;
             if (message.author.bot) return;
             if (message.content === prefix + "question") {
-                var sayings = ["Oui.",
-                                            "Non."
+                var sayings = ["Oui.","Non.","Peut être.."];
                                            // "Je ne sais pas.",
-                                          //  "Peut être..",
+                                          
                                           //  "Je valide !",
 //"J'adore.",
                                           //  "Je ne suis pas Google.",
                                           //  "Je ne peux pas y répondre tout de suite.",
                                           //  "La mer Noire",
                                        // "42"
-                              ];
+                              
     
                 var result = Math.floor((Math.random() * sayings.length) + 0);
 
