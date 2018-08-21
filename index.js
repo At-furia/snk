@@ -347,15 +347,16 @@ bot.on('message', function (message) {
             if (message.author.bot) return;
             if (message.content === prefix + "question") {
                 var sayings = ["Oui.",
-                                            "Non.",
-                                            "Je ne sais pas.",
-                                            "Peut être..",
-                                            "Je valide !",
-                                            "J'adore.",
-                                            "Je ne suis pas Google.",
-                                            "Je ne peux pas y répondre tout de suite.",
-                                            "La mer Noire",
-                                        "42"];
+                                            "Non."
+                                           // "Je ne sais pas.",
+                                          //  "Peut être..",
+                                          //  "Je valide !",
+//"J'adore.",
+                                          //  "Je ne suis pas Google.",
+                                          //  "Je ne peux pas y répondre tout de suite.",
+                                          //  "La mer Noire",
+                                       // "42"
+                              ];
     
                 var result = Math.floor((Math.random() * sayings.length) + 0);
 
