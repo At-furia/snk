@@ -24,7 +24,7 @@ function love(message,prefix,bot){
              var joueur = message.author.username;
             if (message.author.bot) return;
             if (message.content.startsWith(prefix + "question")) {
-                var sayings = ["","Oui.","Non.","Peut être.."];
+                var sayings = ["Oui.","Non.","Peut être.."];
 
     
                 var result = Math.floor((Math.random() * sayings.length) + 0);
