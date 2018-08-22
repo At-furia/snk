@@ -46,7 +46,7 @@
 
         
         .addField(`Présentation`,`
-        Vous venez d'integrer le monde de SNK-FRANCE,
+        Vous venez d'intégrer le monde de SNK-FRANCE,
         nous vous félicitions pour votre intégrations au brigades d'entraînements.
         
         *Nous allons désormais vous choisir un corps d'armée entre :
@@ -56,16 +56,16 @@
         -Titan Shifter
         Suivant ce que notre voyant vois de mieux pour vous !
         Soyez poli et courtois, un français correct est demandé au minimum.
-        Le respect est de vigueur, les propos rascistes, injure ou autre ne seront pas toléré.`)
+        Le respect est de vigueur, les propos racistes, injure ou autre ne seront pas toléré.`)
         .setFooter( `*Ne vous inquietez pas, la faction c'est juste pour le RP, histoire de s'amuser, vous aurez les même droits sur le 
         serveur quel que soit votre faction.
         Aussi, nous vous demandons de jouer le jeu et de choisir un pseudo un minimum sérieux !`)
         .addBlankField()
          .addField(`Présentation de SNK-FR`,`
-        Bonjour je me présente : SNK-FR, je suis votre "guide" dans ce discord, je ne peux malheuresement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
+        Bonjour je me présente : SNK-FR, je suis votre "guide" dans ce discord, je ne peux malheureusement pas vous répondre directement en message privé, il faudra donc tout me dire sur un des canaux de discussion !
         Vous avez a disposition plusieurs commandes de jeux, musiques, etc..
         qui vous seront détaillées en tapant <help ou en demandant a d'autres membres (ou aux modos et admins) !
-        Il vous sera aussi possible de gagner des titres grâce a des "evenements spéciaux" !`)
+        Il vous sera aussi possible de gagner des titres grâce a des "évènements spéciaux" !`)
         member.sendMessage(bienvenue_embed);
           
     function random(min, max) {
