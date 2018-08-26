@@ -418,7 +418,13 @@ bot.on('message', function (message) {
             let ttt = message.guild.channels.find("name", "mini-jeux-🎲");
           if (message.channel === ttt) {     
                    if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) 
-return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar); && message.delete();
+return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar); 
+          }
+             
+                       if (message.channel === ttt) {     
+
+                if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) 
+              message.delete();
               
           }
             }
