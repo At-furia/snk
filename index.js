@@ -419,7 +419,7 @@ bot.on('message', function (message) {
           if (message.channel === ttt) {     
                       if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) )
 return message.delete();
-        bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar);
+return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar);
                 }     
             }
         )
