@@ -417,12 +417,13 @@ bot.on('message', function (message) {
 
             let ttt = message.guild.channels.find("name", "mini-jeux-🎲");
           if (message.channel === ttt) {     
-                      if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) )
-                        return;
-              else {
+                      
               message.delete();
 return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar);
-                }     
+         
+              else {
+                  if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) return;
+                     }     
           }
             }
         )
