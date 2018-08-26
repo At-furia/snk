@@ -416,9 +416,10 @@ bot.on('message', function (message) {
             let userVar = message.author
 
             let ttt = message.guild.channels.find("name", "mini-jeux-🎲");
-          if (message.channel === ttt) {                    
-                message.delete();
-               bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar);
+          if (message.channel === ttt) {     
+                      if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) )
+return message.delete();
+        bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar);
                 }     
             }
         )
