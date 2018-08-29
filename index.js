@@ -434,8 +434,17 @@ bot.on('message', function (message) {
           if (message.channel === ttt) {     
                    if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) 
 return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar); 
-
- }
-             
+                }
             }
         )
+  bot.on('message', message => {
+
+    abc = Math.ceil(Math.random() * 100);
+    if(message.author.bot)return;
+    if (message.channel.type === 'dm') return;
+
+    if (message.content === prefix + "roulette") {
+
+        message.reply(`a fait tourner la roulette et obtient le numéro ${abc} !`)
+    }
+  })
