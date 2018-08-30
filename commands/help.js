@@ -16,7 +16,7 @@ function help(message,prefix){
         //  message.channel.sendEmbed(help_embed);
                 var newhelp_embed = new Discord.RichEmbed()
                 .setColor('#D9F200')
-            .addField("Fonctionnement des commandes", "Chaque membre possède des commandes suivant sa faction, pour plus de lisibilité, la commande <helo est divisé un plusieurs morceaux")
+            .addField("Fonctionnement des commandes", "Chaque membre possède des commandes suivant sa faction, pour plus de lisibilité, la commande <help est divisée en deux commandes")
             .addField("Jeux", "<jeux Affiche toute la liste des jeux")
             .addField("Communauté", "<commu Affiche toute la liste des commandes de la communauté")
             message.channel.sendEmbed(newhelp_embed);
