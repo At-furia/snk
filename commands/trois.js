@@ -5,9 +5,7 @@ const fs = require("fs");
 
 function trois(message,prefix,bot){
 
-        let jdl = message.guild.channels.find("name", "jeu-des-3-lettres");
-
-    if (message.channel === jdl) { 
+       
 
         var alphabet = ['','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         random = Math.ceil(Math.random() * 26);
@@ -73,6 +71,6 @@ if (message.content === prefix + "5l"){
 
         message.channel.send({embed: bruh_embed5});
     }
-    }
+    
 }
     module.exports = trois
