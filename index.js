@@ -311,10 +311,34 @@ bot.on('message', message => {
 
        if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
+               let la-garnison = message.guild.channels.find("name", "la-garnison");
+                   if (message.channel === la-garnison) {                    
+                    if(message.content.startsWith(prefix +'Dot')){
+message.reply("**Dot** : Bonjour, que veux-tu ?")
+                   }     
+                   }
+                }
+            )
+bot.on('message', message => {
+
+       if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+               let brigades-speciales = message.guild.channels.find("name", "brigades-speciales");
+                   if (message.channel === brigades-speciales) {                    
+                    if(message.content.startsWith(prefix +'Naile')){
+message.reply("**Naile** : Bonjour, que veux-tu ?")
+                   }     
+                   }
+                }
+            )
+bot.on('message', message => {
+
+       if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
                let bataillon_d_exploration = message.guild.channels.find("name", "bataillon_d_exploration");
                    if (message.channel === bataillon_d_exploration) {                    
-                    if(message.content.startsWith(prefix +'Livaï')){
-message.reply("Bonjour, ici le caporal Livaï")
+                    if(message.content.startsWith(prefix +'Erwin')){
+message.reply("**Erwin** : Bonjour, que veux-tu ?")
                    }     
                    }
                 }
