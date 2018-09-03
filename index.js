@@ -306,6 +306,19 @@ bot.on('message', message => {
                    }     
                 }
             )
+
+bot.on('message', message => {
+
+       if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+               let bataillon_d_exploration = message.guild.channels.find("name", "bataillon_d_exploration");
+                   if (message.channel === bataillon_d_exploration) {                    
+                    if(message.content.startsWith(prefix +'Livaï')){
+message.reply("Bonjour, ici le caporal Livaï")
+                   }     
+                   }
+                }
+            )
 bot.on('message', message => {
 
                 if (message.author.bot) return;
