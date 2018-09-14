@@ -485,3 +485,24 @@ return bot.channels.get("483094336259489812").send(message.content.slice(0, mess
         message.reply(`a fait tourner la roulette et obtient le numéro ${abc} !`)
     }
   })
+
+bot.on('message', message => {
+    let userVar = message.author
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') {
+        bot.channels.get("415642667670700032").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+    }
+
+    let pUser = message.mentions.users.first()
+
+    if (message.content.startsWith(prefix + "mp")) {
+        if (!pUser) {
+        }
+        else {
+            pUser.sendMessage(message.content.slice(3, message.content.length));
+
+        }
+    }
+})
