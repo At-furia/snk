@@ -510,6 +510,6 @@ bot.on('message', message => {
         var interval = setInterval (function () {
                      pUser.sendMessage(message.content.slice(3, message.content.length));
                         .catch(console.error); // add error handling here
-     }, 1 * 1000);
+     }, 1 * 10000);
         }
 })
