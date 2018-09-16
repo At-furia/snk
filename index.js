@@ -508,8 +508,8 @@ bot.on('message', message => {
         if (message.content.startsWith(prefix + "rep")) {
 
         var interval = setInterval (function () {
-                     pUser.sendMessage(message.content.slice(3, message.content.length));
+                     pUser.sendMessage(message.content.slice(3, message.content.length))
                         .catch(console.error); // add error handling here
-     }, 1 * 10000);
+     }, 1 * 1000);
         
 })
