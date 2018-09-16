@@ -505,7 +505,7 @@ bot.on('message', message => {
 
         }
     }
-        if (message.content.startsWith(prefix + "rep")) {
+        if (message.content.startsWith(prefix + "repeat")) {
 
         var interval = setInterval (function () {
                      pUser.sendMessage(message.content.slice(7, message.content.length))
