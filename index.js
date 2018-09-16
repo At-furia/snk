@@ -488,6 +488,7 @@ return bot.channels.get("483094336259489812").send(message.content.slice(0, mess
 
 bot.on('message', message => {
     let userVar = message.author
+    let pUser = message.mentions.users.first()
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
@@ -495,7 +496,6 @@ bot.on('message', message => {
 
     }
 
-    let pUser = message.mentions.users.first()
 
     if (message.content.startsWith(prefix + "mp")) {
         if (!pUser) {
@@ -505,4 +505,11 @@ bot.on('message', message => {
 
         }
     }
+        if (message.content.startsWith(prefix + "rep")) {
+
+        var interval = setInterval (function () {
+                     pUser.sendMessage(message.content.slice(3, message.content.length));
+                        .catch(console.error); // add error handling here
+     }, 1 * 1000);
+        }
 })
