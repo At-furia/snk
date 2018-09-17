@@ -3,7 +3,7 @@
     const FileSync = require ('lowdb/adapters/FileSync')
     const fs = require("fs");
     const config = require("./config.json");
-    require('events').EventEmitter.prototype._maxListeners = 300;
+    require('events').EventEmitter.prototype._maxListeners = 301;
 
     const adapter = new FileSync('database.json');
     const db = low(adapter);
