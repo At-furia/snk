@@ -201,7 +201,7 @@ var chassedb = db.get("chasse").find('nombre').value()
     var userptc = Object.values(userptcdb)
     db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
         
-                if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
+                if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
            var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
     var userptc = Object.values(userptcdb)
     db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += 5}).write();
@@ -210,7 +210,7 @@ return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgautho
   
         }
     
-    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison"].includes(r.name)) ) {
+    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
        var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
     var userptc = Object.values(userptcdb)
     db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += 5}).write();
@@ -218,11 +218,18 @@ return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgautho
 
     }
 
-    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison"].includes(r.name)) ) {
+    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
        var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
     var userptc = Object.values(userptcdb)
     db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += 5}).write();
         return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
+
+    }
+        if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
+       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "shifter"}).assign({faction: "shifter", pt: userptc[1] += 5}).write();
+        return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` de la faction Les Titan Shifter (pour avoir tué des Titans)`)
 
     }
                 }
@@ -543,15 +550,18 @@ if (message.content.startsWith(prefix + 'tp')) {
             var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
             var ptckillfinal = Object.values(ptckill);
                      var ptckiell = db.get("pt").filter({faction: "exploration"}).find('pt').value()
-            var ptckillfinale = Object.values(ptckiell);
+            var ptckillfinale = Object.values(ptckiell);              
+            var ptckiells = db.get("pt").filter({faction: "shifter"}).find('pt').value()
+            var ptckillfinales = Object.values(ptckiells);
                      var ptckilel = db.get("pt").filter({faction: "spéciale"}).find('pt').value()
             var ptckillfinael = Object.values(ptckilel);
             var xp_embed = new Discord.RichEmbed()
                 .setColor("#590599")
-                .setDescription("points par faction (reset toute les 23h, sauf si crash entre temps)")
+                .setDescription("points par faction pour les chasses")
                 .addField("Garnison :", `${ptckillfinal[1] -= 1} points` )
                 .addField("Brigade Spéciale :", `${ptckillfinael[1] -= 1} points` )
                 .addField("Bataillon d'exploration :", `${ptckillfinale[1] -= 1} points` )
+                .addField("Titans Shifter :", `${ptckillfinales[1] -= 1} points` )
             message.channel.send({embed: xp_embed});
         }
     
