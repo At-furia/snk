@@ -12,7 +12,7 @@
     const mangeradapter = new FileSync('manger.json');
     const mangerdb = low(mangeradapter);
 
-    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: [], chasse: []}).write()
+    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: [], chasse: [], pt: []}).write()
 
     var bot = new Discord.Client();
     var prefix = "<"
@@ -200,6 +200,31 @@ var chassedb = db.get("chasse").find('nombre').value()
     var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
     var userptc = Object.values(userptcdb)
     db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
+        
+                if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
+           var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += 5}).write();
+return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir tué des Titans)`)
+       
+  
+        }
+    
+    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison"].includes(r.name)) ) {
+       var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += 5}).write();
+        return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir tué des Titans)`)
+
+    }
+
+    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison"].includes(r.name)) ) {
+       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
+    var userptc = Object.values(userptcdb)
+    db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += 5}).write();
+        return bot.channels.get("444817395840712704").send(`+ 5 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
+
+    }
                 }
             }
         }  
