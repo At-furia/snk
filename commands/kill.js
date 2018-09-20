@@ -100,7 +100,7 @@ return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pou
             var ptckillfinael = Object.values(ptckilel);
             var xp_embed = new Discord.RichEmbed()
                 .setColor("#590599")
-                .setDescription("points par faction (reset toute les 23h, sauf si crash entre temps)")
+                .setDescription("points par faction kill/manger")
                 .addField("Garnison :", `${ptckillfinal[1] -= 1} points` )
                 .addField("Brigade Spéciale :", `${ptckillfinael[1] -= 1} points` )
                 .addField("Bataillon d'exploration :", `${ptckillfinale[1] -= 1} points` )
