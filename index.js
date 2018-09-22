@@ -29,7 +29,7 @@
          
         bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.\nPour les Brigades d'Entraînements, rejoignez une faction avec <fac (c'est aléatoire). ")
                         .catch(console.error); // add error handling here
-     }, 1 * 14400000);
+     }, 1 * 28800000);
     });
 
   bot.login(process.env.TOKEN);
