@@ -523,7 +523,7 @@ bot.on('message', message => {
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
-        bot.channels.get("415642667670700032").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+        bot.channels.get("493791648309051412").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
     }
 
