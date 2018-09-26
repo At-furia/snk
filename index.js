@@ -347,22 +347,7 @@ bot.on('message', message => {
 })
                
 
-    bot.on('message', message => {
-    let pUser = message.mentions.users.first()
-      let vipbote = message.guild.channels.find("name", "vip-mp-bot");
-                    if (message.channel === vipbote) { 
-                            if (message.content.startsWith(prefix + "mp")) {
-                
-        if (!pUser) {
-        }
-        else {
-            pUser.sendMessage(message.content.slice(3, message.content.length));
-
-        }
-    }
-                    }   
-                }
-            )
+    
 bot.on('message', function (message) {
 
             var joueur = message.author.username;
