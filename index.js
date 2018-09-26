@@ -337,6 +337,7 @@ bot.on('message', message => {
             )
 bot.on('message', message => {
    
+    let userVar = message.author
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
@@ -355,7 +356,6 @@ bot.on('message', message => {
                     }
 })
     bot.on('message', message => {
-    let userVar = message.author
     let pUser = message.mentions.users.first()
       let vipbote = message.guild.channels.find("name", "vip-mp-bot");
                     if (message.channel === vipbote) { 
