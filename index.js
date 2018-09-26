@@ -344,17 +344,9 @@ bot.on('message', message => {
         bot.channels.get("494605252423581697").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
     }
-                let vipbot = message.guild.channels.find("name", "parler-via-le-bot");
-                    if (message.channel === vipbot) { 
-                        
-                    if(message.content.startsWith(prefix +'t')){
-                        bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
-                        } 
-                    if(message.content.startsWith(prefix +'e')){
-                        bot.channels.get("389511539347947520").send(message.content.slice(2, message.content.length));
-                       }
-                    }
 })
+               
+
     bot.on('message', message => {
     let pUser = message.mentions.users.first()
       let vipbote = message.guild.channels.find("name", "vip-mp-bot");
@@ -368,7 +360,17 @@ bot.on('message', message => {
 
         }
     }
-                    }      
+                    }   
+         let vipbot = message.guild.channels.find("name", "parler-via-le-bot");
+                    if (message.channel === vipbot) { 
+                        
+                    if(message.content.startsWith(prefix +'t')){
+                        bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
+                        } 
+                    if(message.content.startsWith(prefix +'e')){
+                        bot.channels.get("389511539347947520").send(message.content.slice(2, message.content.length));
+                       }
+                    }
                 }
             )
 bot.on('message', function (message) {
