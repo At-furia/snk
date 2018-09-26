@@ -497,7 +497,8 @@ bot.on('message', message => {
 
 
     if (message.content.startsWith(prefix + "mp")) {
-                if(!message.member.roles.some(r=>["Escouade Livaï","Escouade Mike"].includes(r.name)) )
+                if(!message.member.roles.some(r=>["Escouade Livaï","Escouade Mike"].includes(r.name)) ) 
+                    return;
                 {
         if (!pUser) {
         }
