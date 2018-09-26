@@ -299,7 +299,23 @@ bot.on('message', message =>{
 Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
             message.channel.send({embed: xp_embed});
     }}})
+bot.on('message', message => {
 
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+    
+let cpourlesvip = message.guild.channels.find("name", "parler-via-le-bot");
+if (message.channel === cpourlesvip) { 
+    
+if(message.content.startsWith(prefix +'ta')){
+    bot.channels.get("427917961441968128").send(message.content.slice(3, message.content.length));
+    } 
+if(message.content.startsWith(prefix +'en')){
+    bot.channels.get("389511539347947520").send(message.content.slice(3, message.content.length));
+   }
+}
+})
+    
 bot.on('message', message => {
 
                 if (message.author.bot) return;
