@@ -300,80 +300,6 @@ Titans Apocalypse Titans (kill) : ${ptckillfinal[1] += -1} Titans tués ` )
             message.channel.send({embed: xp_embed});
     }}})
 
-
-bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-                var joueur = message.author.tag;
-
-                let ttt = message.guild.channels.find("name", "event-des-3-lettres");
-                    if (message.channel === ttt) {                    
-
-                        bot.channels.get("458016809208250399").send(message.content.slice(0, message.content.length) + joueur);
-                    }     
-                }
-            )
-bot.on('message', message => {
-
-                if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-
-                let tttt = message.guild.channels.find("name", "event-des-3-lettres-admin");
-                    if (message.channel === tttt) {                    
-
-                        bot.channels.get("458016496212246540").send(message.content.slice(0, message.content.length));
-                    }     
-                }
-            )
-bot.on('message', message => {
-
-       if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-               let salonvip = message.guild.channels.find("name", "parler-via-le-bot");
-                   if (message.channel === salonvip) {                    
-
-                       bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length));
-                   }     
-                }
-            )
-
-bot.on('message', message => {
-
-       if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-               let la_garnison = message.guild.channels.find("name", "la-garnison");
-                   if (message.channel === la_garnison) {                    
-                    if(message.content.startsWith(prefix +'Dot')){
-message.reply("**Dot** : Bonjour, que veux-tu ?")
-                   }     
-                   }
-                }
-            )
-bot.on('message', message => {
-
-       if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-               let brigades_speciales = message.guild.channels.find("name", "brigades_speciales");
-                   if (message.channel === brigades_speciales) {                    
-                    if(message.content.startsWith(prefix +'Naile')){
-message.reply("**Naile** : Bonjour, que veux-tu ?")
-                   }     
-                   }
-                }
-            )
-bot.on('message', message => {
-
-       if (message.author.bot) return;
-                if (message.channel.type === 'dm') return;
-               let bataillon_d_exploration = message.guild.channels.find("name", "bataillon_d_exploration");
-                   if (message.channel === bataillon_d_exploration) {                    
-                    if(message.content.startsWith(prefix +'Erwin')){
-message.reply("**Erwin** : Bonjour, que veux-tu ?")
-                   }     
-                   }
-                }
-            )
 bot.on('message', message => {
 
                 if (message.author.bot) return;
@@ -407,6 +333,40 @@ bot.on('message', message => {
                         bot.channels.get("389511539347947520").send(message.content.slice(2, message.content.length));
                        } 
                     }
+                }
+            )
+bot.on('message', message => {
+    let userVar = message.author
+    let pUser = message.mentions.users.first()
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') {
+        bot.channels.get("494605252423581697").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+    }
+                let vipbot = message.guild.channels.find("name", "parler-via-le-bot");
+                    if (message.channel === vipbot) { 
+                        
+                    if(message.content.startsWith(prefix +'t')){
+                        bot.channels.get("427917961441968128").send(message.content.slice(2, message.content.length));
+                        } 
+                    if(message.content.startsWith(prefix +'e')){
+                        bot.channels.get("389511539347947520").send(message.content.slice(2, message.content.length));
+                       }
+                    }
+    
+      let vipbote = message.guild.channels.find("name", "vip-mp-bot");
+                    if (message.channel === vipbote) { 
+                            if (message.content.startsWith(prefix + "mp")) {
+                
+        if (!pUser) {
+        }
+        else {
+            pUser.sendMessage(message.content.slice(3, message.content.length));
+
+        }
+    }
+                    }      
                 }
             )
 bot.on('message', function (message) {
