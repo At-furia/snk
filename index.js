@@ -529,6 +529,8 @@ bot.on('message', message => {
 
 
     if (message.content.startsWith(prefix + "mp")) {
+                if(!message.member.roles.some(r=>["Escouade Livaï","Escouade Mike"].includes(r.name)) )
+                {
         if (!pUser) {
         }
         else {
@@ -543,7 +545,7 @@ bot.on('message', message => {
                         .catch(console.error); // add error handling here
      }, 1 * 1000);
         }
-
+    }
 
 if (message.content.startsWith(prefix + 'tp')) {
             var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
