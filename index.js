@@ -12,7 +12,7 @@
     const mangeradapter = new FileSync('manger.json');
     const mangerdb = low(mangeradapter);
 
-    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: [], chasse: [], pt: []}).write()
+    db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: [], boss: [], chasse: [], pt: [], roulette: []}).write()
 
     var bot = new Discord.Client();
     var prefix = "<"
@@ -543,11 +543,21 @@ if (message.content.startsWith(prefix + 'tp')) {
     abcc = Math.ceil(Math.random() * 55);
     if(message.author.bot)return;
     if (message.channel.type === 'dm') return;
-
+var roulettedb = db.get("roulette").find('rou').value()
+var randoum = Object.values(roulettedb);
+      
     if (message.content === prefix + "500abo") {
 if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) 
                     return;
         {
-        message.reply(`a fait tourner la roulette et obtient le numéro ${abcc}, bravo au gagnant !`)
-    }}
+                if(randoum[1] == "1"){
+
+        message.reply(`a fait tourner la roulette et obtient le numéro 56 bravo au gagnant !`)
+                     db.get("roulette").find({ rourourou: "1" }).assign({ rourourou: randoum[1] = "2", rou: randoum[0] = "2" }).write();
+
+    } else {
+        message.reply(`a fait tourner la roulette et obtient le numéro ${abcc} bravo au gagnant !`)
+        }
+        
+        }
   })
