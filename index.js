@@ -537,7 +537,7 @@ if (message.content.startsWith(prefix + 'tp')) {
     
     })
 
-       )
+       
   bot.on('message', message => {
 
     abcc = Math.ceil(Math.random() * 55);
