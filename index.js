@@ -558,6 +558,6 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
     } else {
         message.reply(`a fait tourner la roulette et obtient le numéro ${abcc} bravo au gagnant !`)
         }
-        
+        }
         }
   })
