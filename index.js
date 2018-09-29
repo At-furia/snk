@@ -536,3 +536,18 @@ if (message.content.startsWith(prefix + 'tp')) {
         }
     
     })
+
+       )
+  bot.on('message', message => {
+
+    abc = Math.ceil(Math.random() * 55);
+    if(message.author.bot)return;
+    if (message.channel.type === 'dm') return;
+
+    if (message.content === prefix + "500abo") {
+if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) 
+                    return;
+        {
+        message.reply(`a fait tourner la roulette et obtient le numéro ${abc}, bravo au gagnant !`)
+    }}
+  })
