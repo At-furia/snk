@@ -47,5 +47,12 @@
       "essais" : 1
     }
   ]
+  ,
+  "roulette": [
+    {
+      "rou": "1",
+      "rourourou": "1"
+    }
+  ]
 }
 
