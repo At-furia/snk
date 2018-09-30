@@ -540,7 +540,7 @@ if (message.content.startsWith(prefix + 'tp')) {
        
   bot.on('message', message => {
 
-    abcc = Math.ceil(Math.random() * 55);
+    abcc = Math.ceil(Math.random() * 58);
     if(message.author.bot)return;
     if (message.channel.type === 'dm') return;
 var roulettedb = db.get("roulette").find('rou').value()
