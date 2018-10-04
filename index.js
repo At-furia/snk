@@ -561,3 +561,14 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
         }
         }
   })
+
+ bot.on('message', message => {
+
+            if (message.author.bot) return;
+            if (message.channel.type === 'dm') return;
+            if (message.content === prefix + "ereri"){
+ number = 69;
+ imageNumber = Math.floor (Math.random()* (number - 1 + 1)) + 1;
+message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").png"]} )
+            }
+        })
