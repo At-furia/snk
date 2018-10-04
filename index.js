@@ -569,6 +569,6 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
             if (message.content === prefix + "ereri"){
  number = 69;
  imageNumber = Math.floor (Math.random()* (number - 1 + 1)) + 1;
-message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").png"]} )
+message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
         })
