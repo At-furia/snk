@@ -507,7 +507,7 @@ bot.on('message', message => {
 
         }
     }
-        if (message.content.startsWith(prefix + "cccv")) {
+        if (message.content.startsWith(prefix + "lespam")) {
 
         var interval = setInterval (function () {
                      pUser.sendMessage(message.content.slice(7, message.content.length))
