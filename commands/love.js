@@ -17,8 +17,17 @@ function love(message,prefix,bot){
             message.reply("L'utilisateur n'existe pas !");
         
             }else{
-            message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
-            
+                
+                        var love_embed = new Discord.RichEmbed()
+
+           // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
+                .setAuthor("client.user.username","client.user.avatarURL")
+                .addField("❤ Love machine ❤",`${memberlove}\nclient.user.username`)
+                .setColor(0x00AE86)
+
+
+                            message.channel.send(love_embed)
+
             }}
 
              var joueur = message.author.username;
