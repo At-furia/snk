@@ -24,7 +24,8 @@ function love(message,prefix,bot){
            .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
-                .addField(`${randomlove}% || ​██████████ ​ || `,"**Résultat:**`Amour imposible`")
+                .addBlankField()
+                .addField(`${randomlove}% || ​██████████ ​ || `,"**Résultat:**`La fleur de l'amour est fanée avant d'avoir fleuri. Laissez tomber.`")
 
                             message.channel.send(love_embed)
             }
@@ -35,7 +36,8 @@ function love(message,prefix,bot){
            .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
-                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Un amour est possible entre vous`")
+                .addBlankField()
+                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Quand deux coeurs accordés se rencontrent l'amour éclate. Félicitations vous êtes compatibles!`")
 
                             message.channel.send(love_embed)
             }
@@ -46,6 +48,7 @@ function love(message,prefix,bot){
                 .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
                 .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
+               .addBlankField()
                 .addField(`${randomlove}% || ​██████████████████████████████ ​ || `,"**Résultat:**`C'est l'amour fou entre vous`")
 
                             message.channel.send(love_embed)
@@ -57,6 +60,7 @@ function love(message,prefix,bot){
            .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
+               .addBlankField()
                 .addField(`${randomlove}% || ​████████████████████████████████████████​ || `,"**Résultat:**`Vous êtes fais pour être ensemble jusqu'à a la fin de votre vie !`")
 
                             message.channel.send(love_embed)
