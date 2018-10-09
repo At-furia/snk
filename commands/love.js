@@ -37,7 +37,7 @@ function love(message,prefix,bot){
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
                 .addBlankField()
-                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Quand deux coeurs accordés se rencontrent l'amour les éclaire. Félicitations vous êtes compatibles!`")
+                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Serait-ce une lueur d'amour qu'on apperçoit entre vos deux cœurs? On dirait qu'il y a une attirance réciproque.`")
 
                             message.channel.send(love_embed)
             }
@@ -49,7 +49,7 @@ function love(message,prefix,bot){
                 .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
                .addBlankField()
-                .addField(`${randomlove}% || ​██████████████████████████████ ​ || `,"**Résultat:**`C'est l'amour fou entre vous`")
+                .addField(`${randomlove}% || ​██████████████████████████████ ​ || `,"**Résultat:**`Quand deux coeurs accordés se rencontrent l'amour les éclaire. Félicitations vous êtes compatibles!`")
 
                             message.channel.send(love_embed)
             }
@@ -61,7 +61,7 @@ function love(message,prefix,bot){
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
                .addBlankField()
-                .addField(`${randomlove}% || ​████████████████████████████████████████​ || `,"**Résultat:**`Vous êtes fais pour être ensemble jusqu'à a la fin de votre vie !`")
+                .addField(`${randomlove}% || ​████████████████████████████████████████​ || `,"**Résultat:**`Faites sonner les carillons, invitez vos amis, préparez la fête: le mariage est prévu pour bientôt!`")
 
                             message.channel.send(love_embed)
             }
