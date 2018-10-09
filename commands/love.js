@@ -7,6 +7,7 @@ function love(message,prefix,bot){
 
      if(message.content.startsWith(prefix +'love')){
             if (message.author.bot) return;
+             var joueur = message.author.username;
 
             randomlove = Math.ceil(Math.random() * 101);
     
@@ -16,7 +17,7 @@ function love(message,prefix,bot){
                 message.reply("L'utilisateur n'existe pas !");
             
                 }
-                  if (memberlove == message.author.username) {
+                  if (memberlove === joueur) {
                 
                 var love_embed = new Discord.RichEmbed()
            // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
