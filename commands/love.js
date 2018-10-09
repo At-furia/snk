@@ -17,7 +17,7 @@ function love(message,prefix,bot){
                 message.reply("L'utilisateur n'existe pas !");
             
                 }
-                  if (memberlove = joueur) {
+                 else if (memberlove = joueur) {
                 
                 var love_embed = new Discord.RichEmbed()
            // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
