@@ -37,7 +37,7 @@ function love(message,prefix,bot){
            .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
                 .setColor(0x00AE86)
                 .addBlankField()
-                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Quand deux coeurs accordés se rencontrent l'amour éclate. Félicitations vous êtes compatibles!`")
+                .addField(`${randomlove}% || ​███████████████████ ​ || `,"**Résultat:**`Quand deux coeurs accordés se rencontrent l'amour les éclaire. Félicitations vous êtes compatibles!`")
 
                             message.channel.send(love_embed)
             }
