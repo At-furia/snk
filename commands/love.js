@@ -12,7 +12,12 @@ function love(message,prefix,bot){
             randomlove = Math.ceil(Math.random() * 101);
     
             var memberlove = message.mentions.users.first();
+        if(!memberlove) return;
         
+      //  {
+             ////   message.reply("L'utilisateur n'existe pas !");
+            
+               // }
              //    else if (memberlove = joueur) {
                 
              //   var love_embed = new Discord.RichEmbed()
@@ -68,10 +73,7 @@ function love(message,prefix,bot){
 
                             message.channel.send(love_embed)
             }
-        if(!memberlove){
-                message.reply("L'utilisateur n'existe pas !");
-            
-                }
+        
      }
              var joueur = message.author.username;
             if (message.author.bot) return;
