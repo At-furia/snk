@@ -18,7 +18,7 @@ function love(message,prefix,bot){
             
                 }
              //    else if (memberlove = joueur) {
-            //    
+                
              //   var love_embed = new Discord.RichEmbed()
            // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
           // .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
