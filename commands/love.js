@@ -7,7 +7,7 @@ function love(message,prefix,bot){
 
      if(message.content.startsWith(prefix +'love')){
             if (message.author.bot) return;
-             var joueur = message.author.username;
+          //   var joueur = message.author.username;
 
             randomlove = Math.ceil(Math.random() * 101);
     
@@ -17,17 +17,17 @@ function love(message,prefix,bot){
                 message.reply("L'utilisateur n'existe pas !");
             
                 }
-                 else if (memberlove = joueur) {
-                
-                var love_embed = new Discord.RichEmbed()
+             //    else if (memberlove = joueur) {
+            //    
+             //   var love_embed = new Discord.RichEmbed()
            // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
-           .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
-           .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
-                .setColor(0x00AE86)
-                .addField(`200% || ​████████████████████████████████████████​ || `,"**Résultat:**`Vous vous aimez parfaitement, votre main fais sûrement l'affaire le soir, seul(e) dans le noir..`")
+          // .setAuthor("💖 Love Machine 💖",message.author.avatarURL)
+          // .setDescription(`💗**${memberlove.tag}**\n💗**${message.author.tag}**`)
+          //      .setColor(0x00AE86)
+           //     .addField(`200% || ​████████████████████████████████████████​ || `,"**Résultat:**`Vous vous aimez parfaitement, votre main fais sûrement l'affaire le soir, seul(e) dans le noir..`")
 
-                            message.channel.send(love_embed)
-            }  
+          //                  message.channel.send(love_embed)
+         //   }  
                 if (randomlove < 50) {
                 
                 var love_embed = new Discord.RichEmbed()
