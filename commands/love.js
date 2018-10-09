@@ -17,7 +17,7 @@ function love(message,prefix,bot){
                 message.reply("L'utilisateur n'existe pas !");
             
                 }
-                  if (memberlove === joueur) {
+                  if (memberlove = joueur) {
                 
                 var love_embed = new Discord.RichEmbed()
            // message.reply("Il y'a a " + `${randomlove}` + "% d'amour entre toi et " + memberlove );
@@ -27,7 +27,7 @@ function love(message,prefix,bot){
                 .addField(`200% || ​████████████████████████████████████████​ || `,"**Résultat:**`Vous vous aimez parfaitement, votre main fais sûrement l'affaire le soir, seul(e) dans le noir..`")
 
                             message.channel.send(love_embed)
-            } else {
+            }  
                 if (randomlove < 50) {
                 
                 var love_embed = new Discord.RichEmbed()
@@ -72,7 +72,7 @@ function love(message,prefix,bot){
 
                             message.channel.send(love_embed)
             }
-        }
+        
      }
              var joueur = message.author.username;
             if (message.author.bot) return;
