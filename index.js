@@ -104,7 +104,6 @@
         const spéciale = require("./commands/spéciale.js");
       //  const garnison = require("./commands/garnison.js");
        // const bataillon = require("./commands/bataillon.js");
-       // const shifter = require("./commands/shifter.js");        
       //  const msgstats = require("./commands/msgstats.js");
         const spoil = require("./commands/spoil.js");        
         const trois = require("./commands/trois.js");
@@ -125,7 +124,6 @@
         spéciale(message, prefix, bot)
        // garnison(message, prefix, bot)
       //  bataillon(message, prefix, bot)
-        // shifter(message, prefix, bot)
       //  msgstats(message, prefix, bot)
         spoil(message, prefix, bot)
         trois(message, prefix, bot)
