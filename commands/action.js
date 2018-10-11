@@ -15,6 +15,7 @@ var rlul = luldb.get('lul').size().value();
 var rbonus = bonusdb.get('bonus').size().value();
 
 function rdm(message,prefix,bot){
+    if (message.channel.type === 'dm') return;
 
     if (message.content.startsWith(prefix + 'action')) {
         let verite = message.guild.channels.find("name", "action");
