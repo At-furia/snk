@@ -15,6 +15,7 @@ db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
 function kill(message,prefix,bot){
  
 db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
+    if (message.channel.type === 'dm') return;
 
     if (message.content.startsWith(prefix + 'kill')) {
 
