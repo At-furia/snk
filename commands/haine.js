@@ -60,7 +60,7 @@ function haine(message,prefix,bot){
                 .setAuthor("🖕 Haine Machine 🖕",message.author.avatarURL)
                 .setDescription(`😠**${memberlove.tag}**\n😠**${message.author.tag}**`)
                 .setColor(0x00AE86)
-                .addField(`${randomlove}% || ​██████████████████████████████ ​ || `,"**Résultat:**`Quand deux coeurs désaccordés se rencontrent la les éclates. Félicitations vous vous détestez!`")
+                .addField(`${randomlove}% || ​██████████████████████████████ ​ || `,"**Résultat:**`Quand deux coeurs désaccordés se rencontrent la haine les éclates. Félicitations vous vous détestez!`")
 
                             message.channel.send(love_embed)
             }
