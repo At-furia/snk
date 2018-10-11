@@ -377,6 +377,7 @@ bot.on('message', message => {
 
     
 bot.on('message', function (message) {
+    if (message.channel.type === 'dm') return;
 
             var joueur = message.author.username;
             if (message.author.bot) return;
