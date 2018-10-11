@@ -14,6 +14,7 @@ db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
 
 
 function manger(message,prefix,bot){
+    if (message.channel.type === 'dm') return;
 
     db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
     
