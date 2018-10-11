@@ -91,7 +91,8 @@
       })
 
     bot.on('message', message => {
-        
+            if (message.channel.type === 'dm') return;
+
         const kick = require("./commands/kick.js");
         const ban = require("./commands/ban.js");
         const réseaux = require("./commands/réseaux.js");
