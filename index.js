@@ -497,7 +497,7 @@ bot.on('message', message => {
   //    message.delete()
         bot.channels.get("493791648309051412").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
-    }
+    }}
 
 
     if (message.content.startsWith(prefix + "mp")) {
