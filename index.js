@@ -363,18 +363,6 @@ bot.on('message', message => {
                     }
                 }
             )
-bot.on('message', message => {
-   
-    let userVar = message.author
-
-    if (message.author.bot) return;
-    if (message.channel.type === 'dm') {
-        bot.channels.get("494605252423581697").send(message.content.slice(0, message.content.length)+ " " + userVar); 
-
-    }
-})
-               
-
     
 bot.on('message', function (message) {
     if (message.channel.type === 'dm') return;
@@ -492,6 +480,7 @@ bot.on('message', message => {
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
       if(message.content.includes('@')){
+          message.reply("Impossible de répondre a votre demande si elle contient une mention")
          } else {
 
   //    message.delete()
