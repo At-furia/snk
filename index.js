@@ -491,6 +491,10 @@ bot.on('message', message => {
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
+      if(message.content.includes('@') {
+         } else {
+
+  //    message.delete()
         bot.channels.get("493791648309051412").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
     }
