@@ -558,7 +558,7 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
  bot.on('message', message => {
     var msgauthor = message.author.username
       var chance = Math.floor(Math.random() * 101);
-      var chance = Math.floor(Math.random() * 5);
+      var orbe_random = Math.floor(Math.random() * 5);
     let userVar = message.author
 
             if (message.author.bot) return;
