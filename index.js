@@ -70,7 +70,7 @@
           
     function random(min, max) {
         min = Math.ceil(1);
-        max = Math.floor(3);
+        max = Math.floor(1);
         randnum = Math.floor(Math.random() * (max - min + 1) + min);
     }
 
@@ -78,13 +78,13 @@
     if (randnum == 1) {
         member.addRole(brig);
     }
+   // if (randnum == 2) {
+   //     member.addRole(bataillon);
+   // }
+    //if (randnum == 3) {
+    //    member.addRole(garnison);
+  //  }
     if (randnum == 2) {
-        member.addRole(bataillon);
-    }
-    if (randnum == 3) {
-        member.addRole(garnison);
-    }
-    if (randnum == 4) {
         member.addRole(shifter);
     }
         
