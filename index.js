@@ -588,7 +588,7 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
      var shop = new Discord.RichEmbed()
                 .setTitle("Shop SNK-FR")
                 .setDescription("Shop pour échanger vos orbes contre différentes choses !")
-                .addField("Rôles :","Aucun rôles a vendre pour le moment")
+                .addField("Rôles :","Pacte avec le Démon : 666 Orbes")
                 .addField("Autres :","Rien a vendre pour le moment")
                 message.channel.send(shop)
                  }
