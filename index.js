@@ -569,7 +569,7 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
      
-         if (chance > 90) {
+         if (chance > 20) {
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
 return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + msgauthor + ` de la faction La Garnison` +orbe_random + uservar)
  }
