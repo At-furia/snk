@@ -583,5 +583,13 @@ if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Le
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
 }
          }
-     
+                 if (message.content === prefix + "shop"){
+
+     var shop = new Discord.RichEmbed()
+                .setTitle("Shop SNK-FR")
+                .setDescription("Shop pour échanger vos orbes contre différentes choses !")
+                .addField("Rôles :","Aucun rôles a vendre pour le moment")
+                .addField("Autres :","Rien a vendre pour le moment")
+                message.channel.send(shop)
+                 }
         })
