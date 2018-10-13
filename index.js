@@ -556,6 +556,10 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
   })
 
  bot.on('message', message => {
+    var msgauthor = message.author.username
+      var chance = Math.floor(Math.random() * 101);
+      var chance = Math.floor(Math.random() * 5);
+    let userVar = message.author
 
             if (message.author.bot) return;
             if (message.channel.type === 'dm') return;
@@ -564,4 +568,21 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
  imageNumber = Math.floor (Math.random()* (number - 1 + 1)) + 1;
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
+     
+         if (chance > 90) {
+if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
+return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + msgauthor + ` de la faction La Garnison` +orbe_random + uservar)
+ }
+if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
+return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration`+ orbe_random + uservar)
+}
+
+if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
+return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales ` + orbe_random + uservar)
+}
+if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
+return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + msgauthor + ` de la faction Les Titan Shifter ` + orbe_random + uservar)
+}
+         }
+     
         })
