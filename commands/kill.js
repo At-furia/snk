@@ -30,7 +30,7 @@ function kill(message,prefix,bot){
             var titankill = Math.floor(Math.random() * 126);
             var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
                 
-            if (message.channel === tuer) { 
+           // if (message.channel === tuer) { 
                 if (talkedRecently.has(msgauthor)) {
                     message.reply("Tu dois attendre 3 secondes avant de pouvoir refaire la commande.");
                 } else {
@@ -43,7 +43,7 @@ function kill(message,prefix,bot){
                     talkedRecently.delete(msgauthor);
                 }, 3000);
             }
-        }
+      //  }
             function randomkill(min, max) {
                 min = Math.ceil(0);
                 max = Math.floor(rkill);
