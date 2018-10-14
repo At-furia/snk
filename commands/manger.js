@@ -7,6 +7,7 @@ const mangeradapter = new FileSync('manger.json');
 const mangerdb = low(mangeradapter);
 const adapter = new FileSync('database.json');
 const db = low(adapter);
+const talkedRecently = new Set();
 
 var rmanger = mangerdb.get('manger').size().value();
 db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
