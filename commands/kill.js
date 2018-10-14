@@ -17,80 +17,79 @@ function kill(message,prefix,bot){
 db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
     if (message.channel.type === 'dm') return;
 
-    if (message.content.startsWith(prefix + 'kill')) {
+       if (message.content.startsWith(prefix + 'kill')) {
+        var msgauthor = message.author.username;
 
-    let tuer = message.guild.channels.find("name", "kill");
-
-     if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
-    return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+        let tuer = message.guild.channels.find("name", "kill");
     
-    randomkill();
-
-    var titankill = Math.floor(Math.random() * 126);
-    var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
+         if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
+        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
         
-    if (message.channel === tuer) { 
-
-    message.reply("a tué " + titankill + " Titans" + `${kill}`)
-    var msgauthor = message.author.username;
-
-if(message.author.bot)return;
-} else {
-
-    message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
+        randomkill();
+    
+        var titankill = Math.floor(Math.random() * 126);
+        var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
+            
+        if (message.channel === tuer) { 
+            if (talkedRecently.has(msgauthor)) {
+                message.reply("Tu dois attendre 3 secondes avant de pouvoir refaire la commande.");
+            } else {
+             
+              message.reply("a tué " + titankill + " Titans" + `${kill}`)
+        var msgauthor = message.author.username;
+    
+    } 
+    
+                  
+            } talkedRecently.add(msgauthor);
+            setTimeout(() => {
+                // Removes the user from the set after a minute
+                talkedRecently.delete(msgauthor);
+            }, 3000);
         }
-    }  if (titankill < 10){
-
-    message.reply("C'est tout ? Je vous pensais plus fort que ça... 😔 ")
-}
-if (titankill > 115) {
-    message.reply("😮 WOAW QUELLE FORCE !!! 😍")
-
-}
-
-    function randomkill(min, max) {
-        min = Math.ceil(0);
-        max = Math.floor(rkill);
-        randnum = Math.floor(Math.random() * (max - min) + min);
-    
-    }
-
-      var chance = Math.floor(Math.random() * 101);
-
-var bruh = [10,20,30,40];
-var result = Math.floor((Math.random() * bruh.length) + 0);
-
-
-    if (chance > 85) {
-        
-               if (titankill > 94 ){
-
-        if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
-           var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += bruh[result]}).write();
-return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction La Garnison (pour avoir tué des Titans)`)
        
-  
+        function randomkill(min, max) {
+            min = Math.ceil(0);
+            max = Math.floor(rkill);
+            randnum = Math.floor(Math.random() * (max - min) + min);
+        
         }
     
-    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += bruh[result]}).write();
-        return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir tué des Titans)`)
-
-    }
-
-    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += bruh[result]}).write();
-        return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
-
-    }
-    }
-    }
+          var chance = Math.floor(Math.random() * 101);
+    
+    var bruh = [10,20,30,40];
+    var result = Math.floor((Math.random() * bruh.length) + 0);
+    
+    
+        if (chance > 85) {
+            
+                   if (titankill > 94 ){
+    
+            if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
+               var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += bruh[result]}).write();
+    return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction La Garnison (pour avoir tué des Titans)`)
+           
+      
+            }
+        
+        if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison"].includes(r.name)) ) {
+           var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += bruh[result]}).write();
+            return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir tué des Titans)`)
+    
+        }
+    
+        if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison"].includes(r.name)) ) {
+           var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += bruh[result]}).write();
+            return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
+    
+        }
+        }}
                    
         if (message.content.startsWith(prefix + 'tp')) {
             var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
