@@ -21,6 +21,7 @@ function manger(message,prefix,bot){
     
         if (message.content.startsWith(prefix + 'manger')) {
         if(message.author.bot)return;
+            var msgauthor = message.author.username;
 
         let miam = message.guild.channels.find("name", "🍽-manger");
     
