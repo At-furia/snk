@@ -38,12 +38,23 @@ function kill(message,prefix,bot){
                  
                   message.reply("a tué " + titankill + " Titans" + `${kill}`)
             var msgauthor = message.author.username;
+                  if (titankill < 10){
+        
+            message.reply("C'est tout ? Je vous pensais plus fort que ça... 😔 ")
+        }
+        if (titankill > 115) {
+            message.reply("😮 WOAW QUELLE FORCE !!! 😍")
+        
+        }
         }talkedRecently.add(msgauthor);
                 setTimeout(() => {
                     // Removes the user from the set after a minute
                     talkedRecently.delete(msgauthor);
                 }, 3000);
-            }
+            }else {
+        
+            message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
+                }
        }
             function randomkill(min, max) {
                 min = Math.ceil(0);
