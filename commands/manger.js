@@ -19,10 +19,11 @@ function manger(message,prefix,bot){
     db.defaults({xp: [], sugg: [], ptc: [], ptckill: [],pt: []}).write()
     
         if (message.content.startsWith(prefix + 'manger')) {
-    
+        if(message.author.bot)return;
+
         let miam = message.guild.channels.find("name", "🍽-manger");
     
-        if(!message.member.roles.some(r=>["Titan Shifter","test"].includes(r.name)) )
+        if(!message.member.roles.some(r=>["Titan Shifter","test","Escouade Livaï"].includes(r.name)) )
         return message.reply("Vous devez être un Titan pour utiliser cette commande !");
         
         randommanger();
@@ -31,16 +32,22 @@ function manger(message,prefix,bot){
         var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
             
         if (message.channel === miam) { 
-    
-        message.reply("a tué " + titankille + " Humains" + `${bouffer}`)
-        var msgauthor = message.author.username;
-    
-    if(message.author.bot)return;
-    } else {
+    if (talkedRecently.has(msgauthor)) {
+                    message.reply("Tu dois attendre 3 secondes avant de pouvoir refaire la commande.");
+                } else {
+                 
+                         message.reply("a tué " + titankille + " Humains" + `${bouffer}`)
+
+        }talkedRecently.add(msgauthor);
+                setTimeout(() => {
+                    // Removes the user from the set after a minute
+                    talkedRecently.delete(msgauthor);
+                }, 3000);
+            } else {
     
         message.reply("Merci d'utiliser cette commande dans le salon #manger 😉")
             }
-        }
+       }
         function randommanger(min, max) {
             min = Math.ceil(0);
             max = Math.floor(rmanger);
