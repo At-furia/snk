@@ -63,7 +63,7 @@ function manger(message,prefix,bot){
     var result = Math.floor((Math.random() * bruh.length) + 0);
     
     
-        if (chance > 80) {
+        if (chance > 70) {
             
                    if (titankille > 187 ){
                        
