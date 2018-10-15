@@ -9,7 +9,7 @@ if (message.author.bot) return;
 if (message.channel.type === 'dm') return;
 if (message.content === prefix + "fac") {
 let guild = message.member.guild;
-
+// azasq
 let brig = guild.roles.find(role => role.name === "Les Brigades Spéciales");
 let bataillon = guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
 let shifter = guild.roles.find(role => role.name === "Titan Shifter");
