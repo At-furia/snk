@@ -593,3 +593,112 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
                 message.channel.send(shop)
                  }
         })
+
+bot.on('message', message => {
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    let userVar = message.author
+
+    let ttt = message.guild.channels.find("name", "le-relai-du-staff-c");
+  if (message.channel === ttt) {     
+ bot.channels.get("436943584403652640").send(message.content.slice(0, message.content.length)); 
+
+}
+let teet = message.guild.channels.find("name", "le-relai-du-staff");
+if (message.channel === teet) {     
+bot.channels.get("501112189390946304").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+let avertc = message.guild.channels.find("name", "avertissement-c");
+if (message.channel === avertc) {     
+bot.channels.get("428143543144546305").send(message.content.slice(0, message.content.length)); 
+
+}
+let avert = message.guild.channels.find("name", "avertissement");
+if (message.channel === avert) {     
+bot.channels.get("501112643436937244").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+let lbdsc = message.guild.channels.find("name", "le-bordel-du-staff-c");
+if (message.channel === lbdsc) {     
+bot.channels.get("451187288995659808").send(message.content.slice(0, message.content.length)); 
+
+}
+let lbds = message.guild.channels.find("name", "le-bordel-du-staff");
+if (message.channel === lbds) {     
+bot.channels.get("501112711845904394").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+    }
+)
+
+bot.on('message', message => {
+
+   if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    let userVar = message.author
+
+    let mpbotc = message.guild.channels.find("name", "mp-bot-c");
+  if (message.channel === mpbotc) {     
+ bot.channels.get("493791648309051412").send(message.content.slice(0, message.content.length)); 
+
+}
+let mpbot = message.guild.channels.find("name", "mp-bot");
+if (message.channel === mpbot) {     
+bot.channels.get("501112077805551666").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+
+let botsalonc = message.guild.channels.find("name", "bot-vers-autres-salons-c");
+if (message.channel === botsalonc) {     
+bot.channels.get("463010480106242048").send(message.content.slice(0, message.content.length)); 
+
+}
+let botsalon = message.guild.channels.find("name", "bot-vers-autres-salons");
+if (message.channel === botsalon) {     
+bot.channels.get("501112132797202433").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+})
+
+
+
+bot.on('message', message => {
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    let userVar = message.author
+
+    let tavernec = message.guild.channels.find("name", "💬taverne-de-trost-c");
+  if (message.channel === tavernec) {     
+ bot.channels.get("427917961441968128").send(message.content.slice(0, message.content.length)); 
+
+}
+let tavern = message.guild.channels.find("name", "💬taverne-de-trost");
+if (message.channel === tavern) {     
+bot.channels.get("501111126315237410").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+let cf3c = message.guild.channels.find("name", "🏆coupe-des-factions-s3-c");
+if (message.channel === cf3c) {     
+bot.channels.get("485190525637492737").send(message.content.slice(0, message.content.length)); 
+
+}
+let cf3 = message.guild.channels.find("name", "🏆coupe-des-factions-s3");
+if (message.channel === cf3) {     
+bot.channels.get("501111230556143632").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+let killc = message.guild.channels.find("name", "kill-c");
+if (message.channel === killc) {     
+bot.channels.get("428108625282596865").send(message.content.slice(0, message.content.length)); 
+
+}
+let kill = message.guild.channels.find("name", "kill");
+if (message.channel === kill) {     
+bot.channels.get("501111268531240980").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+    }
+)
