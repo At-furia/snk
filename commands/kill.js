@@ -26,8 +26,17 @@ function kill(message,prefix,bot){
              if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
             return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
             
+            function randomkill(min, max) {
+                min = Math.ceil(0);
+                max = Math.floor(rkill);
+                randnum = Math.floor(Math.random() * (max - min) + min);
+            
+            }
             randomkill();
+          var chance = Math.floor(Math.random() * 101);
         
+        var bruh = [10,20,30,40];
+        var result = Math.floor((Math.random() * bruh.length) + 0);
             var titankill = Math.floor(Math.random() * 126);
             var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
                 
@@ -46,30 +55,7 @@ function kill(message,prefix,bot){
             message.reply("😮 WOAW QUELLE FORCE !!! 😍")
         
         }
-        }talkedRecently.add(msgauthor);
-                setTimeout(() => {
-                    // Removes the user from the set after a minute
-                    talkedRecently.delete(msgauthor);
-                }, 3000);
-            }else {
-        
-            message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
-                }
-       }
-            function randomkill(min, max) {
-                min = Math.ceil(0);
-                max = Math.floor(rkill);
-                randnum = Math.floor(Math.random() * (max - min) + min);
-            
-            }
-        
-              var chance = Math.floor(Math.random() * 101);
-        
-        var bruh = [10,20,30,40];
-        var result = Math.floor((Math.random() * bruh.length) + 0);
-        
-        
-            if (chance > 70) {
+                   if (chance > 70) {
                 
                        if (titankill > 94 ){
         
@@ -97,7 +83,18 @@ function kill(message,prefix,bot){
                 return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
         
             }
-            }}
+            }
+        }talkedRecently.add(msgauthor);
+                setTimeout(() => {
+                    // Removes the user from the set after a minute
+                    talkedRecently.delete(msgauthor);
+                }, 3000);
+            }else {
+        
+            message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
+                }
+       }
+          }
                        
             if (message.content.startsWith(prefix + 'tp')) {
                 var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
