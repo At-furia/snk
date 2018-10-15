@@ -37,11 +37,11 @@
 
       bot.on('guildMemberAdd', member => {
 
-        let brig = member.guild.roles.find("name", "Les Brigades Spéciales");
-        let bataillon = member.guild.roles.find("name", "Le Bataillon d'Exploration");
-        let shifter = member.guild.roles.find("name", "Titan Shifter");
-        let garnison = member.guild.roles.find("name", "La Garnison");
-        member.guild.channels.find("name", "brigade-d-entrainement");
+        let brig = member.guild.roles.find(role => role.name ===  "Les Brigades Spéciales");
+        let bataillon = member.guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
+        let shifter = member.guild.roles.find(role => role.name === "Titan Shifter");
+        let garnison = member.guild.roles.find(role => role.name === "La Garnison");
+        member.guild.channels.find(channels => channels.name === "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
 
         
@@ -148,7 +148,7 @@ bot.on('message', function(message){
     if(message.author.bot)return;
 var chassedb = db.get("chasse").find('nombre').value()
     var nombre = Object.values(chassedb);
-  let chs = message.guild.channels.find("name", "🔭-chasse");
+  let chs = message.guild.channels.find(channels => channels.name ===  "🔭-chasse");
     if (message.channel === chs ) {
 
     if(message.content == prefix + "chasse"){
@@ -372,7 +372,7 @@ bot.on('message', message => {
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
     
-let cpourlesvip = message.guild.channels.find("name", "parler-via-le-bot");
+let cpourlesvip = message.guild.channels.find(channels => channels.name ===  "parler-via-le-bot");
 if (message.channel === cpourlesvip) { 
     
 if(message.content.startsWith(prefix +'ta')){
@@ -383,7 +383,7 @@ if(message.content.startsWith(prefix +'en')){
    }
 }
     let pUser = message.mentions.users.first()
-      let vipbote = message.guild.channels.find("name", "vip-mp-bot");
+      let vipbote = message.guild.channels.find(channels => channels.name ===  "vip-mp-bot");
                     if (message.channel === vipbote) { 
                             if (message.content.startsWith(prefix + "mp")) {
                 
@@ -402,7 +402,7 @@ bot.on('message', message => {
                 if (message.author.bot) return;
                 if (message.channel.type === 'dm') return;
 
-                let sald = message.guild.channels.find("name", "bot-vers-autres-salons");
+                let sald = message.guild.channels.find(channels => channels.name ===  "bot-vers-autres-salons");
                     if (message.channel === sald) { 
                         
                     if(message.content.startsWith(prefix +'t')){
@@ -508,7 +508,7 @@ bot.on('message', function (message) {
             var joueur = message.author.mentions;
             let userVar = message.author
 
-            let ttt = message.guild.channels.find("name", "mini-jeux-🎲");
+            let ttt = message.guild.channels.find(channels => channels.name === "mini-jeux-🎲");
           if (message.channel === ttt) {     
                    if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) 
                        return message.delete();
@@ -523,7 +523,7 @@ bot.on('message', function (message) {
             var joueur = message.author.mentions;
             let userVar = message.author
 
-            let ttt = message.guild.channels.find("name", "mini-jeux-🎲");
+            let ttt = message.guild.channels.find(channels => channels.name ===  "mini-jeux-🎲");
           if (message.channel === ttt) {     
                    if(!message.member.roles.some(r=>["Escouade Livaï","Animateur"].includes(r.name)) ) 
 return bot.channels.get("483094336259489812").send(message.content.slice(0, message.content.length) + " " + userVar); 
@@ -669,32 +669,32 @@ bot.on('message', message => {
     if (message.channel.type === 'dm') return;
     let userVar = message.author
 
-    let ttt = message.guild.channels.find("name", "le-relai-du-staff-c");
+    let ttt = message.guild.channels.find(channels => channels.name ===  "le-relai-du-staff-c");
   if (message.channel === ttt) {     
  bot.channels.get("436943584403652640").send(message.content.slice(0, message.content.length)); 
 
 }
-let teet = message.guild.channels.find("name", "le-relai-du-staff");
+let teet = message.guild.channels.find(channels => channels.name ===  "le-relai-du-staff");
 if (message.channel === teet) {     
 bot.channels.get("501112189390946304").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
 }
-let avertc = message.guild.channels.find("name", "avertissement-c");
+let avertc = message.guild.channels.find(channels => channels.name ===  "avertissement-c");
 if (message.channel === avertc) {     
 bot.channels.get("428143543144546305").send(message.content.slice(0, message.content.length)); 
 
 }
-let avert = message.guild.channels.find("name", "avertissement");
+let avert = message.guild.channels.find(channels => channels.name ===  "avertissement");
 if (message.channel === avert) {     
 bot.channels.get("501112643436937244").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
 }
-let lbdsc = message.guild.channels.find("name", "le-bordel-du-staff-c");
+let lbdsc = message.guild.channels.find(channels => channels.name ===  "le-bordel-du-staff-c");
 if (message.channel === lbdsc) {     
 bot.channels.get("451187288995659808").send(message.content.slice(0, message.content.length)); 
 
 }
-let lbds = message.guild.channels.find("name", "le-bordel-du-staff");
+let lbds = message.guild.channels.find(channels => channels.name ===  "le-bordel-du-staff");
 if (message.channel === lbds) {     
 bot.channels.get("501112711845904394").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
