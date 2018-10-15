@@ -21,7 +21,7 @@ function kill(message,prefix,bot){
            if (message.content.startsWith(prefix + 'kill')) {
             var msgauthor = message.author.username;
     
-            let tuer = message.guild.channels.find("name", "kill");
+            let tuer = message.guild.channels.find(channels => channels.name === "kill");
         
              if(!message.member.roles.some(r=>["Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","test","1ère Division"].includes(r.name)) )
             return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
