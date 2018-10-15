@@ -44,7 +44,8 @@
     {
       "nombre": "azertyuiop",
       "partieetat": "attente",
-      "essais" : 1
+      "essais" : 1,
+      "spécial": 1
     }
   ]
   ,
