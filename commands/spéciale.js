@@ -10,11 +10,11 @@ if (message.channel.type === 'dm') return;
 if (message.content === prefix + "fac") {
 let guild = message.member.guild;
 
-let brig = guild.roles.find("name", "Les Brigades Spéciales");
-let bataillon = guild.roles.find("name", "Le Bataillon d'Exploration");
-let shifter = guild.roles.find("name", "Titan Shifter");
-let garnison = guild.roles.find("name", "La Garnison");
-let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
+let brig = guild.roles.find(role => role.name === "Les Brigades Spéciales");
+let bataillon = guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
+let shifter = guild.roles.find(role => role.name === "Titan Shifter");
+let garnison = guild.roles.find(role => role.name === "La Garnison");
+let Roleremoveentrainement = guild.roles.find(role => role.name === "Brigades d'Entraînements");
 
 var member = message.author.username
 
