@@ -6,13 +6,13 @@ const fs = require("fs");
 function nouveaux(member,bot){
   let guild = message.member.guild;
 
-    let role = member.guild.roles.find("name", "Brigades d'Entraînements");
-        member.guild.channels.find("name", "brigade-d-entrainement");
+    let role = member.guild.roles.find(role => role.name === "Brigades d'Entraînements");
+        member.guild.channels.find(channels => channels.name === "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
- let brig = member.guild.roles.find("name", "Les Brigades Spéciales");
-        let bataillon = member.guild.roles.find("name", "Le Bataillon d'Exploration");
-        let shifter = member.guild.roles.find("name", "Titan Shifter");
-        let garnison = member.guild.roles.find("name", "La Garnison");
+ let brig = member.guild.roles.find(role => role.name === "Les Brigades Spéciales");
+        let bataillon = member.guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
+        let shifter = member.guild.roles.find(role => role.name === "Titan Shifter");
+        let garnison = member.guild.roles.find(role => role.name === "La Garnison");
         
         .addField(`Présentation`,`
         Vous venez d'integrer le monde de SNK-FRANCE,
