@@ -157,7 +157,7 @@ var chassedb = db.get("chasse").find('nombre').value()
          
         if (nombre[3] <= 4){
                     if (nombre[0] == "azertyuiop"){
-        message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 500 Titans !")
+        message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
         number_random = Math.floor(Math.random() * (1000 - 0) + 0)
         console.log(number_random);
         db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
@@ -168,7 +168,7 @@ var chassedb = db.get("chasse").find('nombre').value()
         }
                 if (nombre[3] >= 5){
                                         if (nombre[0] == "azertyuiop"){
-        message.reply("chasse lancée ! :telescope: Je vois des Titans **cuirassés** au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 500 Titans !")
+        message.reply("chasse lancée ! :telescope: Je vois des Titans **cuirassés** au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
         number_random = Math.floor(Math.random() * (1000 - 0) + 0)
         console.log(number_random);
         db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
