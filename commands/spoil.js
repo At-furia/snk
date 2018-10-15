@@ -9,8 +9,8 @@ if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
     
     let guild = message.member.guild;
-    let Role = guild.roles.find('name', 'SPOIL');
-    let removespoil = guild.roles.find('name', "SPOIL");
+    let Role = guild.roles.find(role => role.name === 'SPOIL');
+    let removespoil = guild.roles.find(role => role.name === "SPOIL");
     
     if(!message.content.startsWith(prefix)) return;
     
