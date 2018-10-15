@@ -83,7 +83,7 @@ function kill(message,prefix,bot){
                 return bot.channels.get("444817395840712704").send(`+ ${bruh[result]} points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir tué des Titans)`)
         
             }
-            }
+            }}
         }talkedRecently.add(msgauthor);
                 setTimeout(() => {
                     // Removes the user from the set after a minute
@@ -93,7 +93,7 @@ function kill(message,prefix,bot){
         
             message.reply("Merci d'utiliser cette commande dans le salon #kill 😉")
                 }
-       }
+       
           }
                        
             if (message.content.startsWith(prefix + 'tp')) {
