@@ -30,7 +30,7 @@ function boss(message,prefix){
     }
     var vielolmdr = Math.ceil(Math.random() * 50);
     
-    let chs = message.guild.channels.find("name", "titans");
+    let chs = message.guild.channels.find(channels => channels.name === "titans");
 
     if (message.channel === chs ) {
     if (message.content === prefix + "f") {
@@ -65,7 +65,7 @@ function boss(message,prefix){
     var vielolmddr = Math.ceil(Math.random() * 50);
     
     
-    let chds = message.guild.channels.find("name", "humains");
+    let chds = message.guild.channels.find(channels => channels.name === "humains");
 
     if (message.channel === chds ) {
     if (message.content === prefix + "f") {
