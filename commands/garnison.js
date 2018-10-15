@@ -9,8 +9,8 @@ if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
     
     let guild = message.member.guild;
-    let Role = guild.roles.find('name', 'La Garnison');
-    let Roleremoveentrainement = guild.roles.find('name', "Brigades d'Entraînements");
+    let Role = guild.roles.find(role => role.name === 'La Garnison');
+    let Roleremoveentrainement = guild.roles.find(role => role.name === "Brigades d'Entraînements");
     
     if(!message.content.startsWith(prefix)) return;
     
