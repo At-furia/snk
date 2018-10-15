@@ -18,7 +18,7 @@ function rdm(message,prefix,bot){
     if (message.channel.type === 'dm') return;
 
     if (message.content.startsWith(prefix + 'action')) {
-        let verite = message.guild.channels.find("name", "action");
+        let verite = message.guild.channels.find(channels => channels.name === "action");
 
 randomperso();
 var lul = luldb.get(`lul[${randnum}].lul_value`).toString().value();
