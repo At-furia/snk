@@ -76,7 +76,7 @@
 
     random();
     if (randnum == 1) {
-        member.addRole(brig);
+        member.addRole(shifter);
     }
    // if (randnum == 2) {
    //     member.addRole(bataillon);
