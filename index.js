@@ -768,5 +768,15 @@ if (message.channel === kill) {
 bot.channels.get("501111268531240980").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
 }
+    
+      if (message.author.id === "382605080517672961") {
+   if (message.author.bot) return;
+    var guild = message.member.guild;
+    let mute = guild.roles.find("name", "Muted");
+    //let modo = guild.roles.find("name", "Escouade Mike");
+  //// message.member.removeRole(modo);
+  message.member.addRole(mute);
+
+}
     }
 )
