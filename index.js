@@ -778,10 +778,10 @@ bot.channels.get("501111268531240980").send(message.content.slice(0, message.con
  // message.member.addRole(mute);
 
 //}
-   if (message.author.id === "382605080517672961") {
-        message.member.ban();
+ //  if (message.author.id === "382605080517672961") {
+ //       message.member.ban();
 
- }
+// }
     
     }
 )
