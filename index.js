@@ -643,7 +643,7 @@ message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]}
              
 if(!db.get("xp").find({username: msgauthor}).value()){
 db.get("xp").push({username: msgauthor, xp: 1}).write();
-}
+
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
 return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
 var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
@@ -675,7 +675,7 @@ var userxp = Object.values(userxpdb);
 console.log(userxpdb);
 console.log(userxp);
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
-}
+}}
          }
      if (message.content === prefix + "orbe"){        
                 var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
