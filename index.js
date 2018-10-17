@@ -312,18 +312,18 @@ bot.on('message', message =>{
             var msgauthor = message.author.username;
             if(message.author.bot)return;
     
-        if(!db.get("xp").find({username: msgauthor}).value()){
-            db.get("xp").push({username: msgauthor, xp: 1}).write();
-        }else{
-            var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-            console.log(userxpdb);
-            var userxp = Object.values(userxpdb)
-            console.log(userxp);
-            console.log(`Nombre d'xp : ${userxp[1]}`)
+       // if(!db.get("xp").find({username: msgauthor}).value()){
+        //    db.get("xp").push({username: msgauthor, xp: 1}).write();
+       // }else{
+         //   var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
+          //  console.log(userxpdb);
+          //  var userxp = Object.values(userxpdb)
+           // console.log(userxp);
+          //  console.log(`Nombre d'xp : ${userxp[1]}`)
     
-            db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += 1}).write();
+          //  db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += 1}).write();
     
-            var msgauthor = message.author.username;
+           // var msgauthor = message.author.username;
             var killtest = 0
             if(message.author.bot)return;
         
@@ -352,7 +352,7 @@ bot.on('message', message =>{
                 db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += killteste}).write();
                
     
-        if (message.content === prefix + "msgstat"){        
+        if (message.content === prefix + "azeazd"){        
             var xp = db.get("xp").filter({username: msgauthor}).find('xp').value()
             var ptc = db.get("ptc").filter({username: msgauthor}).find('ptc').value()
             var ptckill = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value()
@@ -646,25 +646,33 @@ db.get("xp").push({username: msgauthor, xp: 1}).write();
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
 return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
 var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb)
+var userxp = Object.values(userxpdb);
+console.log(userxpdb);
+console.log(userxp);
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
 return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
 var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb)
+var userxp = Object.values(userxpdb);
+console.log(userxpdb);
+console.log(userxp);
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
 return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + userVar + ` de la faction Les Brigades Spéciales et gagne ` + orbe_random + ` Orbes`)
 var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb)
+var userxp = Object.values(userxpdb);
+console.log(userxpdb);
+console.log(userxp);
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
 var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb)
+var userxp = Object.values(userxpdb);
+console.log(userxpdb);
+console.log(userxp);
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
 }
          }
