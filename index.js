@@ -689,6 +689,7 @@ db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: useror
                     .addField("Orbes :", `${message.author.username} : ${orbefinal[1]}💎` )
                 message.channel.send({embed: xp_embed});
        }
+ }
                  if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
