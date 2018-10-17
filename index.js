@@ -335,7 +335,8 @@ bot.on('message', message =>{
                 var userptckill = Object.values(userptckilldb)
                 db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += killtest}).write();
         
-           }}
+           }
+//}
     
     
     
