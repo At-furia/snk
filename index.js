@@ -646,27 +646,24 @@ db.get("xp").push({username: msgauthor, xp: 1}).write();
 
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
 return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
-var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb);
-console.log(userxpdb);
-console.log(userxp);
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
+var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
+var userorbe = Object.values(userorbedb);
+console.log(`Nombre d'orbes : ${userorbe[1]}`)
+db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
 return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
-var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb);
-console.log(userxpdb);
-console.log(userxp);
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
+var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
+var userorbe = Object.values(userorbedb);
+console.log(`Nombre d'orbes : ${userorbe[1]}`)
+db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
 return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + userVar + ` de la faction Les Brigades Spéciales et gagne ` + orbe_random + ` Orbes`)
-var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userxp = Object.values(userxpdb);
-console.log(userxpdb);
-console.log(userxp);
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
+var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
+var userorbe = Object.values(userorbedb);
+console.log(`Nombre d'orbes : ${userorbe[1]}`)
+db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
