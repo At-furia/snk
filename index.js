@@ -680,7 +680,7 @@ console.log(`Nombre d'orbes : ${userorbe[1]}`)
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
          
  }
-     (message.content === prefix + "orbe"){        
+    if (message.content === prefix + "orbe"){        
                 var orbe = db.get("xp").filter({username: msgauthor}).find('xp').value()
                 var orbefinal = Object.values(orbe);
                 var xp_embed = new Discord.RichEmbed()
