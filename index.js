@@ -639,7 +639,7 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
      
-         if (chance > 90) {
+         if (chance > 20) {
              
 if(!db.get("xp").find({username: msgauthor}).value()){
 db.get("xp").push({username: msgauthor, xp: 1}).write();
