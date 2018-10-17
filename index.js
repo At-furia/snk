@@ -678,8 +678,8 @@ var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
 var userorbe = Object.values(userorbedb);
 console.log(`Nombre d'orbes : ${userorbe[1]}`)
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
-         }
-     
+         
+ }
      (message.content === prefix + "orbe"){        
                 var orbe = db.get("xp").filter({username: msgauthor}).find('xp').value()
                 var orbefinal = Object.values(orbe);
@@ -688,7 +688,6 @@ db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: useror
                     .setTitle("💎Nombres d'orbes récoltées💎")
                     .addField("Orbes :", `${message.author.username} : ${orbefinal[1]}💎` )
                 message.channel.send({embed: xp_embed});
-       }
  }
                  if (message.content === prefix + "shop"){
 
