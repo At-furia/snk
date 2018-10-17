@@ -639,7 +639,7 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
      
-         if (chance > 20) {
+         if (chance > 90) {
              
 if(!db.get("xp").find({username: msgauthor}).value()){
 db.get("xp").push({username: msgauthor, xp: 1}).write();
@@ -680,7 +680,7 @@ console.log(`Nombre d'orbes : ${userorbe[1]}`)
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
          }
      
-     if (message.content === prefix + "orbe"){        
+     (message.content === prefix + "orbe"){        
                 var orbe = db.get("xp").filter({username: msgauthor}).find('xp').value()
                 var orbefinal = Object.values(orbe);
                 var xp_embed = new Discord.RichEmbed()
@@ -688,7 +688,7 @@ db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: useror
                     .setTitle("💎Nombres d'orbes récoltées💎")
                     .addField("Orbes :", `${message.author.username} : ${orbefinal[1]}💎` )
                 message.channel.send({embed: xp_embed});
-        }
+       }
                  if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
