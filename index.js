@@ -681,8 +681,8 @@ db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp
                 var xpfinal = Object.values(xp);
                 var xp_embed = new Discord.RichEmbed()
                     .setColor("#590599")
-                    .setDescription("Nombres d'orbes récoltées")
-                    .addField("Orbes :", `${message.author.username} : ${xpfinal[1]}` )
+                    .setTitle("💎Nombres d'orbes récoltées💎")
+                    .addField("Orbes :", `${message.author.username} : ${xpfinal[1]}💎` )
                 message.channel.send({embed: xp_embed});
         }
                  if (message.content === prefix + "shop"){
