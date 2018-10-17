@@ -768,9 +768,99 @@ if (message.channel === kill) {
 bot.channels.get("501111268531240980").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
 }
+let jtrc = message.guild.channels.find(channels => channels.name ===  "jeu-des-3-lettres-c");
+if (message.channel === jtrc) {     
+bot.channels.get("457567129953107969").send(message.content.slice(0, message.content.length)); 
+
+}
+let jtr = message.guild.channels.find(channels => channels.name ===  "jeu-des-3-lettres");
+if (message.channel === jtr) {     
+bot.channels.get("501111319131324421").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}
+let mic = message.guild.channels.find(channels => channels.name ===  "🍽-manger-c");
+if (message.channel === mic) {     
+bot.channels.get("432671909340250113").send(message.content.slice(0, message.content.length)); 
+
+}
+let mi = message.guild.channels.find(channels => channels.name ===  "🍽-manger");
+if (message.channel === mi) {     
+bot.channels.get("501111381677047818").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}  
+let chc = message.guild.channels.find(channels => channels.name ===  "🔭-chasse-c");
+if (message.channel === chc) {     
+bot.channels.get("427933902372339721").send(message.content.slice(0, message.content.length)); 
+
+}
+let ch = message.guild.channels.find(channels => channels.name ===  "🔭-chasse");
+if (message.channel === ch) {     
+bot.channels.get("501111520659374110").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}  
+let acc = message.guild.channels.find(channels => channels.name ===  "action-c");
+if (message.channel === acc) {     
+bot.channels.get("434002355747291136").send(message.content.slice(0, message.content.length)); 
+
+}
+let ac = message.guild.channels.find(channels => channels.name ===  "action");
+if (message.channel === ac) {     
+bot.channels.get("501111426061041675").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}  
+let dessc = message.guild.channels.find(channels => channels.name ===  "🎨dessins-art-c");
+if (message.channel === dessc) {     
+bot.channels.get("439090294508617738").send(message.content.slice(0, message.content.length)); 
+
+}
+let dess = message.guild.channels.find(channels => channels.name ===  "🎨dessins-art");
+if (message.channel === dess) {     
+bot.channels.get("501111560870166538").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+} 
+let musc = message.guild.channels.find(channels => channels.name ===  "musique-c");
+if (message.channel === musc) {     
+bot.channels.get("434002355747291136").send(message.content.slice(0, message.content.length)); 
+
+}
+let mus = message.guild.channels.find(channels => channels.name ===  "musique");
+if (message.channel === mus) {     
+bot.channels.get("501111593518759937").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}    
+let frtc = message.guild.channels.find(channels => channels.name ===  "images-montages-photos-c");
+if (message.channel === frtc) {     
+bot.channels.get("486000157305864193").send(message.content.slice(0, message.content.length)); 
+
+}
+let frt = message.guild.channels.find(channels => channels.name ===  "images-montages-photos");
+if (message.channel === frt) {     
+bot.channels.get("501111655388807179").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}  
+let cbc = message.guild.channels.find(channels => channels.name ===  "commandes-bot-c");
+if (message.channel === cbc) {     
+bot.channels.get("433771526685327362").send(message.content.slice(0, message.content.length)); 
+
+}
+let cb = message.guild.channels.find(channels => channels.name ===  "commandes-bot");
+if (message.channel === cb) {     
+bot.channels.get("502186120704950273").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}     
+let dtc = message.guild.channels.find(channels => channels.name ===  "🔞dark-taverne🔞-c");
+if (message.channel === dtc) {     
+bot.channels.get("485161926956023828").send(message.content.slice(0, message.content.length)); 
+
+}
+let dt = message.guild.channels.find(channels => channels.name ===  "🔞dark-taverne🔞");
+if (message.channel === dt) {     
+bot.channels.get("501111704109711391").send(message.content.slice(0, message.content.length)+ " " + userVar); 
+
+}     
     
      // if (message.author.id === "382605080517672961") {
-  // if (message.author.bot) return;
+    // if (message.author.bot) return;
   //  var guild = message.member.guild;
   //  let mute = guild.roles.find("name", "Muted");
     //let modo = guild.roles.find("name", "Escouade Mike");
