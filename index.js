@@ -331,7 +331,7 @@ bot.on('message', message =>{
                 db.get("ptckill").push({username: msgauthor, ptckill: 1}).write();
            }else{
                var userptckilldb = db.get("ptckill").filter({username: msgauthor}).find('ptckill').value();
-                console.log(userptckilldb);
+             //   console.log(userptckilldb);
                 var userptckill = Object.values(userptckilldb)
                 db.get("ptckill").find({username: msgauthor}).assign({username: msgauthor, ptckill: userptckill[1] += killtest}).write();
         
@@ -348,7 +348,7 @@ bot.on('message', message =>{
                 db.get("ptc").push({username: msgauthor, ptc: 1}).write();
           }else{
                var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-               console.log(userptcdb);
+             //  console.log(userptcdb);
                 var userptc = Object.values(userptcdb)
                 db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += killteste}).write();
                
