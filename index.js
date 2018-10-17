@@ -651,7 +651,7 @@ return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar 
 //console.log(userxpdb);
 //console.log(userxp);
 //db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userxp[1] += orbe_random}).write();
-
+}
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
 return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
 //var userxpdb = db.get("xp").filter({username: msgauthor}).find('xp').value();
