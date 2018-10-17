@@ -676,8 +676,8 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
 }
 var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
 var userorbe = Object.values(userorbedb);
-console.log(userorbedb);
-console.log(userorbe);
+console.log(`Nombre d'orbes : ${userorbe[1]}`)
+
 db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
          }
      
