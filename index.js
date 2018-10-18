@@ -698,7 +698,7 @@ db.get("xp").push({username: pUser.username, xp: 1}).write();
                     .setTitle("💎Nombres d'orbes récoltées💎")
                     .addField("Orbes :", `${pUser.username} : ${orbefinale[1]}💎` )
                 message.channel.send({embed: xp_embede});
- }
+ }}
                  if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
