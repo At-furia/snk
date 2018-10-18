@@ -444,7 +444,7 @@ bot.on('message', function (message) {
                                            // "Je ne sais pas.",
                                           
                                           //  "Je valide !",
-//"J'adore.",
+                                            //"J'adore.",
                                           //  "Je ne suis pas Google.",
                                           //  "Je ne peux pas y répondre tout de suite.",
                                           //  "La mer Noire",
