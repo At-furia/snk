@@ -673,7 +673,7 @@ db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.aut
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
 }       
  }
-    if (message.content === prefix + "oorbe"){        
+    if (message.content === prefix + "orbe"){        
                 var orbe = db.get("xp").filter({id: message.member.id}).find('xp').value()
                 var orbefinal = Object.values(orbe);
                 var xp_embed = new Discord.RichEmbed()
@@ -684,7 +684,7 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
  }
      let pUser = message.mentions.users.first()
 
-    if (message.content.startsWith(prefix + "oorbe")) {
+    if (message.content.startsWith(prefix + "orbe")) {
         if (!pUser) {
         }
         else {
