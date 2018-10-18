@@ -638,68 +638,68 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) )
  imageNumber = Math.floor (Math.random()* (number - 1 + 1)) + 1;
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
-     if(!db.get("xp").find({username: msgauthor}).value()){
-db.get("xp").push({username: msgauthor, xp: 1}).write();
+     if(!db.get("xp").find({id: message.member.id,username: msgauthor}).value()){
+db.get("xp").push({id: message.member.id,username: msgauthor, xp: 1}).write();
 } 
          if (chance > 90) {
              
 
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
-var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userorbe = Object.values(userorbedb);
-console.log(`Nombre d'orbes :${msgauthor} ${userorbe[1]}`)
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
+    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+    var userorbe = Object.values(userorbedb);
+    console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+    db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
 return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
 }
 if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
-var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userorbe = Object.values(userorbedb);
-console.log(`Nombre d'orbes :${msgauthor} ${userorbe[1]}`)
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
+    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+    var userorbe = Object.values(userorbedb);
+console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
 return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
-var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
-var userorbe = Object.values(userorbedb);
-console.log(`Nombre d'orbes :${msgauthor} ${userorbe[1]}`)
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
+    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+    var userorbe = Object.values(userorbedb);
+    console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+    db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
 return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + userVar + ` de la faction Les Brigades Spéciales et gagne ` + orbe_random + ` Orbes`)
 }
 if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
-var userorbedb = db.get("xp").filter({username: msgauthor}).find('xp').value();
+var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
 var userorbe = Object.values(userorbedb);
-console.log(`Nombre d'orbes :${msgauthor} ${userorbe[1]}`)
-db.get("xp").find({username: msgauthor}).assign({username: msgauthor, xp: userorbe[1] += orbe_random}).write();
+console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
 }       
  }
-    if (message.content === prefix + "orbe"){        
-                var orbe = db.get("xp").filter({username: msgauthor}).find('xp').value()
+    if (message.content === prefix + "oorbe"){        
+                var orbe = db.get("xp").filter({id: message.member.id}).find('xp').value()
                 var orbefinal = Object.values(orbe);
                 var xp_embed = new Discord.RichEmbed()
                     .setColor("#590599")
                     .setTitle("💎Nombres d'orbes récoltées💎")
-                    .addField("Orbes :", `${message.author.username} : ${orbefinal[1]}💎` )
+                    .addField("Orbes :", `${message.author.username} : ${orbefinal[2]}💎` )
                 message.channel.send({embed: xp_embed});
  }
      let pUser = message.mentions.users.first()
 
-    if (message.content.startsWith(prefix + "orbe")) {
+    if (message.content.startsWith(prefix + "oorbe")) {
         if (!pUser) {
         }
         else {
-             if(!db.get("xp").find({username: pUser.username}).value()){
-db.get("xp").push({username: pUser.username, xp: 1}).write();
+             if(!db.get("xp").find({id: pUser.id}).value()){
+db.get("xp").push({id: pUser.id,username :pUser.username, xp: 1}).write();
 } 
-            var orbee = db.get("xp").filter({username: pUser.username}).find('xp').value()
+            var orbee = db.get("xp").filter({id: pUser.id}).find('xp').value()
                 var orbefinale = Object.values(orbee);
                 var xp_embede = new Discord.RichEmbed()
                     .setColor("#590599")
                     .setTitle("💎Nombres d'orbes récoltées💎")
-                    .addField("Orbes :", `${pUser.username} : ${orbefinale[1]}💎` )
+                    .addField("Orbes :", `${pUser.username} : ${orbefinale[2]}💎` )
                 message.channel.send({embed: xp_embede});
  }}
-                 if (message.content === prefix + "shop"){
+              if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
                 .setTitle("Shop SNK-FR")
@@ -711,8 +711,10 @@ db.get("xp").push({username: pUser.username, xp: 1}).write();
                 .addField("Rôles Shifter :","**Titan Cuirassé** : 2500 Orbes\n**Titan Féminin** : 10000 Orbes")
                 .addField("Rôles Spéciaux :","**As de la manœuvre Tridimensionnelle** : 25000 Orbes (être level 20 minimum)")
                 message.channel.send(shop)
-                 }
+                 }    
         })
+               
+        
 
 bot.on('message', message => {
 
