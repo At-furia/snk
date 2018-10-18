@@ -673,32 +673,32 @@ db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.aut
 return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
 }       
  }
-    if (message.content === prefix + "orbe"){        
-                var orbe = db.get("xp").filter({id: message.member.id}).find('xp').value()
-                var orbefinal = Object.values(orbe);
-                var xp_embed = new Discord.RichEmbed()
-                    .setColor("#590599")
-                    .setTitle("💎Nombres d'orbes récoltées💎")
-                    .addField("Orbes :", `${message.author.username} : ${orbefinal[2]}💎` )
-                message.channel.send({embed: xp_embed});
- }
-     let pUser = message.mentions.users.first()
+ //   if (message.content === prefix + "orbe"){        
+    //            var orbe = db.get("xp").filter({id: message.member.id}).find('xp').value()
+    //            var orbefinal = Object.values(orbe);
+     //           var xp_embed = new Discord.RichEmbed()
+       //             .setColor("#590599")
+      //              .setTitle("💎Nombres d'orbes récoltées💎")
+      ////              .addField("Orbes :", `${message.author.username} : ${orbefinal[2]}💎` )
+   //             message.channel.send({embed: xp_embed});
+ //}//
+   //  let pUser = message.mentions.users.first()
 
-    if (message.content.startsWith(prefix + "orbe")) {
-        if (!pUser) {
-        }
-        else {
-             if(!db.get("xp").find({id: pUser.id}).value()){
-db.get("xp").push({id: pUser.id,username :pUser.username, xp: 1}).write();
-} 
-            var orbee = db.get("xp").filter({id: pUser.id}).find('xp').value()
-                var orbefinale = Object.values(orbee);
-                var xp_embede = new Discord.RichEmbed()
-                    .setColor("#590599")
-                    .setTitle("💎Nombres d'orbes récoltées💎")
-                    .addField("Orbes :", `${pUser.username} : ${orbefinale[2]}💎` )
-                message.channel.send({embed: xp_embede});
- }}
+   // if (message.content.startsWith(prefix + "orbe")) {
+   //     if (!pUser) {
+    //    }
+   //     else {
+  //           if(!db.get("xp").find({id: pUser.id}).value()){
+//db.get("xp").push({id: pUser.id,username :pUser.username, xp: 1}).write();
+//} 
+         //   var orbee = db.get("xp").filter({id: pUser.id}).find('xp').value()
+         //       var orbefinale = Object.values(orbee);
+          //      var xp_embede = new Discord.RichEmbed()
+          //          .setColor("#590599")
+           //         .setTitle("💎Nombres d'orbes récoltées💎")
+          //          .addField("Orbes :", `${pUser.username} : ${orbefinale[2]}💎` )
+          //      message.channel.send({embed: xp_embede});
+ //}}
               if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
