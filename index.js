@@ -691,7 +691,7 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
              if(!db.get("xp").find({username: pUser.username}).value()){
 db.get("xp").push({username: pUser.username, xp: 1}).write();
 } 
-            var orbee = db.get("xp").filter({username: pUser}).find('xp').value()
+            var orbee = db.get("xp").filter({username: pUser.username}).find('xp').value()
                 var orbefinale = Object.values(orbee);
                 var xp_embede = new Discord.RichEmbed()
                     .setColor("#590599")
