@@ -682,6 +682,23 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
                     .addField("Orbes :", `${message.author.username} : ${orbefinal[1]}💎` )
                 message.channel.send({embed: xp_embed});
  }
+     let pUser = message.mentions.users.first()
+
+    if (message.content.startsWith(prefix + "orbe")) {
+        if (!pUser) {
+        }
+        else {
+             if(!db.get("xp").find({username: pUser.username}).value()){
+db.get("xp").push({username: pUser.username, xp: 1}).write();
+} 
+            var orbee = db.get("xp").filter({username: pUser}).find('xp').value()
+                var orbefinale = Object.values(orbee);
+                var xp_embede = new Discord.RichEmbed()
+                    .setColor("#590599")
+                    .setTitle("💎Nombres d'orbes récoltées💎")
+                    .addField("Orbes :", `${pUser.username} : ${orbefinale[1]}💎` )
+                message.channel.send({embed: xp_embede});
+ }
                  if (message.content === prefix + "shop"){
 
      var shop = new Discord.RichEmbed()
