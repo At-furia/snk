@@ -59,7 +59,7 @@ function manger(message,prefix,bot){
         
           var chance = Math.floor(Math.random() * 101);
     
-        var bruh = [10,20,30,40];
+        var bruh = [25,50,75,100];
     var result = Math.floor((Math.random() * bruh.length) + 0);
     
     
