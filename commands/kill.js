@@ -35,9 +35,9 @@ function kill(message,prefix,bot){
             randomkill();
           var chance = Math.floor(Math.random() * 101);
         
-        var bruh = [10,20,30,40];
+        var bruh = [25,50,75,100];
         var result = Math.floor((Math.random() * bruh.length) + 0);
-            var titankill = Math.floor(Math.random() * 126);
+            var titankill = Math.floor(Math.random() * 251);
             var kill = killdb.get(`kill[${randnum}].kill_value`).toString().value();
                 
            if (message.channel === tuer) { 
@@ -57,7 +57,7 @@ function kill(message,prefix,bot){
         }
                    if (chance > 70) {
                 
-                       if (titankill > 94 ){
+                       if (titankill > 187 ){
         
                 if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration"].includes(r.name)) ){
                    var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
