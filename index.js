@@ -626,7 +626,7 @@ if (message.content.startsWith(prefix + 'tp')) {
  // })
 bot.on('message', message => {
 
-    abc = Math.ceil(Math.random() * 66);
+    abcc = Math.ceil(Math.random() * 66);
     if(message.author.bot)return;
     if (message.channel.type === 'dm') return;
 
