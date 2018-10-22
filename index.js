@@ -716,7 +716,7 @@ return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar 
      var shop = new Discord.RichEmbed()
                 .setTitle("Shop SNK-FR")
                 .setDescription("Shop pour échanger vos orbes contre différentes choses !")
-                .addField("Rôles basiques :","**Voleur de nourriture** : 100 Orbes\n**Chapardeur de patate** : 300 Orbes\n**Soldat désobéissant** : 500 Orbes\n**Pacte avec le Démon** : 666 Orbes\n**Obsédé de Titans** : 750 Orbes\n**Chasseur de titans** : 1000 Orbes\n**Mangeur de Titants** : 1500 Orbes")
+                .addField("Rôles basiques :","**Voleur de nourriture** : 100-0 Orbes\n**Chapardeur de patate** : 300 Orbes\n**Soldat désobéissant** : 500 Orbes\n**Pacte avec le Démon** : 666 Orbes\n**Obsédé de Titans** : 750 Orbes\n**Chasseur de titans** : 1000 Orbes\n**Mangeur de Titants** : 1500 Orbes")
                 .addField("Rôles Bataillon :","**As de la découpe** : 2500 Orbes\n**Maître des Explorations** : 10000 Orbes")
                 .addField("Rôles Garnison :","**Soldats alcoolique** : 2500 Orbes\n**As du tir au canon** : 10000 Orbes")
                 .addField("Rôles Brigades :","**As de la corruption** : 2500 Orbes\n**Protecteur du Roi** : 10000 Orbes")
