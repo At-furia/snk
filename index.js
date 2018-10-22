@@ -600,29 +600,41 @@ if (message.content.startsWith(prefix + 'tp')) {
     
     })
 
-       
-  bot.on('message', message => {
+//       
+ // bot.on('message', message => {
 
-    abcc = Math.ceil(Math.random() * 58);
+  //  abcc = Math.ceil(Math.random() * 58);
+ //   if(message.author.bot)return;
+ //   if (message.channel.type === 'dm') return;
+//var roulettedb = db.get("roulette").find('rou').value()
+//var randoum = Object.values(roulettedb);
+      
+//    if (message.content === prefix + "500abo") {
+//if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) 
+        //            return;
+    //    {
+         //       if(randoum[1] == "1"){
+
+      //  message.reply(`a fait tourner la roulette et obtient le numéro 56 bravo au gagnant !`)
+    //                 db.get("roulette").find({ rourourou: "1" }).assign({ rourourou: randoum[1] = "2", rou: randoum[0] = "2" }).write();
+
+   // } else {
+    //    message.reply(`a fait tourner la roulette et obtient le numéro ${abcc} bravo au gagnant !`)
+    //    }
+     //   }
+     //   }
+ // })
+bot.on('message', message => {
+
+    abc = Math.ceil(Math.random() * 66);
     if(message.author.bot)return;
     if (message.channel.type === 'dm') return;
-var roulettedb = db.get("roulette").find('rou').value()
-var randoum = Object.values(roulettedb);
-      
+
     if (message.content === prefix + "500abo") {
-if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) 
-                    return;
-        {
-                if(randoum[1] == "1"){
+if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) return;
 
-        message.reply(`a fait tourner la roulette et obtient le numéro 56 bravo au gagnant !`)
-                     db.get("roulette").find({ rourourou: "1" }).assign({ rourourou: randoum[1] = "2", rou: randoum[0] = "2" }).write();
-
-    } else {
         message.reply(`a fait tourner la roulette et obtient le numéro ${abcc} bravo au gagnant !`)
-        }
-        }
-        }
+    }
   })
 
  bot.on('message', message => {
