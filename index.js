@@ -133,8 +133,8 @@
         report(message, prefix, bot)
         boss(message, prefix, bot)
 
-
-    })
+//mdr c ici
+    )
 
    // bot.on("guildMemberAdd", member => {
       //  const nouveaux = require("./commands/nouveaux.js");
