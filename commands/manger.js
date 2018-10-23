@@ -27,17 +27,17 @@ function manger(message,prefix,bot){
     
         if(!message.member.roles.some(r=>["Titan Shifter","test","Escouade Livaï"].includes(r.name)) )
         return message.reply("Vous devez être un Titan pour utiliser cette commande !");
-        
+
         randommanger();
     
-        var titankille = Math.floor(Math.random() * 251);
         var bouffer = mangerdb.get(`manger[${randnum}].manger_value`).toString().value();
             
         if (message.channel === miam) { 
     if (talkedRecently.has(msgauthor)) {
                     message.reply("Tu dois attendre 3 secondes avant de pouvoir refaire la commande.");
                 } else {
-                 
+                         var titankille = Math.floor(Math.random() * 251);
+
                          message.reply("a tué " + titankille + " Humains" + `${bouffer}`)
 
         }talkedRecently.add(msgauthor);
