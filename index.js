@@ -168,7 +168,7 @@ bot.on('message', function (message) {
                     message.reply("chasse lancée ! :telescope: Je vois des Titans **cuirassés** au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
                     number_random = Math.floor(Math.random() * (1000 - 0) + 0)
                     console.log(number_random);
-                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0 }).write();
+                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0,essais: nombre[2] = 1  }).write();
                 } else {
                     message.reply("Une chasse est déjà en cours !")
                 }
