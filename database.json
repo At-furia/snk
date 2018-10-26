@@ -96,7 +96,8 @@
       "nombre": "azertyuiop",
       "partieetat": "attente",
       "essais" : 1,
-      "spécial": 1
+      "spécial": 1,
+      "essaisold": 0
     }
   ]
   ,
