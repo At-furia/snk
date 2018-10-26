@@ -150,7 +150,7 @@ bot.on('message', function (message) {
     var nombre = Object.values(chassedb);
     let chs = message.guild.channels.find(channels => channels.name === "🔭-chasse");
     if (message.channel === chs) {
-        if (message.content == prefix + "cx") {
+        if (message.content == prefix + "chasse") {
             if (!message.member.roles.some(r => ["Titan Shifter", "Escouade Livaï", "La Garnison", "Les Brigades Spéciales", "Le Bataillon d'Exploration", "1ère Division"].includes(r.name)))
                 return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
             if (nombre[3] <= 4) {
