@@ -158,7 +158,7 @@ bot.on('message', function (message) {
                     message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
                     number_random = Math.floor(Math.random() * (1000 - 0) + 0)
                     console.log(number_random);
-                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0 }).write();
+                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0,essais: nombre[2] = 1 }).write();
                 } else {
                     message.reply("Une chasse est déjà en cours !")
                 }
@@ -206,18 +206,15 @@ bot.on('message', function (message) {
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 100 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 100 }).write();
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 10 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
@@ -227,19 +224,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 100 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 100 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 10 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
@@ -249,19 +243,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 100 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 100 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 10 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
@@ -271,19 +262,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 100 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 100 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 10 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
@@ -312,19 +300,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 500 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 500 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 250 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 250 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
                             }
@@ -334,19 +319,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 500 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 500 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 250 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 250 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
                             }
@@ -356,19 +338,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 500 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 500 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 250 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 250 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
                             }
@@ -378,19 +357,16 @@ bot.on('message', function (message) {
                             var userptc = Object.values(userptcdb)
                             if (nombre[4] <= 5) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 500 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 500 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 5 && nombre[4] <= 10) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 250 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 250 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
                             if (nombre[4] >= 15) {
                                 message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
-                                db.get("chasse").find("nombre").assign({essais: nombre[2] = 1}).write();
                                 db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 50 }).write();
                                 return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
                             }
