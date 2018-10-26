@@ -723,41 +723,41 @@ if(!message.member.roles.some(r=>["Escouade Livaï"].includes(r.name)) ) return;
  imageNumber = Math.floor (Math.random()* (number - 1 + 1)) + 1;
 message.channel.send( {files: ["./discordrpg/" + "1 (" + imageNumber + ").jpg"]} )
             }
-     if(!db.get("xp").find({id: message.member.id,username: msgauthor}).value()){
-db.get("xp").push({id: message.member.id,username: msgauthor, xp: 1}).write();
-} 
-         if (chance > 90) {
+   //  if(!db.get("xp").find({id: message.member.id,username: msgauthor}).value()){
+//d//b.get("xp").push({id: message.member.id,username: msgauthor, xp: 1}).write();
+//} 
+   //      if (chance > 90) {
              
 
-if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
-    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
-    var userorbe = Object.values(userorbedb);
-    console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
-    db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
-return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
-}
-if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
-    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
-    var userorbe = Object.values(userorbedb);
-console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
-db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
-return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
-}
-if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
-    var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
-    var userorbe = Object.values(userorbedb);
-    console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
-    db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
-return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + userVar + ` de la faction Les Brigades Spéciales et gagne ` + orbe_random + ` Orbes`)
-}
-if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
-var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
-var userorbe = Object.values(userorbedb);
-console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
-db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
-return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
-}       
- }
+//if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
+  //  var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+ //   var userorbe = Object.values(userorbedb);
+ //   console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+ //   db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
+//return bot.channels.get("500327368628633612").send(`+ 5 points pour ` + userVar + ` de la faction La Garnison et gagne ` + orbe_random + ` Orbes`)
+//}
+//if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
+ //   var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+//    var userorbe = Object.values(userorbedb);
+//console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+//db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
+//return bot.channels.get("500327274336485406").send(`+ 5 points pour ` + userVar + ` de la faction Le Bataillon d'Exploration et gagne ` + orbe_random + ` Orbes`)
+///}
+//if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
+  //  var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+ //   var userorbe = Object.values(userorbedb);
+ //   console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+ //   db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
+//return bot.channels.get("500327274407657473").send(`+ 5 points pour ` + userVar + ` de la faction Les Brigades Spéciales et gagne ` + orbe_random + ` Orbes`)
+//}
+//if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
+//var userorbedb = db.get("xp").filter({id: message.author.id}).find('xp').value();
+//var userorbe = Object.values(userorbedb);
+//console.log(`${msgauthor} : ${userorbe[2]} Orbes`)
+//db.get("xp").find({id: message.member.id}).assign({id: userorbe[0] = message.author.id,username: userorbe[1] = message.author.username, xp: userorbe[2] += orbe_random}).write();
+//return bot.channels.get("500327349645213706").send(`+ 5 points pour ` + userVar + ` de la faction Les Titan Shifter et gagne ` + orbe_random + ` Orbes`)
+//}       
+// }
  //   if (message.content === prefix + "orbe"){        
     //            var orbe = db.get("xp").filter({id: message.member.id}).find('xp').value()
     //            var orbefinal = Object.values(orbe);
