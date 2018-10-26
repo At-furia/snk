@@ -170,10 +170,10 @@ bot.on('message', function (message) {
                 //    console.log(number_random);
                  //   db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0,essais: nombre[2] = 1  }).write();
                // } else {
-                    message.reply("Une chasse est déjà en cours !")
+                 //   message.reply("Une chasse est déjà en cours !")
                // }
             //}
-        }
+      //  }
         if (nombre[1] == "start") {
             if (message.content > nombre[0]) {
                 message.reply("Il y a moins de Titans !")
