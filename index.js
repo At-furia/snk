@@ -143,165 +143,216 @@
 
     //  })
 
-bot.on('message', function(message){
+bot.on('message', function (message) {
     if (message.channel.type === 'dm') return;
-    if(message.author.bot)return;
-var chassedb = db.get("chasse").find('nombre').value()
+    if (message.author.bot) return;
+    var chassedb = db.get("chasse").find('nombre').value()
     var nombre = Object.values(chassedb);
-  let chs = message.guild.channels.find(channels => channels.name ===  "🔭-chasse");
-    if (message.channel === chs ) {
-
-    if(message.content == prefix + "chasse"){
-        if(!message.member.roles.some(r=>["Titan Shifter","Escouade Livaï","La Garnison","Les Brigades Spéciales","Le Bataillon d'Exploration","1ère Division"].includes(r.name)) )
-        return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
-         
-        if (nombre[3] <= 4){
-                    if (nombre[0] == "azertyuiop"){
-        message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
-        number_random = Math.floor(Math.random() * (1000 - 0) + 0)
-        console.log(number_random);
-        db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
-
-        } else {
-            message.reply("Une chasse est déjà en cours !")
-        }
-        }
-                if (nombre[3] >= 5){
-                                        if (nombre[0] == "azertyuiop"){
-        message.reply("chasse lancée ! :telescope: Je vois des Titans **cuirassés** au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
-        number_random = Math.floor(Math.random() * (1000 - 0) + 0)
-        console.log(number_random);
-        db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random }).write();
-
-        } else {
-            message.reply("Une chasse est déjà en cours !")
-        }
+    let chs = message.guild.channels.find(channels => channels.name === "🔭-chasse");
+    if (message.channel === chs) {
+        if (message.content == prefix + "cx") {
+            if (!message.member.roles.some(r => ["Titan Shifter", "Escouade Livaï", "La Garnison", "Les Brigades Spéciales", "Le Bataillon d'Exploration", "1ère Division"].includes(r.name)))
+                return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
+            if (nombre[3] <= 4) {
+                if (nombre[0] == "azertyuiop") {
+                    message.reply("chasse lancée ! :telescope: Je vois des Titans au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
+                    number_random = Math.floor(Math.random() * (1000 - 0) + 0)
+                    console.log(number_random);
+                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0 }).write();
+                } else {
+                    message.reply("Une chasse est déjà en cours !")
                 }
-    }
-    
-
-    if(nombre[1] == "start"){
-
-
-            if(message.content > nombre[0]){
-
+            }
+            if (nombre[3] >= 5) {
+                if (nombre[0] == "azertyuiop") {
+                    message.reply("chasse lancée ! :telescope: Je vois des Titans **cuirassés** au loin, essaye de les compter ! Tu as juste à me donner un nombre, et je te dirais s'il y en a plus ou moins ... D'après moi il y a entre 0 et 1000 Titans !")
+                    number_random = Math.floor(Math.random() * (1000 - 0) + 0)
+                    console.log(number_random);
+                    db.get("chasse").find({ partieetat: "attente" }).assign({ partieetat: nombre[1] = "start", nombre: nombre[0] = number_random, essaisold: nombre[4] = 0 }).write();
+                } else {
+                    message.reply("Une chasse est déjà en cours !")
+                }
+            }
+        }
+        if (nombre[1] == "start") {
+            if (message.content > nombre[0]) {
                 message.reply("Il y a moins de Titans !")
-                db.get("chasse").find("nombre").assign({essais: nombre[2] += 1}).write();
-
+                db.get("chasse").find("nombre").assign({ essais: nombre[2] += 1 }).write();
             }
-            else if (message.content < nombre[0]){
-
+            else if (message.content < nombre[0]) {
                 message.reply("Il y a plus de Titans !")
-                db.get("chasse").find("nombre").assign({essais: nombre[2] += 1}).write();
-
+                db.get("chasse").find("nombre").assign({ essais: nombre[2] += 1 }).write();
             }
-            
             if (message.content == nombre[0]) {
-                                if (nombre[3] <= 4){
+                if (nombre[3] <= 4) {
+                    var msgauthor = message.author.username;
+                    message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
+                    db.get("chasse").find("nombre").assign({
+                        nombre: nombre[0] = "azertyuiop",
+                        partieetat: nombre[1] = "attente",
+                        essaisold: nombre[4] = nombre[2],
+                        essais: nombre[2] = 1,
+                        spécial: nombre[3] += 1
 
-            var msgauthor = message.author.username;
-
-            message.reply(`à trouvé le bon nombre de Titans et fais gagner 10 points a sa faction ! (en `+`${nombre[2]}` + ` essais)`);
-                 db.get("chasse").find("nombre").assign({
-                nombre: nombre[0] = "azertyuiop",
-                partieetat: nombre[1] = "attente",
-                     essais: nombre[2] = 1,
-                     spécial: nombre[3] += 1
-            }).write();
-    if(!db.get("ptc").find({username: msgauthor}).value()){
-        db.get("ptc").push({username: msgauthor, ptc: 1}).write();
-    } else{
-    var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-    var userptc = Object.values(userptcdb)
-    db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
-        
-                if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
-           var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += 10}).write();
-return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
-       
-  
-        }
-    
-    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += 10}).write();
-        return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
-
-    }
-
-    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += 10}).write();
-        return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
-
-    }
-        if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "shifter"}).assign({faction: "shifter", pt: userptc[1] += 10}).write();
-        return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Les Titan Shifter (pour avoir gagné une chasse)`)
-
-    }
+                    }).write();
+                    if (!db.get("ptc").find({ username: msgauthor }).value()) {
+                        db.get("ptc").push({ username: msgauthor, ptc: 1 }).write();
+                    } else {
+                        var userptcdb = db.get("ptc").filter({ username: msgauthor }).find('ptc').value();
+                        var userptc = Object.values(userptcdb)
+                        db.get("ptc").find({ username: msgauthor }).assign({ username: msgauthor, ptc: userptc[1] += 1 }).write();
+                        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "Le Bataillon d'Exploration", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "garnison" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 100 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 10 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 100 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 10 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "spéciale" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 100 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 10 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 100 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 100 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 10 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 10 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                        }
+                    }
                 }
-            } 
             }
-                    if (message.content == nombre[0]) {
-                                        if (nombre[3] >= 5){
-
-            var msgauthor = message.author.username;
-
-            message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en `+`${nombre[2]}` + ` essais)`);
-                 db.get("chasse").find("nombre").assign({
-                nombre: nombre[0] = "azertyuiop",
-                partieetat: nombre[1] = "attente",
-                     essais: nombre[2] = 1,
-                     spécial: nombre[3] -= 4
-            }).write();
-    if(!db.get("ptc").find({username: msgauthor}).value()){
-        db.get("ptc").push({username: msgauthor, ptc: 1}).write();
-    } else{
-    var userptcdb = db.get("ptc").filter({username: msgauthor}).find('ptc').value();
-    var userptc = Object.values(userptcdb)
-    db.get("ptc").find({username: msgauthor}).assign({username: msgauthor, ptc: userptc[1] += 1}).write();
-        
-                if(!message.member.roles.some(r=>["Les Brigades Spéciales","Le Bataillon d'Exploration","Titan Shifter"].includes(r.name)) ){
-           var userptcdb = db.get("pt").filter({faction: "garnison"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "garnison"}).assign({faction: "garnison", pt: userptc[1] += 50}).write();
-return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
-       
-  
+            if (message.content == nombre[0]) {
+                if (nombre[3] >= 5) {
+                    var msgauthor = message.author.username;
+                    message.reply(`à trouvé le bon nombre de Titans et fais gagner 50 points a sa faction ! (en ` + `${nombre[2]}` + ` essais)`);
+                    db.get("chasse").find("nombre").assign({
+                        nombre: nombre[0] = "azertyuiop",
+                        partieetat: nombre[1] = "attente",
+                        essaisold: nombre[4] = nombre[2],
+                        essais: nombre[2] = 1,
+                        spécial: nombre[3] -= 4
+                    }).write();
+                    if (!db.get("ptc").find({ username: msgauthor }).value()) {
+                        db.get("ptc").push({ username: msgauthor, ptc: 1 }).write();
+                    } else {
+                        var userptcdb = db.get("ptc").filter({ username: msgauthor }).find('ptc').value();
+                        var userptc = Object.values(userptcdb)
+                        db.get("ptc").find({ username: msgauthor }).assign({ username: msgauthor, ptc: userptc[1] += 1 }).write();
+                        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "Le Bataillon d'Exploration", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "garnison" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 500 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 250 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction La Garnison (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 500 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 250 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Titan Shifter"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "spéciale" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 500 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 250 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
+                            }
+                        }
+                        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
+                            var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
+                            var userptc = Object.values(userptcdb)
+                            if (nombre[4] <= 5) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 500 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 500 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 5 && nombre[4] <= 10) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 250 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 250 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                            if (nombre[4] >= 15) {
+                                db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 50 }).write();
+                                return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Titans Shifter (pour avoir gagné une chasse)`)
+                            }
+                        }
+                    }
+                }
+            }
         }
-    
-    if(!message.member.roles.some(r=>["Les Brigades Spéciales","La Garnison","Titan Shifter"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "exploration"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "exploration"}).assign({faction: "exploration", pt: userptc[1] += 50}).write();
-        return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (pour avoir gagné une chasse)`)
-
-    }
-
-    if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Titan Shifter"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "spéciale"}).assign({faction: "spéciale", pt: userptc[1] += 50}).write();
-        return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (pour avoir gagné une chasse)`)
-
-    }
-        if(!message.member.roles.some(r=>["Le Bataillon d'Exploration","La Garnison","Les Brigades Spéciales"].includes(r.name)) ) {
-       var userptcdb = db.get("pt").filter({faction: "spéciale"}).find('pt').value();
-    var userptc = Object.values(userptcdb)
-    db.get("pt").find({faction: "shifter"}).assign({faction: "shifter", pt: userptc[1] += 50}).write();
-        return bot.channels.get("444817395840712704").send(`+ 50 points pour ` + msgauthor + ` de la faction Les Titan Shifter (pour avoir gagné une chasse)`)
-
-    }
-                }}
-            } 
-        }  
     }
 })
 
