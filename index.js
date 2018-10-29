@@ -996,7 +996,6 @@ if (message.channel === dt) {
 bot.channels.get("501111704109711391").send(message.content.slice(0, message.content.length)+ " " + userVar); 
 
 }     
-    
    //   if (message.author.id === "382605080517672961") {
    //  if (message.author.bot) return;
    // var guild = message.member.guild;
@@ -1008,8 +1007,148 @@ bot.channels.get("501111704109711391").send(message.content.slice(0, message.con
 //}
  //  if (message.author.id === "382605080517672961") {
  //       message.member.ban();
-
 // }
-    
     }
 )
+
+const talkedRecently = new Set();
+
+bot.on('message', message => {
+
+    var msgauthor = message.author.id
+    
+                if (message.author.bot) return;
+                if (message.channel.type === 'dm') return;
+               let hlh = message.guild.channels.find(channels => channels.name === "🎃halloween👻");
+    if (message.channel === hlh) {
+if (message.content == prefix + "hal") {
+    if (talkedRecently.has(msgauthor)) {
+        message.reply("⏱️ Vous ne pouvez lancer la machine que toute les 4 heures !");
+    } else {
+    lololwin = Math.ceil(Math.random() * 100);
+    lololwine = Math.ceil(Math.random() * 100);
+
+    var alphabet = ['','🎃','👻','🍬','🍭','💀',':eye_in_speech_bubble:','🦇','🕷','🕸','🕯',':coffin:']
+    var alphabetfake = ['',':eye_in_speech_bubble:','🦇','🕷','🕸','🕯']
+    randomf = Math.ceil(Math.random() * 5);
+    var lettre_aleatoiref = alphabetfake[randomf];
+    random = Math.ceil(Math.random() * 11);
+    random1 = Math.ceil(Math.random() * 11);
+    random2 = Math.ceil(Math.random() * 11);
+    random4 = Math.ceil(Math.random() * 11);
+    random6 = Math.ceil(Math.random() * 11);
+    random7 = Math.ceil(Math.random() * 11);
+    random8 = Math.ceil(Math.random() * 11);
+    random3 = Math.ceil(Math.random() * 11);
+    var lettre_aleatoire3 = alphabet[random3];
+    var lettre_aleatoire = alphabet[random];
+    var lettre_aleatoire1 = alphabet[random1];
+    var lettre_aleatoire2 = alphabet[random2];
+    var lettre_aleatoire4 = alphabet[random4];    
+    var lettre_aleatoire6 = alphabet[random6];
+    var lettre_aleatoire7 = alphabet[random7];   
+    var lettre_aleatoire8 = alphabet[random8];
+
+    if (lololwin >= 36) {
+        console.log(lololwin)
+        message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement vous n'avez pas gagné de lots lors de ce tirage, ressayez plus tard !`)
+}
+if (lololwin <= 5) {
+    console.log(lololwin)
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🎃🎃🎃:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, la chance est avec vous, vous remportez un grade VIP !`)
+    let guild = message.member.guild;
+    let halov = guild.roles.find(role => role.name === "Brigade Centrale");
+    message.member.addRole(halov);
+}
+if (lololwin >= 6 && lololwin <= 15) {
+    console.log(lololwin)
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, voici un beau titre en récompense !`)
+    let guild = message.member.guild;
+    let halo = guild.roles.find(role => role.name === "🎃👻🍬**Titan effrayant**🍬👻🎃");
+    message.member.addRole(halo);
+
+}
+if (lololwin >= 16 && lololwin <= 25) {
+    console.log(lololwin)
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n👻👻👻:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation,vous venez de faire gagner 150 points a votre faction !`)
+    if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
+        var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 150 }).write();
+        return bot.channels.get("444817395840712704").send(`+ 150 points pour ` + msgauthor + ` de la faction Titans Shifter (Roulette d'Halloween)`)
+    }
+    if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Titan Shifter"].includes(r.name))) {
+        var userptcdb = db.get("pt").filter({ faction: "spéciale" }).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 150 }).write();
+        return bot.channels.get("444817395840712704").send(`+ 150 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (Roulette d'Halloween)`)
+    }
+    if (!message.member.roles.some(r => ["Les Brigades Spéciales", "Le Bataillon d'Exploration", "Titan Shifter"].includes(r.name))) {
+        var userptcdb = db.get("pt").filter({ faction: "garnison" }).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 150 }).write();
+        return bot.channels.get("444817395840712704").send(`+ 150 points pour ` + msgauthor + ` de la faction La Garnison (Roulette d'Halloween)`)
+    }
+
+
+    if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
+        var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
+        var userptc = Object.values(userptcdb)
+        db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 150 }).write();
+        return bot.channels.get("444817395840712704").send(`+ 150 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (Roulette d'Halloween)`)
+    }
+
+}
+    if (lololwin >= 26 && lololwin <= 30) {
+        console.log(lololwin)
+        message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍬🍬🍬:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation,vous venez de faire gagner 1500 points a votre faction !`)
+        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
+            var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
+            var userptc = Object.values(userptcdb)
+            db.get("pt").find({ faction: "shifter" }).assign({ faction: "shifter", pt: userptc[1] += 1500 }).write();
+            return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction Titans Shifter (Roulette d'Halloween)`)
+        }
+        if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Titan Shifter"].includes(r.name))) {
+            var userptcdb = db.get("pt").filter({ faction: "spéciale" }).find('pt').value();
+            var userptc = Object.values(userptcdb)
+            db.get("pt").find({ faction: "spéciale" }).assign({ faction: "spéciale", pt: userptc[1] += 1500 }).write();
+            return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction Les Brigades Spéciales (Roulette d'Halloween)`)
+        }
+        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "Le Bataillon d'Exploration", "Titan Shifter"].includes(r.name))) {
+            var userptcdb = db.get("pt").filter({ faction: "garnison" }).find('pt').value();
+            var userptc = Object.values(userptcdb)
+            db.get("pt").find({ faction: "garnison" }).assign({ faction: "garnison", pt: userptc[1] += 1500 }).write();
+            return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction La Garnison (Roulette d'Halloween)`)
+        }
+
+
+        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
+            var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
+            var userptc = Object.values(userptcdb)
+            db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 1500 }).write();
+            return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (Roulette d'Halloween)`)
+        }
+    }
+if (lololwin >= 31 && lololwin <= 35) {
+    console.log(lololwin)
+
+    if (lololwine >= 50) {
+
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💀💀💀:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nPas de chance, vous avez attrapé un mauvais sort, vous ne pouvez plus parler pendant 30 minutes !`)
+    }
+    if (lololwine <= 49) {
+
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n:coffin::coffin::coffin::arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nPas de chance, vous avez attrapé un mauvais sort, vous ne pouvez plus parler pendant 30 minutes !`)
+    }
+    let guild = message.member.guild;
+    let mute_role = guild.roles.find(role => role.name === "Muted");
+    message.member.addRole(mute_role); 
+    setTimeout(() => {message.member.removeRole(mute_role);}, 1800 * 1000);
+}
+}
+}talkedRecently.add(msgauthor);
+setTimeout(() => {
+    talkedRecently.delete(msgauthor);
+}, 14400 * 1000);
+}
+})
