@@ -1021,7 +1021,7 @@ bot.on('message', message => {
                 if (message.channel.type === 'dm') return;
                let hlh = message.guild.channels.find(channels => channels.name === "🎃halloween👻");
     if (message.channel === hlh) {
-if (message.content == prefix + "hal") {
+if (message.content == prefix + "mmh") {
     if (talkedRecently.has(msgauthor)) {
         message.reply("⏱️ Vous ne pouvez lancer la machine que toute les 4 heures !");
     } else {
