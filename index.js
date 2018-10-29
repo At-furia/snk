@@ -1051,26 +1051,26 @@ if (message.content == prefix + "hal") {
 
     if (lololwin >= 36) {
         console.log(lololwin)
-        message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement vous n'avez pas gagné de lots lors de ce tirage, ressayez plus tard !`)
+        message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas avec vous, la machine s'éteins et se met a faire un sifflement horrible..`)
 }
 if (lololwin <= 5) {
     console.log(lololwin)
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🎃🎃🎃:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, la chance est avec vous, vous remportez un grade VIP !`)
+    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🎃🎃🎃:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nLa machine n'avais même pas fini de tourner que vous avez déjà reçu votre récompense, une aura de force autour de vous, tellement puissante qu'on vous prend pour l'élu, vous devenez un VIP !`)
     let guild = message.member.guild;
     let halov = guild.roles.find(role => role.name === "Brigade Centrale");
     message.member.addRole(halov);
 }
 if (lololwin >= 6 && lololwin <= 15) {
     console.log(lololwin)
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, voici un beau titre en récompense !`)
+    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\n3 🍭 Mais rien ne se passe..Après avoir foutu quelques coups de pieds dans la machine par énervement, un parchemin apparait dans vos mains : *Vous venez de gagner un titre d'honneur de la part du créateur de la machine* !`)
     let guild = message.member.guild;
-    let halo = guild.roles.find(role => role.name === "🎃👻🍬**Titan effrayant**🍬👻🎃");
+    let halo = guild.roles.find(role => role.name === "🎃👻🍬**Casse Bonbons**🍬👻🎃");
     message.member.addRole(halo);
 
 }
 if (lololwin >= 16 && lololwin <= 25) {
     console.log(lololwin)
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n👻👻👻:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation,vous venez de faire gagner 150 points a votre faction !`)
+    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n👻👻👻:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nA peine les cadrans s'arrêtent, vous voyez quelques pièces tomber dans un bac sous la machine !Vous venez de faire gagner 150 points a votre faction !`)
     if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
         var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
         var userptc = Object.values(userptcdb)
@@ -1101,7 +1101,7 @@ if (lololwin >= 16 && lololwin <= 25) {
 }
     if (lololwin >= 26 && lololwin <= 30) {
         console.log(lololwin)
-        message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍬🍬🍬:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation,vous venez de faire gagner 1500 points a votre faction !`)
+        message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍬🍬🍬:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nA peine les cadrans s'arrêtent, vous entendez une pluie de pièces tomber dans un bac sous la machine !Vous venez de faire gagner 1500 points a votre faction !`)
         if (!message.member.roles.some(r => ["Le Bataillon d'Exploration", "La Garnison", "Les Brigades Spéciales"].includes(r.name))) {
             var userptcdb = db.get("pt").filter({ faction: "shifter" }).find('pt').value();
             var userptc = Object.values(userptcdb)
@@ -1134,11 +1134,11 @@ if (lololwin >= 31 && lololwin <= 35) {
 
     if (lololwine >= 50) {
 
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💀💀💀:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nPas de chance, vous avez attrapé un mauvais sort, vous ne pouvez plus parler pendant 30 minutes !`)
+    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💀💀💀:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nAprès quelques secondes a attendre devant la machine, une trappe s'ouvre et vous asperge de poudre et d'étincelles..Vous ne savez pas de quoi il s'agit mais vous ne pouvez plus parler, attendez quelques minutes que les effets disparaissent !`)
     }
     if (lololwine <= 49) {
 
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n:coffin::coffin::coffin::arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nPas de chance, vous avez attrapé un mauvais sort, vous ne pouvez plus parler pendant 30 minutes !`)
+    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n:coffin::coffin::coffin::arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nAprès quelques secondes a attendre devant la machine, une trappe s'ouvre et vous asperge de poudre et d'étincelles..Vous ne savez pas de quoi il s'agit mais vous ne pouvez plus parler, attendez quelques minutes que les effets disparaissent !`)
     }
     let guild = message.member.guild;
     let mute_role = guild.roles.find(role => role.name === "Muted");
