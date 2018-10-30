@@ -96,7 +96,7 @@ function kill(message,prefix,bot){
        
           }
                        
-            if (message.content.startsWith(prefix + 'tp')) {
+            if (message.content.startsWith(prefix + 'pts')) {
                 var ptckill = db.get("pt").filter({faction: "garnison"}).find('pt').value()
                 var ptckillfinal = Object.values(ptckill);
                          var ptckiell = db.get("pt").filter({faction: "exploration"}).find('pt').value()
