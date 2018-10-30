@@ -1023,7 +1023,7 @@ bot.on('message', message => {
     if (message.channel === hlh) {
 if (message.content == prefix + "mmh") {
     if (talkedRecently.has(msgauthor)) {
-        message.reply("⏱️ Vous ne pouvez lancer la machine que toute les 4 heures !");
+        message.reply("⏱️ Vous activez le levier de la machine, malheureusement rien ne se passe, resseayez plus tard !");
     } else {
     lololwin = Math.ceil(Math.random() * 100);
     lololwine = Math.ceil(Math.random() * 100);
@@ -1051,7 +1051,7 @@ if (message.content == prefix + "mmh") {
 
     if (lololwin >= 36) {
         console.log(lololwin)
-        message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas avec vous, la machine s'éteins et se met a faire un sifflement horrible..`)
+        message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas avec vous, la machine s'éteint et se met à faire un sifflement horrible..`)
 }
 if (lololwin <= 5) {
     console.log(lololwin)
@@ -1149,6 +1149,6 @@ if (lololwin >= 31 && lololwin <= 35) {
 }talkedRecently.add(msgauthor);
 setTimeout(() => {
     talkedRecently.delete(msgauthor);
-}, 14400 * 1000);
+}, 10800000);
 }
 })
