@@ -76,7 +76,7 @@ function manger(message,prefix,bot){
        
     
     
-     if (message.content.startsWith(prefix + 'tp')) {
+     if (message.content.startsWith(prefix + 'pts')) {
         
                               var pteckilel = db.get("pt").filter({faction: "shifter"}).find('pt').value()
             var pteckillfinael = Object.values(pteckilel);
