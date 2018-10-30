@@ -8,7 +8,6 @@ function ban(message,prefix,bot){
         }else{
             var memberban = message.mentions.users.first();
             console.log(memberban)
-            console.log(message.guild.member(memberban).bannable)
             if(!memberban){
                 message.reply("L'utilisateur n'existe pas !");
             }else{
