@@ -1055,18 +1055,29 @@ if (message.content == prefix + "mmh") {
 }
 if (lololwin <= 5) {
     console.log(lololwin)
-    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🎃🎃🎃:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nLa machine n'avais même pas fini de tourner que vous avez déjà reçu votre récompense, une aura de force autour de vous, tellement puissante qu'on vous prend pour l'élu, vous devenez un VIP !`)
-    let guild = message.member.guild;
-    let halov = guild.roles.find(role => role.name === "Brigade Centrale");
-    message.member.addRole(halov);
+   // message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🎃🎃🎃:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nLa machine n'avais même pas fini de tourner que vous avez déjà reçu votre récompense, une aura de force autour de vous, tellement puissante qu'on vous prend pour l'élu, vous devenez un VIP !`)
+   // let guild = message.member.guild;
+   // let halov = guild.roles.find(role => role.name === "Brigade Centrale");
+    //message.member.addRole(halov);
+        message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas avec vous, la machine s'éteint et se met à faire un sifflement horrible..`)
 }
 if (lololwin >= 6 && lololwin <= 15) {
     console.log(lololwin)
-    message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\n3 🍭 Mais rien ne se passe..Après avoir foutu quelques coups de pieds dans la machine par énervement, un parchemin apparait dans vos mains : *Vous venez de gagner un titre d'honneur de la part du créateur de la machine* !`)
     let guild = message.member.guild;
-    let halo = guild.roles.find(role => role.name === "🎃👻🍬**Casse Bonbons**🍬👻🎃");
-    message.member.addRole(halo);
+    let firstrole = guild.roles.find(role => role.name === "🎃👻🍬**Titan effrayant**🍬👻🎃");
+    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, voici un beau titre en récompense !`)
+    message.member.addRole(firstrole);
 
+    if (message.member.roles.some(r => ["🎃👻🍬**Titan effrayant**🍬👻🎃"].includes(r.name))){
+    let guild = message.member.guild;
+    let halo = guild.roles.find(role => role.name === "👻Fantôme de l'ennui👻");
+    message.member.addRole(halo);
+    }
+    if (message.member.roles.some(r => ["🎃👻🍬**Titan effrayant**🍬👻🎃" && "👻Fantôme de l'ennui👻"].includes(r.name))){
+        let guild = message.member.guild;
+        let sss = guild.roles.find(role => role.name === "☠️💀Spooky Scary Skeleton💀☠️");
+        message.member.addRole(sss);
+        }  
 }
 if (lololwin >= 16 && lololwin <= 25) {
     console.log(lololwin)
