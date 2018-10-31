@@ -1023,7 +1023,7 @@ bot.on('message', message => {
     if (message.channel === hlh) {
 if (message.content == prefix + "mmh") {
     if (talkedRecently.has(msgauthor)) {
-        message.reply("⏱️ Vous activez le levier de la machine, malheureusement rien ne se passe, ressayez plus tard !");
+        message.reply("⏱️ Vous activez le levier de la machine, malheureusement rien ne se passe, réessayez plus tard !");
     } else {
     lololwin = Math.ceil(Math.random() * 100);
     lololwine = Math.ceil(Math.random() * 100);
