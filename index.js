@@ -1063,11 +1063,11 @@ if (lololwin <= 5) {
 }
 if (lololwin >= 6 && lololwin <= 15) {
     console.log(lololwin)
-    let guild = message.member.guild;
-    let firstrole = guild.roles.find(role => role.name === "🎃👻🍬**Titan effrayant**🍬👻🎃");
-    message.channel.send(`:slot_machine: **Vous lancez la machine démoniaque**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nFélicitation, voici un beau titre en récompense !`)
-    message.member.addRole(firstrole);
-
+     message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍭🍭🍭:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\n3 🍭 Mais rien ne se passe..Après avoir foutu quelques coups de pieds dans la machine par énervement, un parchemin apparait dans vos mains : *Vous venez de gagner un titre d'honneur de la part du créateur de la machine* !`)
+     let guild = message.member.guild;
+     let halo = guild.roles.find(role => role.name === "🎃👻🍬**Casse Bonbons**🍬👻🎃");
+     message.member.addRole(halo);
+    
     if (message.member.roles.some(r => ["🎃👻🍬**Titan effrayant**🍬👻🎃"].includes(r.name))){
     let guild = message.member.guild;
     let halo = guild.roles.find(role => role.name === "👻Fantôme de l'ennui👻");
