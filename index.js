@@ -25,11 +25,11 @@
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
         bot.user.setStatus("idle")
        // bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
-         var interval = setInterval (function () {
+      //   var interval = setInterval (function () {
          
        // bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.\nPour les Brigades d'Entraînements, rejoignez une faction avec <fac (c'est aléatoire). ")
-                        .catch(console.error); // add error handling here
-     }, 1 * 28800001);
+             //           .catch(console.error); // add error handling here
+    // }, 1 * 28800001);
     });
 
   bot.login(process.env.TOKEN);
