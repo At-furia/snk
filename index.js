@@ -1133,12 +1133,12 @@ if (lololwin >= 16 && lololwin <= 25) {
         }
 
 
-        if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
-            var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
-            var userptc = Object.values(userptcdb)
-            db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 1500 }).write();
-            return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (Roulette d'Halloween)`)
-        }
+        //if (!message.member.roles.some(r => ["Les Brigades Spéciales", "La Garnison", "Titan Shifter"].includes(r.name))) {
+          //  var userptcdb = db.get("pt").filter({ faction: "exploration" }).find('pt').value();
+           // var userptc = Object.values(userptcdb)
+           // db.get("pt").find({ faction: "exploration" }).assign({ faction: "exploration", pt: userptc[1] += 1500 }).write();
+         //   return bot.channels.get("444817395840712704").send(`+ 1500 points pour ` + msgauthor + ` de la faction Le Bataillon d'Exploration (Roulette d'Halloween)`)
+       // }
     }
 if (lololwin >= 31 && lololwin <= 35) {
     console.log(lololwin)
@@ -1152,9 +1152,9 @@ if (lololwin >= 31 && lololwin <= 35) {
     message.channel.send(`:slot_machine: **Vous activez le levier de la Machine Maudite d'Halloween**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n:coffin::coffin::coffin::arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nAprès quelques secondes a attendre devant la machine, une trappe s'ouvre et vous asperge de poudre et d'étincelles..Vous ne savez pas de quoi il s'agit mais vous ne pouvez plus parler, attendez quelques minutes que les effets disparaissent !`)
     }
     let guild = message.member.guild;
-    let mute_role = guild.roles.find(role => role.name === "Muted");
-    message.member.addRole(mute_role); 
-    setTimeout(() => {message.member.removeRole(mute_role);}, 1800 * 1000);
+   // let mute_role = guild.roles.find(role => role.name === "Muted");
+   // message.member.addRole(mute_role); 
+   // setTimeout(() => {message.member.removeRole(mute_role);}, 1800 * 1000);
 }
 }
 }talkedRecently.add(msgauthor);
