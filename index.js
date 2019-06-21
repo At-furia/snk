@@ -24,10 +24,10 @@
     bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'SNK - <help', type: 3}})
         bot.user.setStatus("idle")
-        bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
+       // bot.channels.get("444817395840712704").send(`Bot redémarré, points a mettre a jour`);
          var interval = setInterval (function () {
          
-        bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.\nPour les Brigades d'Entraînements, rejoignez une faction avec <fac (c'est aléatoire). ")
+       // bot.channels.get("389511539347947520").send("[Message Automatique]Ce canal est un salon d'accueil, tout hors sujet/flood sera passible de mute.\nPour les Brigades d'Entraînements, rejoignez une faction avec <fac (c'est aléatoire). ")
                         .catch(console.error); // add error handling here
      }, 1 * 28800001);
     });
@@ -37,11 +37,11 @@
 
       bot.on('guildMemberAdd', member => {
 
-        let brig = member.guild.roles.find(role => role.name ===  "Les Brigades Spéciales");
-        let bataillon = member.guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
-        let shifter = member.guild.roles.find(role => role.name === "Titan Shifter");
-        let garnison = member.guild.roles.find(role => role.name === "La Garnison");
-        member.guild.channels.find(channels => channels.name === "brigade-d-entrainement");
+       // let brig = member.guild.roles.find(role => role.name ===  "Les Brigades Spéciales");
+       // let bataillon = member.guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
+        ///let shifter = member.guild.roles.find(role => role.name === "Titan Shifter");
+        //let garnison = member.guild.roles.find(role => role.name === "La Garnison");
+        //member.guild.channels.find(channels => channels.name === "brigade-d-entrainement");
         var bienvenue_embed = new Discord.RichEmbed()
 
         
@@ -74,19 +74,19 @@
         randnum = Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    random();
-    if (randnum == 1) {
-        member.addRole(shifter);
-    }
-    if (randnum == 2) {
-        member.addRole(bataillon);
-    }
-    if (randnum == 3) {
-        member.addRole(garnison);
-    }
-    if (randnum == 4) {
-        member.addRole(shifter);
-    }
+  //  random();
+   //// if (randnum == 1) {
+   //     member.addRole(shifter);
+   // }
+   // if (randnum == 2) {
+    //    member.addRole(bataillon);
+  //  }
+  //  if (randnum == 3) {
+  //      member.addRole(garnison);
+  //  }
+  //  if (randnum == 4) {
+   ///     member.addRole(shifter);
+   // }
         
       })
 
@@ -151,7 +151,7 @@ bot.on('message', function (message) {
     var nombre = Object.values(chassedb);
     let chs = message.guild.channels.find(channels => channels.name === "🔭-chasse");
     if (message.channel === chs) {
-        if (message.content == prefix + "chasse") {
+        if (message.content == prefix + "chassenop") {
             if (!message.member.roles.some(r => ["Titan Shifter", "Escouade Livaï", "La Garnison", "Les Brigades Spéciales", "Le Bataillon d'Exploration", "1ère Division"].includes(r.name)))
                 return message.reply("Vous n'êtes pas assez gradé pour utiliser cette commande !");
             if (nombre[3] <= 4) {
