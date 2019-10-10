@@ -32,7 +32,7 @@
     // }, 1 * 28800001);
     });
 
-  bot.login(process.env.TOKEN);
+//   bot.login(process.env.TOKEN);
 
 
       bot.on('guildMemberAdd', member => {
