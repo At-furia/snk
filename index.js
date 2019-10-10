@@ -36,7 +36,7 @@
 
 
       bot.on('guildMemberAdd', member => {
-
+.
        // let brig = member.guild.roles.find(role => role.name ===  "Les Brigades Spéciales");
        // let bataillon = member.guild.roles.find(role => role.name === "Le Bataillon d'Exploration");
         ///let shifter = member.guild.roles.find(role => role.name === "Titan Shifter");
